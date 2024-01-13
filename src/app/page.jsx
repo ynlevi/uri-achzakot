@@ -6,7 +6,7 @@ import { BsPersonGear } from "react-icons/bs";
 
 export default function Home() {
   return (
-    <div className="mx-4 xs:mx-8 lg:mx-32 text-theme-primary">
+    <div className="mx-3 xs:mx-8 lg:mx-32 text-theme-primary">
       {/* hero sectoin */}
       <section className="text-theme-primary tracking-wide">
         <div className="md:flex md:mt-10 ">
