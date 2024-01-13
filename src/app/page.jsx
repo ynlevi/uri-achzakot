@@ -60,7 +60,9 @@ export default function Home() {
               }`}
             >
               {icon}
-              <h3 className="font-bold text-lg">{title}</h3>
+              <h3 className="font-bold text-lg whitespace-nowrap overflow-hidden">
+                {title}
+              </h3>
               <p className="text-sm md:text-base">{p}</p>
             </li>
           ))}
