@@ -4,7 +4,8 @@
 
 :root {
   --theme-primary: #1da1f2;
-  --theme-light: #f2e8e9;
+  /* --theme-light: #f2e8e9; */
+  --theme-light: #ffffff;
   --theme-yellow: #f3e702;
   --theme-light-dark: #e17366;
 }
