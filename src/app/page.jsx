@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="text-theme-primary tracking-wide mx-8 lg:mx-32">
+    <div className="text-theme-primary tracking-wide mx-4 xs:mx-8 lg:mx-32">
       <div className="md:flex md:mt-10 ">
         <div className=" text-4xl mt-10 md:mt-6 text-theme-light ml-8">
           <h1 className="font-bold">אורי אחזקות.</h1>
@@ -39,7 +39,7 @@ export default function Home() {
           מענה נרחב לכל הבעיות התפעוליות.
         </li>
       </ul>
-      <h2 className="font-bold text-2xl my-4">בדיוק בשביל זה אנחנו כאן.</h2>
+      <h2 className="font-bold text-2xl my-2">בדיוק בשביל זה אנחנו כאן.</h2>
       <CTABtn text={"שיחת יעוץ חינם"} />
     </div>
   );
