@@ -53,7 +53,7 @@ export default function Home() {
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem] text-theme-primary py-2 px-1 md:p-3 rounded-xl ${
+              className={`flex flex-col items-center text-center gap-[.20rem]  flex-1 max-w-[15rem] text-theme-primary py-2 px-1 md:p-3 rounded-xl ${
                 i % 2 === 0
                   ? "bg-slate-50"
                   : "border-[0.1px] border-theme-primary"
