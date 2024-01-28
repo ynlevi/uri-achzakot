@@ -6,11 +6,20 @@
   --theme-primary: #1da1f2;
   /* --theme-light: #f2e8e9; */
   --theme-light: #ffffff;
-  --theme-yellow: #f3e702;
+  --theme-yellow: #f29d1d;
   --theme-light-dark: #e17366;
+  --theme-cta: #1df26f;
 }
 
 body {
   color: var(--theme-light);
   background: var(--theme-dark);
+}
+@keyframes move-right {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
 }

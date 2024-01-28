@@ -3,7 +3,7 @@ import { useState } from "react";
 import { VscMenu, VscClose } from "react-icons/vsc";
 import { AnimatePresence, motion } from "framer-motion";
 import MenuItems from "./MenuItems";
-export default function MobileMenu() {
+export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
   const [neverOpen, setNeverOpen] = useState(true);
   const hamburger = {
@@ -14,7 +14,7 @@ export default function MobileMenu() {
   const firstClick = () => setNeverOpen(false);
 
   return (
-    <div className="lg:hidden flex items-center ">
+    <div className="w-9">
       <AnimatePresence>
         {isOpen ? (
           <MenuOpen key="open" handleClick={toggleClick} />
@@ -30,7 +30,7 @@ export default function MobileMenu() {
             animate="shown"
             exit="hidden"
           >
-            <VscMenu size={30} />
+            <VscMenu size={30} className="" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -59,7 +59,7 @@ const MenuOpen = ({ handleClick }) => {
     <>
       <motion.div
         onClick={handleClick}
-        className="cursor-pointer text-opacity-100 opacity-[87%] text-2xl z-40 bg-theme-primary absolute inset-0 h-[100vh] "
+        className="px-3 xs:px-8 lg:px-32 cursor-pointer text-opacity-100 opacity-[87%] text-2xl z-40 bg-theme-primary absolute inset-0 h-[100vh] "
         variants={menuScreen}
         initial="initial"
         animate="shown"
@@ -69,7 +69,7 @@ const MenuOpen = ({ handleClick }) => {
           initial={{ y: "-500px" }}
           animate={{ y: 0, transition: { delay: 0.5 } }}
           exit={{ y: "-500px" }}
-          className="w-fit mt-2 ml-1 mr-auto"
+          className=" pt-3 mr-auto w-fit"
         >
           <VscClose size={40} />
         </motion.div>

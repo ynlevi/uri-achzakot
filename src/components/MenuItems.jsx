@@ -10,8 +10,8 @@ export default function MenuItems({ handleClick }) {
         <li key={i} className="py-1 capitalize list-none tracking-widest">
           <Link
             href={path}
-            className={`py-1 ${
-              path === pathname && "text-theme-yellow font-light"
+            className={`py-1  ${
+              path === pathname ? "text-theme-cta font-bold" : "font-light"
             }`}
             onClick={handleClick}
           >

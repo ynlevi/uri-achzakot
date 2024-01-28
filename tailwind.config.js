@@ -12,6 +12,7 @@ module.exports = {
         "theme-light": "var(--theme-light)",
         "theme-yellow": "var(--theme-yellow)",
         "theme-light-dark": "var(--theme-light-dark)",
+        "theme-cta": "var(--theme-cta)",
       },
       screens: {
         xs: "500px",
