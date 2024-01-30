@@ -1,7 +1,9 @@
+import { color } from "framer-motion";
+
 function CTABtn({ text, className }) {
   return (
-    <div className={`w-fit mr-auto ${className}`}>
-      <button className="p-3 mr-auto w-fit font-semibold tracking-wider rounded-xl bg-theme-cta text-theme-light">
+    <div className={`w-fit rounded-xl text-theme-light  ${className}`}>
+      <button className={`p-3 w-fit tracking-wider font-semibold`}>
         {text}
       </button>
     </div>

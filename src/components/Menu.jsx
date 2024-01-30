@@ -86,7 +86,7 @@ const MenuOpen = ({ handleClick }) => {
           }}
           exit={{ y: "-180%", transition: { delay: 0.25 } }}
           transition={{}}
-          className="flex flex-col gap-3 mx-auto text-center relative z-50 top-10 cursor-default "
+          className="flex w-fit flex-col gap-3 mx-auto text-center relative z-50 top-10 cursor-default "
           onClick={(e) => e.stopPropagation()}
         >
           <MenuItems handleClick={handleClick} />

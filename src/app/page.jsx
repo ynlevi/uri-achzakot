@@ -46,11 +46,14 @@ export default function Home() {
           </li>
         </ul>
         <h2 className="font-bold text-2xl mt-2">בדיוק בשביל זה אנחנו כאן.</h2>
-        <CTABtn text={"שיחת יעוץ חינם"} className={"mt-4 "} />
+        <CTABtn
+          text={"לשיחת יעוץ חינם"}
+          className={"mt-4 mr-auto bg-theme-cta "}
+        />
       </section>
       {/* why me section */}
-      <section className="mt-10 mx-3 xs:mx-8 lg:mx-32">
-        <ul className="flex gap-[.4rem] lg:gap-8 w-fit mx-auto">
+      <section className="mt-10 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
+        <ul className="flex gap-[.6rem] lg:w-full justify-between">
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
@@ -69,8 +72,38 @@ export default function Home() {
           ))}
         </ul>
       </section>
+      {/*who are we? */}
+      <section className="absolute inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
+        <div className="border-[.1px] border-theme-primary flex flex-col md:flex-row md:gap-8  bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl ">
+          <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 bg-red-800 ">
+            <Image
+              src={"/happy-customer.jpg"}
+              fill={true}
+              className="absolute -z-10"
+              objectFit="cover"
+              property={true}
+            />
+          </div>
+          <div className="md:w-64 md:flex-auto">
+            <h2 className="text-2xl mt-3 mb-1 font-semibold ">
+              אז מי אנחנו בעצם?
+            </h2>
+            <p>
+              לורם איפסום אשר פורסם בטעות באמצע כתבה בעיתון הסינגפורי "The
+              Straits Times" ב-26 באפריל 2014 לורם איפסום או בקיצור ליפסום
+              (בלטינית: lorem ipsum) הוא מלל מקובל וחסר משמעות המשמש "ממלא מקום"
+              בעת עריכה, בתחום הדפוס, ההדפסה והפרסום. הטקסט משמש כלי לייצוג דפוס
+              שאמור להתווסף למוצר הפרסום בעתיד.
+            </p>
+            <CTABtn
+              text={"להמשך הסיפור שלנו"}
+              className={"mt-4 bg-theme-primary "}
+            />
+          </div>
+        </div>
+      </section>
       {/*our customors */}
-      <section className="mt-5 pt-5 relative bg-gray-100">
+      <section className="mt-10  relative bg-gray-100 pt-96 md:pt-48">
         <h2 className="text-3xl mx-3 xs:mx-8 lg:mx-32 ">מבין לקוחותינו :</h2>
         <ul className="overflow-hidden relative inset-x-0 py-4 before:h-28 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-gray-100 before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-gray-100 after:to-transparent after:w-3/12 after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] ">
           <div
@@ -80,7 +113,7 @@ export default function Home() {
           >
             {customersLogos.map(({ src, alt, link }, index) => (
               <li
-                className={`rounded-xl shrink-0 w-32 md:w-fit p-2 md:p-3  ${
+                className={`rounded-xl shrink-0 w-32 md:w-fit px-2 my-auto flex items-center h-20 md:p-3  ${
                   index % 2 === 0
                     ? "bg-theme-light "
                     : "border-[.1px] border-theme-primary "
@@ -93,6 +126,7 @@ export default function Home() {
                     src={src}
                     alt={alt}
                     decoding="async"
+                    className=""
                   ></Image>
                 </a>
               </li>
