@@ -72,7 +72,7 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      {/*who are we? */}
+      {/*our story */}
       <section className="absolute inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
         <div className="border-[.1px] border-theme-primary flex flex-col md:flex-row md:gap-8  bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl ">
           <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 bg-red-800 ">
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </section>
       {/*our customors */}
-      <section className="mt-10  relative bg-gray-100 pt-96 md:pt-48">
+      <section className="mt-10  relative bg-gray-100 pt-[27rem] xs:pt-96 md:pt-48">
         <h2 className="text-3xl mx-3 xs:mx-8 lg:mx-32 ">מבין לקוחותינו :</h2>
         <ul className="overflow-hidden relative inset-x-0 py-4 before:h-28 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-gray-100 before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-gray-100 after:to-transparent after:w-3/12 after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] ">
           <div
