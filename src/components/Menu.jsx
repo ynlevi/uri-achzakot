@@ -14,7 +14,7 @@ export default function Menu() {
   const firstClick = () => setNeverOpen(false);
 
   return (
-    <div className="w-9">
+    <div className="w-8">
       <AnimatePresence>
         {isOpen ? (
           <MenuOpen key="open" handleClick={toggleClick} />

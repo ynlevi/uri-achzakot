@@ -8,12 +8,12 @@ function Logo() {
       // viewBox="125 0 280 280"
       viewBox="155 0 220 250"
       preserveAspectRatio="xMidYMid meet"
-      className="text-theme-primary "
+      className="fill-theme-light"
     >
       <g
         transform="translate(0.000000,295.000000) scale(0.100000,-0.100000)"
         stroke="none"
-        className="fill-theme-light"
+        className=""
       >
         <path
           d="M2385 2187 c-22 -13 -95 -58 -162 -100 l-122 -76 -103 -3 -103 -3 -3

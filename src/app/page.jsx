@@ -1,33 +1,38 @@
 import CTABtn from "@/components/CTABtn";
 import Image from "next/image";
-import { FaMedal } from "react-icons/fa6";
+import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
+import Choosing from "@/components/Choosing";
 export default function Home() {
   return (
-    <div className=" text-theme-primary -mt-[25rem] ">
+    <div className=" ">
       {/* hero sectoin */}
-      <section className="mx-3 xs:mx-8 lg:mx-32 text-theme-primary tracking-wide">
-        <div className="md:flex md:mt-10 ">
-          <div className=" text-4xl mt-10 md:mt-6 text-theme-light ml-8">
-            <h1 className="font-bold">אורי אחזקות.</h1>
-            <h1>
+      <section className="mx-3 xs:mx-8 lg:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
+        <div className="md:flex  md:max-w-xl lg:max-w-2xl">
+          <div className="text-4xl md:text-6xl ml-8 ">
+            <h1 className="">
+              <b>אורי אחזקות.</b>
+            </h1>
+            <h1 className="">
               אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
             </h1>
           </div>
-          <div className="relative inset-0 -z-10 h-48 w-11/12 xs:w-10/12 sm:h-64 md:w-6/12 xl:h-[22rem] mr-auto mt-6 ">
+
+          <div className="mask relative md:absolute h-[19rem] w-[22rem] md:scale-125 lg:scale-150 top-0 left-0 -z-10  mr-auto mt-6">
+            {/* <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"> */}
             <Image
-              src={"/happy-customer.jpg"}
+              src={"/holding-house.jpg"}
               fill={true}
-              className="absolute rounded-xl -z-10 "
+              className="absolute -z-10   "
               objectFit="cover"
               property={true}
             />
           </div>
         </div>
-        <ul className="text-lg lg:text-xl mt-12 max-w-xl">
+        <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
           <li>
             <b>יש לך </b>
             המון על הראש.
@@ -37,19 +42,32 @@ export default function Home() {
           </li>
           <li>
             <b>אתה לא רוצה </b>
-            להתעסק בבעיות היום יומיות הנובעות מבלאי ושימוש במתקנים.
+            להתעסק בתקלות היום יומיות - אתה רוצה פשוט למנוע אותם.
           </li>
-          <li>
+          {/* <li>
             <b>אתה צריך </b>
-            מישהו אמין בעל ידים טובות, מקצועיות ויחסי אנוש מעולים, שידע לתת לך
-            מענה נרחב לכל הבעיות התפעוליות.
-          </li>
+            מישהו אמין בעל ידים טובות, מקצועיות ויחסי אנוש מעולים.
+          </li> */}
+          <h2 className="text-2xl mt-3 md:mt-4">
+            <b>בדיוק בשביל זה אנחנו כאן.</b>
+          </h2>
+          <h4 className="text-lg lg:text-xl tracking-wide">
+            צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
+            אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
+            בתחום עד הפיתרון המושלם ביותר.
+          </h4>
         </ul>
-        <h2 className="font-bold text-2xl mt-2">בדיוק בשביל זה אנחנו כאן.</h2>
+
         <CTABtn
           text={"לשיחת יעוץ חינם"}
-          className={"mt-4 mr-auto bg-theme-cta "}
+          className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
         />
+      </section>
+      {/* how can we help */}
+      <section className="mx-3 xs:mx-8 lg:mx-32 tracking-wide">
+        <h2 className="text-3xl">היי! איך אפשר לעזור?</h2>
+        <h4 className="text-lg">לחצו על השירות המבוקש לפירוט נוסף</h4>
+        <Choosing />
       </section>
       {/* why me section */}
       <section className="mt-10 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
@@ -86,7 +104,7 @@ export default function Home() {
           </div>
           <div className="md:w-64 md:flex-auto">
             <h2 className="text-2xl mt-3 mb-1 font-semibold ">
-              אז מי אנחנו בעצם?
+              נעים להכיר, אני אורי.
             </h2>
             <p>
               לורם איפסום אשר פורסם בטעות באמצע כתבה בעיתון הסינגפורי "The
@@ -135,7 +153,7 @@ export default function Home() {
         </ul>
       </section>
       {/* our servise */}
-      <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
+      {/* <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
       <section className="mt-10 w-fit tracking-wide mx-3 xs:mx-8 lg:mx-32">
         <h2 className="text-3xl ">השירותים שלנו כוללים:</h2>
         <ul className="mt-4">
@@ -149,7 +167,7 @@ export default function Home() {
           ))}
           <li></li>
         </ul>
-      </section>
+      </section> */}
 
       <div className="mt-96 mb-96 h-96"></div>
     </div>
@@ -157,28 +175,30 @@ export default function Home() {
 }
 const benefit = [
   {
+    icon: <BsPersonGear size={40} />,
+    title: "בגלל המומחיות",
+    p: `אצלנו תקבלו מענה מקיף לכל סוגי התחזוקה, הבניה והתחזוק השוטף, מניעת תקלות ופתרון בעיות מורכבות.`,
+  },
+  {
     icon: <FaMedal size={40} />,
     title: "בגלל הנסיון",
-    p: "נסיון רב והכרות עמוקה עם המומחים הכי מבוקשים בשוק.",
+    p: `עשור של מתן שרותים מגוונים בכל סוגי המבנים מתחזוקת מוסדות ועד דירות,
+    חללים משותפים, פנים וחוץ.`,
   },
   {
     icon: <MdOutlineEventAvailable size={40} />,
     title: "בגלל הזמינות",
-    p: "זמינות ללא תחרות, כולל בתקופות הכי עמוסות בשנה.",
-  },
-  {
-    icon: <BsPersonGear size={40} />,
-    title: "בגלל המומחיות",
-    p: "מענה מקיף לכל סוגי התפעול כולל תקני בטיחות, חשמל ותחזוקת מבנים.",
+    p: `כל הפתרונות במרחק טלפון אחד, מול חברה אחת שנותנת לך מעטפת מלאה, כולל מענה מיידי לתקלות SOS, גם בתקופות העמוסות ביותר בשנה.`,
   },
 ];
-const services = [
-  "בדיקת תקנים קבועה במעונות וצהרונים, כולל בדיקות בטיחות.",
-  "כל השירותים התפעוליים כמו בעיות אינסטלציה, חשמל, צבע ובניה.",
-  "שירותי ניקיון ותחזוקה שוטפת לדירות לתושבי חוץ.",
-  "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
-  "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
-];
+
+// const services = [
+//   "בדיקת תקנים קבועה במעונות וצהרונים, כולל בדיקות בטיחות.",
+//   "כל השירותים התפעוליים - בניה והרחבת מתקנים, צבע, אניסטלציה, חשמל, טיפול בנזקי צנרת ורטיבות וניקוי מרזבים.",
+//   "שירותי ניקיון ותחזוקה שוטפת לדירות לתושבי חוץ.",
+//   "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
+//   "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
+// ];
 const customersLogos = [
   {
     src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
