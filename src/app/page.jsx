@@ -9,7 +9,7 @@ import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
 export default function Home() {
   return (
-    <div className=" ">
+    <div className="">
       {/* hero sectoin */}
       <section className="mx-3 xs:mx-8 lg:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="md:flex  md:max-w-xl lg:max-w-2xl">
@@ -125,7 +125,11 @@ export default function Home() {
           position={"top"}
           className="absolute -top-20 md:-top-52 -z-10 inset-0 "
         />
-
+        <Wave
+          position={"top"}
+          color="var(--theme-dark)"
+          className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] -inset-x-0 absolute"
+        />
         <h2 className="text-3xl mx-3  xs:mx-8 lg:mx-32 text-center -mt-10">
           לקוחות מרוצים שלנו
         </h2>
@@ -177,8 +181,16 @@ export default function Home() {
         </ul>
       </section> */}
       {/* call to action section */}
-      <section className="relative">
-        <Wave position={"bottom"} className="absolute -top-2 inset-0 z-10" />
+      <section className="relative ">
+        <Wave
+          position={"bottom"}
+          className="absolute -top-2 inset-x-0 -z-[5]"
+        />
+        <Wave
+          position={"bottom"}
+          color="var(--theme-dark)"
+          className="-z-10 -top-1 -inset-x-0 absolute"
+        />
       </section>
 
       <div className="mt-96"></div>
@@ -225,7 +237,7 @@ const customersLogos = [
   {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
-    custom: "scale-150",
+    custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
@@ -246,7 +258,7 @@ const customersLogos = [
   {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
-    custom: "scale-150",
+    custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
@@ -267,7 +279,7 @@ const customersLogos = [
   {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
-    custom: "scale-150",
+    custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
@@ -288,7 +300,7 @@ const customersLogos = [
   {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
-    custom: "scale-150",
+    custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {

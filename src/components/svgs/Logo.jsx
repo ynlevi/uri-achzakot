@@ -3,8 +3,6 @@ function Logo() {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="531.000000pt"
-      height="295.000000pt"
       // viewBox="125 0 280 280"
       viewBox="155 0 220 250"
       preserveAspectRatio="xMidYMid meet"
