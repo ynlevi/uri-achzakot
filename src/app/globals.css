@@ -32,11 +32,6 @@ b {
   mask-repeat: no-repeat;
   transform-origin: left top;
 }
-.stroke-custom {
-  path {
-    stroke-width: 0.2px !important;
-  }
-}
 
 @keyframes move-right {
   from {

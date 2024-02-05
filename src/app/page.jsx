@@ -6,6 +6,7 @@ import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 import Choosing from "@/components/Choosing";
+import Wave from "@/components/svgs/Wave";
 export default function Home() {
   return (
     <div className=" ">
@@ -42,7 +43,7 @@ export default function Home() {
           </li>
           <li>
             <b>אתה לא רוצה </b>
-            להתעסק בתקלות היום יומיות - אתה רוצה פשוט למנוע אותם.
+            להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
           </li>
           {/* <li>
             <b>אתה צריך </b>
@@ -64,7 +65,7 @@ export default function Home() {
         />
       </section>
       {/* how can we help */}
-      <section className="mx-3 xs:mx-8 lg:mx-32 tracking-wide">
+      <section className="mx-3 xs:mx-8 lg:mx-auto tracking-wide max-w-4xl text-center">
         <h2 className="text-3xl">היי! איך אפשר לעזור?</h2>
         <h4 className="text-lg">לחצו על השירות המבוקש לפירוט נוסף</h4>
         <Choosing />
@@ -75,11 +76,7 @@ export default function Home() {
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem] text-theme-primary py-2 px-1 md:px-6 rounded-xl ${
-                i % 2 === 0
-                  ? "bg-slate-50 "
-                  : "border-[0.1px] border-theme-primary bg-theme-light"
-              }`}
+              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem] text-theme-primary py-1 px-[.15rem] md:px-6 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-white bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-theme-light`}
             >
               {icon}
               <h3 className="font-bold text-lg whitespace-nowrap overflow-hidden">
@@ -91,9 +88,9 @@ export default function Home() {
         </ul>
       </section>
       {/*our story */}
-      <section className="absolute inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-        <div className="border-[.1px] border-theme-primary flex flex-col md:flex-row md:gap-8  bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl ">
-          <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 bg-red-800 ">
+      <section className="absolute  inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
+        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
+          <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
             <Image
               src={"/happy-customer.jpg"}
               fill={true}
@@ -120,18 +117,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/*our customors */}
-      <section className="mt-10  relative bg-gray-100 pt-[27rem] xs:pt-96 md:pt-48">
-        <h2 className="text-3xl mx-3 xs:mx-8 lg:mx-32 ">מבין לקוחותינו :</h2>
-        <ul className="overflow-hidden relative inset-x-0 py-4 before:h-28 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-gray-100 before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-gray-100 after:to-transparent after:w-3/12 after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] ">
+
+      <section className="mt-32 md:mt-24 relative bg-white text-theme-primary  pt-[27rem] xs:pt-96 md:pt-48">
+        <Wave
+          position={"top"}
+          className="absolute -top-20 md:-top-52 -z-10 inset-0 "
+        />
+
+        <h2 className="text-3xl mx-3  xs:mx-8 lg:mx-32 text-center -mt-10">
+          לקוחות מרוצים שלנו
+        </h2>
+
+        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-4 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-white before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-white after:to-transparent after:w-3/12 before:md:from-60% after:md:from-60%  after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
           <div
             dir="ltr"
             className="flex gap-6  "
-            style={{ animation: "10s move-right infinite linear" }}
+            style={{ animation: "30s move-right infinite linear" }}
           >
-            {customersLogos.map(({ src, alt, link }, index) => (
+            {customersLogos.map(({ src, alt, link, custom }, index) => (
               <li
-                className={`rounded-xl shrink-0 w-32 md:w-fit px-2 my-auto flex items-center h-20 md:p-3  ${
+                className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                   index % 2 === 0
                     ? "bg-theme-light "
                     : "border-[.1px] border-theme-primary "
@@ -139,12 +146,12 @@ export default function Home() {
               >
                 <a target="_blank" href={link}>
                   <Image
-                    width="160"
-                    height="160"
+                    fill
                     src={src}
                     alt={alt}
                     decoding="async"
-                    className=""
+                    objectFit="contain"
+                    className={`p-1 md:p-3 ${custom}`}
                   ></Image>
                 </a>
               </li>
@@ -152,6 +159,7 @@ export default function Home() {
           </div>
         </ul>
       </section>
+
       {/* our servise */}
       {/* <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
       <section className="mt-10 w-fit tracking-wide mx-3 xs:mx-8 lg:mx-32">
@@ -168,8 +176,12 @@ export default function Home() {
           <li></li>
         </ul>
       </section> */}
+      {/* call to action section */}
+      <section className="relative">
+        <Wave position={"bottom"} className="absolute -top-2 inset-0 z-10" />
+      </section>
 
-      <div className="mt-96 mb-96 h-96"></div>
+      <div className="mt-96"></div>
     </div>
   );
 }
@@ -201,118 +213,87 @@ const benefit = [
 // ];
 const customersLogos = [
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
+    src: "/netzach.png",
     alt: "עמותת נצח יהודה",
     link: "https://netzahyehuda.org",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
+    src: "/bet-sanedria.gif",
+    alt: "בית סנהדריה",
+    link: "https://netzahyehuda.org",
+  },
+  {
+    src: "/hechal-itchak.svg",
+    alt: "ישיבת היכל יצחק",
+    custom: "scale-150",
+    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
+  },
+  {
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
+    src: "/netzach.png",
     alt: "עמותת נצח יהודה",
     link: "https://netzahyehuda.org",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
+    src: "/bet-sanedria.gif",
+    alt: "בית סנהדריה",
+    link: "https://netzahyehuda.org",
+  },
+  {
+    src: "/hechal-itchak.svg",
+    alt: "ישיבת היכל יצחק",
+    custom: "scale-150",
+    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
+  },
+  {
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
+    src: "/netzach.png",
     alt: "עמותת נצח יהודה",
     link: "https://netzahyehuda.org",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
+    src: "/bet-sanedria.gif",
+    alt: "בית סנהדריה",
+    link: "https://netzahyehuda.org",
+  },
+  {
+    src: "/hechal-itchak.svg",
+    alt: "ישיבת היכל יצחק",
+    custom: "scale-150",
+    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
+  },
+  {
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
+    src: "/netzach.png",
     alt: "עמותת נצח יהודה",
     link: "https://netzahyehuda.org",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
+    src: "/bet-sanedria.gif",
+    alt: "בית סנהדריה",
     link: "https://netzahyehuda.org",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
+    src: "/hechal-itchak.svg",
+    alt: "ישיבת היכל יצחק",
+    custom: "scale-150",
+    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "https://netzahyehuda.org/wp-content/uploads/2020/05/cropped-לוגו.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
   },
 ];

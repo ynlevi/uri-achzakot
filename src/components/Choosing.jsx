@@ -5,6 +5,7 @@ import LivingRoom from "./svgs/LivingRoom";
 import Building from "./svgs/Building";
 import Plan from "./svgs/Plan";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { LayoutGroup } from "framer-motion";
 
 import { motion, AnimatePresence } from "framer-motion";
 function Choosing() {
@@ -16,15 +17,15 @@ export default Choosing;
 function App() {
   const [selectedTab, setSelectedTab] = useState(services[0]);
   return (
-    <div className="mt-2 border-4 border-white bg-white text-theme-primary rounded-xl overflow-auto ">
+    <div className="mt-2 border-8 border-theme-light bg-theme-light text-theme-primary rounded-xl overflow-auto ">
       <nav className="">
-        <ul className="flex justify-between ">
+        <ul className="flex justify-between font-bold">
           {services.map((item) => (
             <li
               key={item.id}
               className={`relative w-full text-center py-2 items-center flex-col flex ${
                 item === selectedTab
-                  ? "bg-theme-light cursor-default"
+                  ? "bg-white cursor-default"
                   : "cursor-pointer"
               } `}
               onClick={() => setSelectedTab(item)}
@@ -41,7 +42,7 @@ function App() {
           ))}
         </ul>
       </nav>
-      <main className="p-4 h-42 bg-theme-light text-theme-primary">
+      <main className="p-4 h-42 bg-white text-theme-primary ">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedTab ? selectedTab.id : "empty"}
@@ -51,7 +52,7 @@ function App() {
             transition={{ duration: 0.2 }}
           >
             {selectedTab && (
-              <ul>
+              <ul className="md:text-lg md:my-4 text-start max-w-md mx-auto">
                 {selectedTab.details.map((string) => (
                   <li className="flex gap-1">
                     <div className="pt-[.35rem]">
@@ -111,14 +112,10 @@ const services = [
     name: "תושבי חו׳׳ל",
     icon: <Plan />,
     details: [
-      "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
+      "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
+      "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
       "שילום תקופתי חשבונות חשמל ומים.",
-      "מעקב תקינות חשמל, ספרינקלרים, עמודות אש.",
-      "עבודות גינון וטיפוח שטחי חוץ.",
-      "תקינות תאורת פנים, חוץ, גינה, פוטו צל.",
-      "ניקיון שטחים משותפים, חדרי אשפה.",
-      "תחזוקת צבע, בדיקת נזילות, איטום יריעות.",
-      "חיזוק קורות.",
+      "בדיקת תקינות כלל המוצרים בבית במצב שמיש.",
       "טיפולי הרחקת יונים.",
     ],
   },
