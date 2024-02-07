@@ -20,7 +20,7 @@ export default function FlotObjects() {
     //     className="z-40 bg-red-500 h-40 w-40"
     //   ></motion.div>
     // </div>
-    <div className="absolute inset-x-0 top-0 z-[2]">
+    <div className="hidden md:absolute inset-x-0 top-0 z-[2]">
       {/* right side */}
       <Blob className={"right-14 top-10 text-theme-primary -rotate-12"} />
       <Blob

@@ -5,6 +5,10 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
+import LivingRoom from "@/components/svgs/LivingRoom";
+import Building from "@/components/svgs/Building";
+import Plan from "@/components/svgs/Plan";
+
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
 
@@ -66,12 +70,56 @@ export default function Home() {
           className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
         />
       </section>
-      {/* how can we help */}
+      {/* our service */}
+      <section className=" ">
+        <h2 className="text-4xl text-center">השירותים שלנו</h2>
+        <ul className="flex flex-col mt-2 gap-4">
+          {services.map((item, index) => (
+            <li>
+              <div
+                className={`relative h-72 md:w-[50vw] md:h-96  ${
+                  index % 2 === 0 ? " mr-auto ml-10" : "ml-auto mr-10"
+                } `}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div
+                className={`font-medium text-white tracking-wide p-4 py-2 -mt-20 theme-dark-with-opacity ${
+                  index % 2 === 0 ? " mr-10" : " ml-10"
+                }`}
+                style={{
+                  backdropFilter: "blur(2px)",
+                  "-webkitBackdropFilter": "blur(2px)",
+                }}
+              >
+                <h4 className="  text-4xl ">{item.name}</h4>
+                <ul className=" ">
+                  {item.details.map((string, j) => (
+                    <li key={j} className="flex gap-1">
+                      <div className="pt-[.35rem]">
+                        {<IoMdCheckmarkCircleOutline />}
+                      </div>
+
+                      <div>{string}</div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+      {/* how can we help
       <section className="mx-3 xs:mx-8 lg:mx-auto tracking-wide max-w-4xl text-center">
         <h2 className="text-3xl">היי! איך אפשר לעזור?</h2>
         <h4 className="text-lg">לחצו על השירות המבוקש לפירוט נוסף</h4>
         <Choosing />
-      </section>
+      </section> */}
       {/* why me section */}
       <section className="mt-10 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
         <h2 className="text-4xl text-center">למה דווקא אורי אחזקות?</h2>
@@ -181,6 +229,53 @@ export default function Home() {
     </div>
   );
 }
+
+const services = [
+  {
+    id: 0,
+    name: "תחזוקת דירות",
+    icon: <LivingRoom />,
+    image: "/apartment.jpg",
+    details: [
+      "ניהול צוות תחזוקה למתן מענה לכל הצרכים השוטפים של מוסדות.",
+      "ניקיון: מבנה, אבזור טואלטיקה שירותים, חצרות, גינון.",
+      "תשתיות: חשמל, אינסטלציה, השחלות כבלים רשת.",
+      "תיקונים ותוספות: גבס, צבע, ריצוף, איטום ובניה קלה",
+      "לווי מהנדסים לחיזוקי מבנה.",
+      "בדיקה תקופתית על ידי מהנדס/ יועץ בטיחות, עבור אישור תמ״ת.",
+    ],
+  },
+  {
+    id: 1,
+    name: "תחזוקת מבנים",
+    icon: <Building />,
+    image: "/building.jpg",
+    details: [
+      "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
+      "שילום תקופתי חשבונות חשמל ומים.",
+      "מעקב תקינות חשמל, ספרינקלרים, עמודות אש.",
+      "עבודות גינון וטיפוח שטחי חוץ.",
+      "תקינות תאורת פנים, חוץ, גינה, פוטו צל.",
+      "ניקיון שטחים משותפים, חדרי אשפה.",
+      "תחזוקת צבע, בדיקת נזילות, איטום יריעות.",
+      "חיזוק קורות.",
+      "טיפולי הרחקת יונים.",
+    ],
+  },
+  {
+    id: 2,
+    name: "תחזוקת נכסים לתושבי חו׳׳ל",
+    icon: <Plan />,
+    image: "/hul.jpg",
+    details: [
+      "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
+      "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
+      "שילום תקופתי חשבונות חשמל ומים.",
+      "בדיקת תקינות כלל המוצרים בבית במצב שמיש.",
+      "טיפולי הרחקת יונים.",
+    ],
+  },
+];
 const benefit = [
   {
     icon: <BsPersonGear size={40} />,
