@@ -7,6 +7,8 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
+
+import FlotObjects from "@/components/FlotObjects";
 export default function Home() {
   return (
     <div className="">
@@ -72,16 +74,15 @@ export default function Home() {
       </section>
       {/* why me section */}
       <section className="mt-10 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
-        <ul className="flex gap-[.6rem] lg:w-full justify-between">
+        <h2 className="text-4xl text-center">למה דווקא אורי אחזקות?</h2>
+        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border mt-4 ">
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem] text-theme-primary py-1 px-[.15rem] md:px-6 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-white bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-theme-light`}
+              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem]  px-[.15rem] md:px-6 text-theme-primary py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-white bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-theme-light w-24`}
             >
               {icon}
-              <h3 className="font-bold text-lg whitespace-nowrap overflow-hidden">
-                {title}
-              </h3>
+              <h3 className="font-bold text-lg whitespace-nowrap ">{title}</h3>
               <p className="text-sm md:text-base">{p}</p>
             </li>
           ))}
@@ -117,9 +118,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/*our customors */}
-
       <section className="mt-32 md:mt-24 relative bg-white text-theme-primary  pt-[27rem] xs:pt-96 md:pt-48">
         <Wave
           position={"top"}
@@ -130,10 +129,10 @@ export default function Home() {
           color="var(--theme-dark)"
           className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] -inset-x-0 absolute"
         />
+        <FlotObjects />
         <h2 className="text-3xl mx-3  xs:mx-8 lg:mx-32 text-center -mt-10">
           לקוחות מרוצים שלנו
         </h2>
-
         <ul className="overflow-hidden relative pb-6 inset-x-0 pt-4 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-white before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-white after:to-transparent after:w-3/12 before:md:from-60% after:md:from-60%  after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
           <div
             dir="ltr"
@@ -163,23 +162,6 @@ export default function Home() {
           </div>
         </ul>
       </section>
-
-      {/* our servise */}
-      {/* <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
-      <section className="mt-10 w-fit tracking-wide mx-3 xs:mx-8 lg:mx-32">
-        <h2 className="text-3xl ">השירותים שלנו כוללים:</h2>
-        <ul className="mt-4">
-          {services.map((p, index) => (
-            <li className="flex gap-2 items-center text-lg ">
-              <div className="max-w-6 pt-1 mb-auto">
-                <IoMdCheckmarkCircleOutline size={20} />
-              </div>
-              <p className="">{p}</p>
-            </li>
-          ))}
-          <li></li>
-        </ul>
-      </section> */}
       {/* call to action section */}
       <section className="relative ">
         <Wave
@@ -192,8 +174,10 @@ export default function Home() {
           className="-z-10 -top-1 -inset-x-0 absolute"
         />
       </section>
-
-      <div className="mt-96"></div>
+      <div className="h-96 w-full"></div>
+      <div className="h-96 w-screen"></div>
+      <div className="h-96 w-full"></div>
+      <div className="h-96 w-screen"></div>
     </div>
   );
 }
@@ -216,13 +200,6 @@ const benefit = [
   },
 ];
 
-// const services = [
-//   "בדיקת תקנים קבועה במעונות וצהרונים, כולל בדיקות בטיחות.",
-//   "כל השירותים התפעוליים - בניה והרחבת מתקנים, צבע, אניסטלציה, חשמל, טיפול בנזקי צנרת ורטיבות וניקוי מרזבים.",
-//   "שירותי ניקיון ותחזוקה שוטפת לדירות לתושבי חוץ.",
-//   "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
-//   "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
-// ];
 const customersLogos = [
   {
     src: "/netzach.png",
@@ -309,3 +286,32 @@ const customersLogos = [
     link: "https://www.facebook.com/Paratroopersultraorthodox/",
   },
 ];
+
+{
+  /* our servise - probebly not goona be in use */
+}
+{
+  /* <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
+      <section className="mt-10 w-fit tracking-wide mx-3 xs:mx-8 lg:mx-32">
+        <h2 className="text-3xl ">השירותים שלנו כוללים:</h2>
+        <ul className="mt-4">
+          {services.map((p, index) => (
+            <li className="flex gap-2 items-center text-lg ">
+              <div className="max-w-6 pt-1 mb-auto">
+                <IoMdCheckmarkCircleOutline size={20} />
+              </div>
+              <p className="">{p}</p>
+            </li>
+          ))}
+          <li></li>
+        </ul>
+      </section> */
+}
+
+// const services = [
+//   "בדיקת תקנים קבועה במעונות וצהרונים, כולל בדיקות בטיחות.",
+//   "כל השירותים התפעוליים - בניה והרחבת מתקנים, צבע, אניסטלציה, חשמל, טיפול בנזקי צנרת ורטיבות וניקוי מרזבים.",
+//   "שירותי ניקיון ותחזוקה שוטפת לדירות לתושבי חוץ.",
+//   "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
+//   "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
+// ];

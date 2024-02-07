@@ -6,7 +6,7 @@ import Building from "./svgs/Building";
 import Plan from "./svgs/Plan";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { LayoutGroup } from "framer-motion";
-
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 function Choosing() {
   return <App />;
@@ -17,53 +17,60 @@ export default Choosing;
 function App() {
   const [selectedTab, setSelectedTab] = useState(services[0]);
   return (
-    <div className="mt-2 border-8 border-theme-light bg-theme-light text-theme-primary rounded-xl overflow-auto ">
-      <nav className="">
-        <ul className="flex justify-between font-bold">
-          {services.map((item) => (
-            <li
-              key={item.id}
-              className={`relative w-full text-center py-2 items-center flex-col flex ${
-                item === selectedTab
-                  ? "bg-white cursor-default"
-                  : "cursor-pointer"
-              } `}
-              onClick={() => setSelectedTab(item)}
-            >
-              {item.icon}
-              {item.name}
-              {item.id === selectedTab.id ? (
-                <motion.div
-                  className="absolute bottom-0 inset-x-0 h-[1px] bg-theme-selected"
-                  layoutId="underline"
-                />
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <main className="p-4 h-42 bg-white text-theme-primary ">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedTab ? selectedTab.id : "empty"}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.2 }}
+    <div className="mt-2 border-[12px] border-theme-light bg-theme-light text-theme-primary rounded-xl ">
+      <ul className="flex  font-bold ">
+        {services.map((item) => (
+          <li
+            key={item.id}
+            className={`relative w-full text-center py-2 flex flex-col justify-between items-center ${
+              item === selectedTab
+                ? "bg-white cursor-default"
+                : "cursor-pointer"
+            }  ${item.id + 1 !== services.length && "flex border-l"} `}
+            onClick={() => setSelectedTab(item)}
           >
-            {selectedTab && (
-              <ul className="md:text-lg md:my-4 text-start max-w-md mx-auto">
+            {item.icon}
+            {item.name}
+            {item.id === selectedTab.id ? (
+              <motion.div
+                className="absolute bottom-0 inset-x-0 h-1 bg-theme-selected"
+                layoutId="underline"
+              />
+            ) : null}
+          </li>
+        ))}
+      </ul>
+      <main className=" bg-white text-theme-primary p-3">
+        <AnimatePresence mode="wait">
+          {selectedTab && (
+            <motion.div
+              key={selectedTab ? selectedTab.id : "empty"}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col md:flex-row-reverse md:gap-4 "
+            >
+              <Image
+                src={selectedTab.image}
+                height={400}
+                width={600}
+                alt={selectedTab.name}
+                className="h-52 md:h-72 w-full md:w-6/12 md:flex-auto object-cover"
+              />
+              <ul className="md:text-lg py-4 text-start max-w-md mx-auto flex-auto md:w-6/12 ">
                 {selectedTab.details.map((string) => (
                   <li className="flex gap-1">
                     <div className="pt-[.35rem]">
                       {<IoMdCheckmarkCircleOutline />}
                     </div>
+
                     <div>{string}</div>
                   </li>
                 ))}
               </ul>
-            )}
-          </motion.div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </main>
     </div>
@@ -80,8 +87,9 @@ function App() {
 const services = [
   {
     id: 0,
-    name: "דירות",
+    name: "תחזוקת דירות",
     icon: <LivingRoom />,
+    image: "/apartment.jpg",
     details: [
       "ניהול צוות תחזוקה למתן מענה לכל הצרכים השוטפים של מוסדות.",
       "ניקיון: מבנה, אבזור טואלטיקה שירותים, חצרות, גינון.",
@@ -93,8 +101,9 @@ const services = [
   },
   {
     id: 1,
-    name: "מבנים",
+    name: "תחזוקת מבנים",
     icon: <Building />,
+    image: "/building.jpg",
     details: [
       "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
       "שילום תקופתי חשבונות חשמל ומים.",
@@ -109,8 +118,9 @@ const services = [
   },
   {
     id: 2,
-    name: "תושבי חו׳׳ל",
+    name: "תחזוקת נכסים לתושבי חו׳׳ל",
     icon: <Plan />,
+    image: "/hul.jpg",
     details: [
       "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
       "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
