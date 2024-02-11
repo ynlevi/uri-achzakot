@@ -4,10 +4,7 @@ import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-
-import LivingRoom from "@/components/svgs/LivingRoom";
-import Building from "@/components/svgs/Building";
-import Plan from "@/components/svgs/Plan";
+import Service from "@/components/Service";
 
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
@@ -17,7 +14,7 @@ export default function Home() {
   return (
     <div className="">
       {/* hero sectoin */}
-      <section className="mx-3 xs:mx-8 lg:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
+      <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="md:flex  md:max-w-xl lg:max-w-2xl">
           <div className="text-4xl md:text-6xl ml-8 ">
             <h1 className="">
@@ -33,8 +30,7 @@ export default function Home() {
             <Image
               src={"/holding-house.jpg"}
               fill={true}
-              className="absolute -z-10   "
-              objectFit="cover"
+              className="absolute -z-1 object-cover"
               property={true}
             />
           </div>
@@ -71,48 +67,8 @@ export default function Home() {
         />
       </section>
       {/* our service */}
-      <section className=" ">
-        <h2 className="text-4xl text-center">השירותים שלנו</h2>
-        <ul className="flex flex-col mt-2 gap-4">
-          {services.map((item, index) => (
-            <li>
-              <div
-                className={`relative h-72 md:w-[50vw] md:h-96  ${
-                  index % 2 === 0 ? " mr-auto ml-10" : "ml-auto mr-10"
-                } `}
-              >
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div
-                className={`font-medium text-white tracking-wide p-4 py-2 -mt-20 theme-dark-with-opacity ${
-                  index % 2 === 0 ? " mr-10" : " ml-10"
-                }`}
-                style={{
-                  backdropFilter: "blur(2px)",
-                  "-webkitBackdropFilter": "blur(2px)",
-                }}
-              >
-                <h4 className="  text-4xl ">{item.name}</h4>
-                <ul className=" ">
-                  {item.details.map((string, j) => (
-                    <li key={j} className="flex gap-1">
-                      <div className="pt-[.35rem]">
-                        {<IoMdCheckmarkCircleOutline />}
-                      </div>
-
-                      <div>{string}</div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <section className="mx-3 xs:mx-8 xl:mx-32" dir="ltr">
+        <Service />
       </section>
       {/* how can we help
       <section className="mx-3 xs:mx-8 lg:mx-auto tracking-wide max-w-4xl text-center">
@@ -121,7 +77,7 @@ export default function Home() {
         <Choosing />
       </section> */}
       {/* why me section */}
-      <section className="mt-10 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
+      <section className="mt-10  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
         <h2 className="text-4xl text-center">למה דווקא אורי אחזקות?</h2>
         <ul className="flex gap-[.4rem] lg:w-full justify-between box-border mt-4 ">
           {benefit.map(({ icon, title, p }, i) => (
@@ -142,9 +98,8 @@ export default function Home() {
           <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
             <Image
               src={"/happy-customer.jpg"}
-              fill={true}
-              className="absolute -z-10"
-              objectFit="cover"
+              fill
+              className="absolute -z-10 object-cover"
               property={true}
             />
           </div>
@@ -201,8 +156,7 @@ export default function Home() {
                     src={src}
                     alt={alt}
                     decoding="async"
-                    objectFit="contain"
-                    className={`p-1 md:p-3 ${custom}`}
+                    className={`p-1 md:p-3 object-contain ${custom}`}
                   ></Image>
                 </a>
               </li>
@@ -230,52 +184,6 @@ export default function Home() {
   );
 }
 
-const services = [
-  {
-    id: 0,
-    name: "תחזוקת דירות",
-    icon: <LivingRoom />,
-    image: "/apartment.jpg",
-    details: [
-      "ניהול צוות תחזוקה למתן מענה לכל הצרכים השוטפים של מוסדות.",
-      "ניקיון: מבנה, אבזור טואלטיקה שירותים, חצרות, גינון.",
-      "תשתיות: חשמל, אינסטלציה, השחלות כבלים רשת.",
-      "תיקונים ותוספות: גבס, צבע, ריצוף, איטום ובניה קלה",
-      "לווי מהנדסים לחיזוקי מבנה.",
-      "בדיקה תקופתית על ידי מהנדס/ יועץ בטיחות, עבור אישור תמ״ת.",
-    ],
-  },
-  {
-    id: 1,
-    name: "תחזוקת מבנים",
-    icon: <Building />,
-    image: "/building.jpg",
-    details: [
-      "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
-      "שילום תקופתי חשבונות חשמל ומים.",
-      "מעקב תקינות חשמל, ספרינקלרים, עמודות אש.",
-      "עבודות גינון וטיפוח שטחי חוץ.",
-      "תקינות תאורת פנים, חוץ, גינה, פוטו צל.",
-      "ניקיון שטחים משותפים, חדרי אשפה.",
-      "תחזוקת צבע, בדיקת נזילות, איטום יריעות.",
-      "חיזוק קורות.",
-      "טיפולי הרחקת יונים.",
-    ],
-  },
-  {
-    id: 2,
-    name: "תחזוקת נכסים לתושבי חו׳׳ל",
-    icon: <Plan />,
-    image: "/hul.jpg",
-    details: [
-      "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
-      "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
-      "שילום תקופתי חשבונות חשמל ומים.",
-      "בדיקת תקינות כלל המוצרים בבית במצב שמיש.",
-      "טיפולי הרחקת יונים.",
-    ],
-  },
-];
 const benefit = [
   {
     icon: <BsPersonGear size={40} />,
@@ -410,3 +318,17 @@ const customersLogos = [
 //   "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
 //   "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
 // ];
+
+{
+  /* <ul className="text-sm">
+                  {item.details.map((string, j) => (
+                    <li key={j} className="flex gap-1">
+                      <div className="pt-[.35rem]">
+                        {<IoMdCheckmarkCircleOutline />}
+                      </div>
+
+                      <div>{string}</div>
+                    </li>
+                  ))}
+                </ul> */
+}
