@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import ServiceCardMedia from "./ServiceCardMedia";
 import React, { useEffect, useRef } from "react";
 import {
   useScroll,
@@ -9,60 +10,52 @@ import {
 } from "framer-motion";
 
 export default function Service() {
+  const sectionRef = useRef(null);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start .7", "end end"],
   });
-  //   const x = useTransform(
-  //     scrollYProgress,
-  //     [0, 0.1, 0.8, 1],
-  //     ["0%", "-10%", "-40%", "-67.5%"]
-  //   );
-
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.4], ["0", "6vh", "10vh"]);
+  const x = useTransform(
+    scrollYProgress,
+    [0.5, 0.56, 0.8, 0.9],
+    ["0%", "-10%", "-40%", "-67.5%"]
+  );
+  const opacity = useTransform(scrollYProgress, [0.9, 0.92, 1], [1, 0.8, 0]);
+  const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
   //   const width = useTransform(scrollYProgress, [0]);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("x changed to", latest);
   });
   return (
-    <motion.div className="h-[150vh] ">
-      <motion.ul className="sticky top-[25vh] pt-14 flex gap-4 overflow-x-hidden lg:overflow-x-clip lg:top-8">
-        <h2 className="text-4xl text-center absolute top-0 z-50 inset-x-0">
-          השירותים שלנו
-        </h2>
-        <motion.div
-          className="flex flex-row-reverse gap-4 w-fit lg:flex-col"
-          //   style={{ x }}
-          dir="auto"
-        >
-          {services.map((item, index) => (
-            <motion.li
-              ref={ref}
-              className={` border-2 border-theme-dark rounded-xl relative w-[93vw] h-72 lg:w-[22rem] lg:border-0 `}
-              //   style={index === 0 && { flex: "1 1 0", height: "25rem" }}
-            >
-              <Image
-                src={item.image}
-                alt={item.name}
-                fill
-                className="rounded-xl object-cover"
-              />
-              <div
-                className={`absolute bottom-6 font-medium text-white tracking-wide p-4 py-2 theme-dark-with-opacity md:mt-0`}
-                style={{
-                  backdropFilter: "blur(2px)",
-                  "-webkitBackdropFilter": "blur(2px)",
-                }}
-              >
-                <h4 className="text-3xl tracking-normal ">{item.name}</h4>
-              </div>
-            </motion.li>
-          ))}
+    <motion.div ref={ref} className="h-[200vh] ">
+      <motion.div
+        style={{ opacity }}
+        className="sticky z-10 main-bg inset-0  h-screen overflow-x-hidden "
+      >
+        <motion.div style={{ y }} className=" ">
+          <motion.h2
+            style={{ scale: h2Scale }}
+            className=" text-center origin-bottom text-5xl lg:text-4xl relative  "
+          >
+            השירותים שלנו
+          </motion.h2>
+          <motion.ul
+            className="flex mt-7 flex-row-reverse gap-4 w-fit mx-3 xs:mx-8 xl:mx-32 "
+            style={{ x }}
+            dir="auto"
+          >
+            {services.map((item, index) => (
+              <ServiceCardMedia item={item} index={index} />
+            ))}
+          </motion.ul>
         </motion.div>
-      </motion.ul>
+      </motion.div>
     </motion.div>
   );
 }
+
 const services = [
   {
     id: 0,

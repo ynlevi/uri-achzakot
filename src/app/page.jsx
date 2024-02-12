@@ -67,7 +67,7 @@ export default function Home() {
         />
       </section>
       {/* our service */}
-      <section className="mx-3 xs:mx-8 xl:mx-32" dir="ltr">
+      <section className="" dir="ltr">
         <Service />
       </section>
       {/* how can we help
@@ -77,7 +77,7 @@ export default function Home() {
         <Choosing />
       </section> */}
       {/* why me section */}
-      <section className="mt-10  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
+      <section className="-mt-[70vh]  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
         <h2 className="text-4xl text-center">למה דווקא אורי אחזקות?</h2>
         <ul className="flex gap-[.4rem] lg:w-full justify-between box-border mt-4 ">
           {benefit.map(({ icon, title, p }, i) => (
