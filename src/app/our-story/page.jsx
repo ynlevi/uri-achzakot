@@ -1,35 +1,52 @@
 import Image from "next/image";
 import CTABtn from "@/components/CTABtn";
+import Wave from "@/components/svgs/Wave";
 function page() {
   return (
-    <div className="mx-3 xs:mx-8 xl:mx-32 tracking-wide text-lg flex flex-col lg:flex-row-reverse">
-      <div className="relative h-64 lg:h-80 w-full lg:flex-1 mt-8 flex-grow ">
-        <Image
-          src={"/happy-customer.jpg"}
-          fill
-          className="absolute -z-10 object-cover "
-          property={true}
+    <div className="tracking-wide  ">
+      <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl flex flex-col lg:flex-row gap-4 justify-between mt-16 lg:mt-24 lg:items-center ">
+        <h2 className="text-5xl text-center ">קצת עליי</h2>
+        <div className="relative h-52 xs:h-64 md:h-80 lg:h-96 w-full lg:max-w-xl ">
+          <Image
+            src={"/happy-customer.jpg"}
+            fill
+            className="absolute -z-10 object-cover "
+            property={true}
+          />
+        </div>
+      </div>
+
+      <div className="relative ">
+        <Wave
+          color="var(--theme-dark)"
+          position={"top"}
+          className={"relative inset-x-0 top-3 -z-0"}
+        />
+        <Wave
+          color={"var(--theme-light)"}
+          position={"top"}
+          className=" absolute inset-x-0 top-4"
         />
       </div>
-      <div className="lg:flex-1 lg:p-3 text-black">
-        <h2 className="text-4xl mt-8">קצת עליי</h2>
-        {p.map((s, i) => {
-          return (
-            <>
-              <p className="mt-2 text-lg" key={i}>
-                {s}
-              </p>
-            </>
-          );
-        })}
-        <h4 className="text-xl text-theme-dark font-semibold mt-4">
-          מחכים לשמוע ממך, אנחנו כאן לכל שאלה!
-        </h4>
-        <CTABtn
-          text={"דברו איתנו עוד היום"}
-          url={"contact"}
-          className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
-        />
+
+      <div className=" bg-theme-light text-theme-primary ">
+        <div className="mx-3 xs:mx-8  md:mx-auto max-w-3xl relative bottom-4 lg:bottom-10">
+          {p.map((s, i) => {
+            return (
+              <>
+                <p
+                  className={` mt-2 text-xl ${
+                    i === 0 &&
+                    "first-letter:text-6xl first-letter:leading-10 first-letter:float-start first-letter:ml-3"
+                  }`}
+                  key={i}
+                >
+                  {s}
+                </p>
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -37,7 +54,7 @@ function page() {
 
 export default page;
 const p = [
-  `נעים להכיר אני אורי, מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי הבית שלהם. מיומן בניתוח מערכות חשמל ומיזוג אוויר וטיפול בתקלות מורכבות. מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים ומוסדות`,
+  `נעים להכיר, אני אורי, מנהל ומייסד של אורי אחזקות, בעל ניסיון של עשור בתעשיית החשמל ואחזקת דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי הבית שלהם. מיומן בניתוח מערכות חשמל ומיזוג אוויר וטיפול בתקלות מורכבות. מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים ומוסדות`,
   `לפני עשור, התחלתי תוך כדי לימודי הנדסאי חשמל, שמרתי על המערכות החשמליות והמכאניות של נכסי מגורים. גיליתי שיש לי כשרון לזיהוי ופתרון תקלות מורכבות. חידדתי את כישוריי, צברתי ניסיון רב ערך, ועד מהרה מצאתי את עצמי עובר לתחום תחזוקת מבנים. בתקופה זו הבחנתי היטב בפער משמעותי בשוק – היעדר סיוע נגיש ואמין לבעלי בתים בכל הנוגע לתקלות חשמל, אינסטלציה ומיזוג אוויר.`,
   `מתוך הבנה עמוקה של התסכול וחוסר הוודאות שחווים מי שאינם מכירים את התקלות בבית, החלטתי לעשות צעד נועז, והקמתי את אורי אחזקות כדי לתת מענה לצרכים של בעלי בתים הזקוקים לסיוע בתקלות ביתיות, לרבות בעיות חשמל, אינסטלציה ומיזוג אוויר.`,
   `

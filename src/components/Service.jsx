@@ -35,7 +35,7 @@ export default function Service() {
     <motion.div ref={ref} className="h-[200vh] ">
       <motion.div
         style={{ opacity }}
-        className="sticky z-10 main-bg inset-0  h-screen overflow-x-hidden "
+        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem]  h-screen overflow-x-hidden "
       >
         <motion.div className=" ">
           <motion.h2

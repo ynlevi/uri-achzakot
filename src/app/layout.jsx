@@ -3,7 +3,7 @@ import { Assistant } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 const assistant = Assistant({
   weight: ["200", "300", "400", "500", "700"],
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <div id="content" className="min-h-screen w-full  ">
           {children}
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

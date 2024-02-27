@@ -100,7 +100,7 @@ export default function Home() {
       </section>
       {/*our story */}
       <section className="absolute  inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
+        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-white relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
           <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
             <Image
               src={"/happy-customer.jpg"}
@@ -129,10 +129,11 @@ export default function Home() {
         </div>
       </section>
       {/*our customors */}
-      <section className="mt-32 md:mt-24 relative bg-white text-theme-primary  pt-[27rem] xs:pt-96 md:pt-48">
+      <section className="mt-32 md:mt-24 relative bg-theme-light text-theme-primary  pt-[27rem] xs:pt-96 md:pt-48">
         <Wave
           position={"top"}
           className="absolute -top-20 md:-top-52 -z-10 inset-0 "
+          color={"var(--theme-light)"}
         />
         <Wave
           position={"top"}
@@ -143,7 +144,7 @@ export default function Home() {
         <h2 className="text-3xl mx-3  xs:mx-8 lg:mx-32 text-center -mt-10">
           לקוחות מרוצים שלנו
         </h2>
-        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-4 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-white before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-white after:to-transparent after:w-3/12 before:md:from-60% after:md:from-60%  after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
+        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-4 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-light before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-light after:to-transparent after:w-3/12 before:md:from-60% after:md:from-60%  after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
           <div
             dir="ltr"
             className="flex gap-6  "
@@ -153,8 +154,8 @@ export default function Home() {
               <li
                 className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                   index % 2 === 0
-                    ? "bg-theme-light "
-                    : "border-[.1px] border-theme-primary "
+                    ? "border-[.1px] border-theme-dark "
+                    : "bg-white "
                 }`}
               >
                 <a target="_blank" href={link}>
@@ -171,22 +172,6 @@ export default function Home() {
           </div>
         </ul>
       </section>
-      {/* call to action section */}
-      <section className="relative ">
-        <Wave
-          position={"bottom"}
-          className="absolute -top-2 inset-x-0 -z-[5]"
-        />
-        <Wave
-          position={"bottom"}
-          color="var(--theme-dark)"
-          className="-z-10 -top-1 -inset-x-0 absolute"
-        />
-      </section>
-      <div className="h-96 w-full"></div>
-      <div className="h-96 w-screen"></div>
-      <div className="h-96 w-full"></div>
-      <div className="h-96 w-screen"></div>
     </div>
   );
 }

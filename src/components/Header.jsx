@@ -11,7 +11,7 @@ function Header() {
     <>
       {/* <div className="h-16 w-full bg-theme-primary "></div> */}
       <ul
-        className="inset-0 px-3 xs:px-8 lg:px-32 h-fit w-full before:absolute before:inset-0 before:bg-gradient-to-b before:from-theme-primary before:to-transparent before:opacity-70 before:-z-20 z-10 "
+        className="inset-0 px-3 xs:px-8 lg:px-32 h-fit w-full before:absolute before:inset-0 before:bg-gradient-to-b before:from-theme-primary before:to-transparent before:opacity-70 before:-z-20 z-10 fixed "
         style={{
           backdropFilter: "blur(4px)",
           "-webkitBackdropFilter": "blur(4px)",
