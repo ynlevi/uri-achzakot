@@ -11,6 +11,7 @@ import Wave from "@/components/svgs/Wave";
 
 import FlotObjects from "@/components/FlotObjects";
 export default function Home() {
+  // const scrollYService = scrollYService;
   return (
     <div className="">
       {/* hero sectoin */}
@@ -63,11 +64,16 @@ export default function Home() {
 
         <CTABtn
           text={"לשיחת יעוץ חינם"}
+          url={"contact"}
           className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
         />
       </section>
       {/* our service */}
-      <section className="" dir="ltr">
+      <section
+        //  scrollYService={scrollYService}
+        className=""
+        dir="ltr"
+      >
         <Service />
       </section>
       {/* how can we help
@@ -108,14 +114,15 @@ export default function Home() {
               נעים להכיר, אני אורי.
             </h2>
             <p>
-              לורם איפסום אשר פורסם בטעות באמצע כתבה בעיתון הסינגפורי "The
-              Straits Times" ב-26 באפריל 2014 לורם איפסום או בקיצור ליפסום
-              (בלטינית: lorem ipsum) הוא מלל מקובל וחסר משמעות המשמש "ממלא מקום"
-              בעת עריכה, בתחום הדפוס, ההדפסה והפרסום. הטקסט משמש כלי לייצוג דפוס
-              שאמור להתווסף למוצר הפרסום בעתיד.
+              מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת
+              דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי
+              הבית שלהם. מיומן בניתוח מערכות חשמל ומיזוג אוויר וטיפול בתקלות
+              מורכבות. מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים
+              ומוסדות.
             </p>
             <CTABtn
-              text={"להמשך הסיפור שלנו"}
+              text={"קרא עוד"}
+              url={"/our-story"}
               className={"mt-4 bg-theme-primary "}
             />
           </div>

@@ -1,11 +1,12 @@
 import { color } from "framer-motion";
+import Link from "next/link";
 
-function CTABtn({ text, className }) {
+function CTABtn({ text, url, className }) {
   return (
-    <div className={`w-fit rounded-xl text-theme-light  ${className}`}>
-      <button className={`p-3 w-fit tracking-wider font-semibold`}>
-        {text}
-      </button>
+    <div
+      className={`w-fit rounded-xl p-3 tracking-wider font-semibold text-theme-light  ${className}`}
+    >
+      <Link href={url}>{text}</Link>
     </div>
   );
 }

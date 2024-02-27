@@ -16,15 +16,18 @@ export default function Service() {
     target: ref,
     offset: ["start .7", "end end"],
   });
-  const y = useTransform(scrollYProgress, [0, 0.3, 0.4], ["0", "6vh", "10vh"]);
-  const x = useTransform(
+  const mediaEffect = useTransform(
     scrollYProgress,
     [0.5, 0.56, 0.8, 0.9],
     ["0%", "-10%", "-40%", "-67.5%"]
   );
-  const opacity = useTransform(scrollYProgress, [0.9, 0.92, 1], [1, 0.8, 0]);
+  // const desktopEffect = useTransform  = (i) =>(
+
+  // )
+
+  const opacity = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
   const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
-  //   const width = useTransform(scrollYProgress, [0]);
+  const y = useTransform(scrollYProgress, [0, 0.3, 0.4], ["0", "6vh", "10vh"]);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("x changed to", latest);
   });
@@ -34,20 +37,24 @@ export default function Service() {
         style={{ opacity }}
         className="sticky z-10 main-bg inset-0  h-screen overflow-x-hidden "
       >
-        <motion.div style={{ y }} className=" ">
+        <motion.div className=" ">
           <motion.h2
             style={{ scale: h2Scale }}
-            className=" text-center origin-bottom text-5xl lg:text-4xl relative  "
+            className=" text-center origin-bottom text-5xl relative"
           >
             השירותים שלנו
           </motion.h2>
           <motion.ul
-            className="flex mt-7 flex-row-reverse gap-4 w-fit mx-3 xs:mx-8 xl:mx-32 "
-            style={{ x }}
+            className="flex pt-7 flex-row-reverse gap-4 w-fit mx-3 xs:mx-8 xl:mx-32 "
+            // style={{ x: mediaEffect }}
             dir="auto"
           >
             {services.map((item, index) => (
-              <ServiceCardMedia item={item} index={index} />
+              <ServiceCardMedia
+                // style={{ x: desktopEffect(index) }}
+                item={item}
+                index={index}
+              />
             ))}
           </motion.ul>
         </motion.div>
