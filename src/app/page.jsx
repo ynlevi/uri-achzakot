@@ -4,7 +4,7 @@ import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import Service from "@/components/Service";
+import Service from "@/components/Service/index.jsx";
 
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
@@ -13,7 +13,7 @@ import FlotObjects from "@/components/FlotObjects";
 export default function Home() {
   // const scrollYService = scrollYService;
   return (
-    <div className="">
+    <div className="mt-16">
       {/* hero sectoin */}
       <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="md:flex  md:max-w-xl lg:max-w-2xl">

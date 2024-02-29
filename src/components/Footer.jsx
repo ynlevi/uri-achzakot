@@ -13,7 +13,7 @@ export default function Footer() {
         className="-z-10 -top-1 -inset-x-0 absolute"
       />
       <div className="mx-3 xs:mx-8 xl:mx-auto max-w-3xl lg:-mt-24 mb-10">
-        <h2 className="text-2xl font-bold text-theme-dark">
+        <h2 className="text-2xl lg:text-3xl font-bold text-theme-dark">
           מחכים לשמוע ממך, אנחנו כאן לכל שאלה.
         </h2>
         <form
@@ -59,7 +59,7 @@ export default function Footer() {
             {" "}
             Levi's Digital Solutions for Small Business{" "}
           </a>
-          2023 ©
+          2024 ©
         </p>
       </div>
     </div>

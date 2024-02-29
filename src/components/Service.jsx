@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import ServiceCardMedia from "./ServiceCardMedia";
+import { GoGoal } from "react-icons/go";
+import styles from "@/styles/Service.module.scss";
 import React, { useEffect, useRef } from "react";
 import {
   useScroll,
@@ -21,9 +22,7 @@ export default function Service() {
     [0.5, 0.56, 0.8, 0.9],
     ["0%", "-10%", "-40%", "-67.5%"]
   );
-  // const desktopEffect = useTransform  = (i) =>(
-
-  // )
+  const scale = useTransform(scrollYProgress, [0.4, 1], [1, 2]);
 
   const opacity = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
   const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
@@ -35,7 +34,7 @@ export default function Service() {
     <motion.div ref={ref} className="h-[200vh] ">
       <motion.div
         style={{ opacity }}
-        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem]  h-screen overflow-x-hidden "
+        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem]  h-screen overflow-hidden "
       >
         <motion.div className=" ">
           <motion.h2
@@ -45,21 +44,85 @@ export default function Service() {
             השירותים שלנו
           </motion.h2>
           <motion.ul
-            className="flex pt-7 flex-row-reverse gap-4 w-fit mx-3 xs:mx-8 xl:mx-32 "
+            className="flex pt-7 flex-row-reverse gap-4 lg:gap-0 mx-3 xs:mx-8 xl:mx-32 w-fit lg:w-auto lg:justify-between "
             // style={{ x: mediaEffect }}
             dir="auto"
           >
             {services.map((item, index) => (
-              <ServiceCardMedia
-                // style={{ x: desktopEffect(index) }}
-                item={item}
-                index={index}
-              />
+              // <ServiceCardMedia item={item} index={index} />
+              <ServiceCardDesktop scale={scale} item={item} index={index} />
             ))}
           </motion.ul>
         </motion.div>
       </motion.div>
     </motion.div>
+  );
+}
+
+function ServiceCardMedia({ item, index }) {
+  return (
+    <motion.li className={`bg-theme-light w-[93vw]`} key={index}>
+      <div className="relative h-64 top-0 ">
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          className=" object-cover"
+        />
+      </div>
+
+      <div className={`relative`}>
+        <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
+          {item.name}
+        </h4>
+        <ul className="text-black p-4">
+          {item.details.map((detail, index) => (
+            <div className="flex gap-1">
+              <GoGoal
+                className="mt-[.35rem] w-4 shrink-0  border-black"
+                size={14}
+              />
+              <li key={index}>{detail}</li>
+            </div>
+          ))}
+        </ul>
+      </div>
+    </motion.li>
+  );
+}
+
+function ServiceCardDesktop({ scale, item, index }) {
+  return (
+    <motion.li key={index} style={{ scale }} className={styles.card}>
+      <div
+        className={`relative bg-theme-light h-[33rem] w-[22rem] inset-y-0 border-4  `}
+      >
+        <div className="relative h-64 top-0 ">
+          <Image
+            src={item.image}
+            alt={item.name}
+            fill
+            className=" object-cover"
+          />
+        </div>
+        <motion.div className={`relative`}>
+          <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
+            {item.name}
+          </h4>
+          <ul className="text-black p-4">
+            {item.details.map((detail, index) => (
+              <div className="flex gap-1">
+                <GoGoal
+                  className="mt-[.35rem] w-4 shrink-0  border-black"
+                  size={14}
+                />
+                <li key={index}>{detail}</li>
+              </div>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    </motion.li>
   );
 }
 
