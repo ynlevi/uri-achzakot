@@ -5,6 +5,7 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Service from "@/components/Service/index.jsx";
+import Reviews from "@/components/Reviews";
 
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
@@ -13,7 +14,7 @@ import FlotObjects from "@/components/FlotObjects";
 export default function Home() {
   // const scrollYService = scrollYService;
   return (
-    <div className="mt-16">
+    <div className="pt-16 lg:pt-20">
       {/* hero sectoin */}
       <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="md:flex  md:max-w-xl lg:max-w-2xl">
@@ -52,9 +53,7 @@ export default function Home() {
             <b>אתה צריך </b>
             מישהו אמין בעל ידים טובות, מקצועיות ויחסי אנוש מעולים.
           </li> */}
-          <h2 className="text-2xl mt-3 md:mt-4">
-            <b>בדיוק בשביל זה אנחנו כאן.</b>
-          </h2>
+          <b className="text-2xl mt-3 md:mt-4">בדיוק בשביל זה אנחנו כאן.</b>
           <h4 className="text-lg lg:text-xl tracking-wide">
             צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
             אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
@@ -84,12 +83,12 @@ export default function Home() {
       </section> */}
       {/* why me section */}
       <section className="-mt-[70vh]  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
-        <h2 className="text-4xl text-center">למה דווקא אורי אחזקות?</h2>
-        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border mt-4 ">
+        <h2 className="">למה דווקא אורי אחזקות?</h2>
+        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border ">
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem]  px-[.15rem] md:px-6 text-theme-primary py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-white bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-theme-light w-24`}
+              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem]  px-[.15rem] md:px-6 text-theme-primary py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-red-50 bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-red-50 w-24`}
             >
               {icon}
               <h3 className="font-bold text-lg whitespace-nowrap ">{title}</h3>
@@ -100,7 +99,7 @@ export default function Home() {
       </section>
       {/*our story */}
       <section className="absolute  inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-white relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
+        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-red-50 relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
           <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
             <Image
               src={"/happy-customer.jpg"}
@@ -109,11 +108,11 @@ export default function Home() {
               property={true}
             />
           </div>
-          <div className="md:w-64 md:flex-auto">
+          <div className="md:w-64 md:flex-auto ">
             <h2 className="text-2xl mt-3 mb-1 font-semibold ">
               נעים להכיר, אני אורי.
             </h2>
-            <p>
+            <p className="text-lg">
               מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת
               דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי
               הבית שלהם. מיומן בניתוח מערכות חשמל ומיזוג אוויר וטיפול בתקלות
@@ -141,10 +140,11 @@ export default function Home() {
           className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] -inset-x-0 absolute"
         />
         <FlotObjects />
-        <h2 className="text-3xl mx-3  xs:mx-8 lg:mx-32 text-center -mt-10">
-          לקוחות מרוצים שלנו
-        </h2>
-        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-4 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-light before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-light after:to-transparent after:w-3/12 before:md:from-60% after:md:from-60%  after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
+        <h2 className="mx-3 xs:mx-8 lg:mx-32 -mt-10">לקוחות מרוצים שלנו</h2>
+        <div className="lg:border-r-[.1px] border-gray-600 ">
+          <Reviews />
+        </div>
+        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-8 before:h-28 before:md:h-36 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-light before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-light after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 ">
           <div
             dir="ltr"
             className="flex gap-6  "
@@ -155,7 +155,7 @@ export default function Home() {
                 className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                   index % 2 === 0
                     ? "border-[.1px] border-theme-dark "
-                    : "bg-white "
+                    : "bg-white shadow-md"
                 }`}
               >
                 <a target="_blank" href={link}>
@@ -281,46 +281,3 @@ const customersLogos = [
     link: "https://www.facebook.com/Paratroopersultraorthodox/",
   },
 ];
-
-{
-  /* our servise - probebly not goona be in use */
-}
-{
-  /* <div className="bg-gradient-to-b from-gray-100 to-transparent absolute h-[25vh] w-screen -z-10" />
-      <section className="mt-10 w-fit tracking-wide mx-3 xs:mx-8 lg:mx-32">
-        <h2 className="text-3xl ">השירותים שלנו כוללים:</h2>
-        <ul className="mt-4">
-          {services.map((p, index) => (
-            <li className="flex gap-2 items-center text-lg ">
-              <div className="max-w-6 pt-1 mb-auto">
-                <IoMdCheckmarkCircleOutline size={20} />
-              </div>
-              <p className="">{p}</p>
-            </li>
-          ))}
-          <li></li>
-        </ul>
-      </section> */
-}
-
-// const services = [
-//   "בדיקת תקנים קבועה במעונות וצהרונים, כולל בדיקות בטיחות.",
-//   "כל השירותים התפעוליים - בניה והרחבת מתקנים, צבע, אניסטלציה, חשמל, טיפול בנזקי צנרת ורטיבות וניקוי מרזבים.",
-//   "שירותי ניקיון ותחזוקה שוטפת לדירות לתושבי חוץ.",
-//   "עבודה תיקנית עם אנשי מקצוע בעלי שם ומנהלי אתרים המוכרים במשרד העבודה.",
-//   "עבודה צמודה עם כל אנשי המקצוע הרלוונטים (מהנדנסים, אדריכלים, חשמלאים ואנשי מיזוג).",
-// ];
-
-{
-  /* <ul className="text-sm">
-                  {item.details.map((string, j) => (
-                    <li key={j} className="flex gap-1">
-                      <div className="pt-[.35rem]">
-                        {<IoMdCheckmarkCircleOutline />}
-                      </div>
-
-                      <div>{string}</div>
-                    </li>
-                  ))}
-                </ul> */
-}

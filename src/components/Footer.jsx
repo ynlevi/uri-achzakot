@@ -12,7 +12,7 @@ export default function Footer() {
         color="var(--theme-dark)"
         className="-z-10 -top-1 -inset-x-0 absolute"
       />
-      <div className="mx-3 xs:mx-8 xl:mx-auto max-w-3xl lg:-mt-24 mb-10">
+      <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl lg:-mt-24 mb-10">
         <h2 className="text-2xl lg:text-3xl font-bold text-theme-dark">
           מחכים לשמוע ממך, אנחנו כאן לכל שאלה.
         </h2>

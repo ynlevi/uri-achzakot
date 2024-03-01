@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "netzahyehuda.org",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+        port: "",
+      },
     ],
   },
 };

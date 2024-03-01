@@ -23,13 +23,13 @@ export default function Service() {
     [0.5, 0.56, 0.8, 0.9],
     ["0%", "-10%", "-40%", "-67.5%"]
   );
-  const scale2 = useTransform(scrollYProgress, [0.4, 1], [1, 1.2]);
-  const scale4 = useTransform(scrollYProgress, [0.4, 1], [1, 1.4]);
-  const scale5 = useTransform(scrollYProgress, [0.4, 1], [1, 1.7]);
+  const scale2 = useTransform(scrollYProgress, [0.4, 1], [1, 2]);
+  const scale4 = useTransform(scrollYProgress, [0.4, 1], [1, 1.2]);
+  const scale5 = useTransform(scrollYProgress, [0.4, 1], [1, 1.6]);
 
   const opacityOnMobile = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
-  const opacityOnDesktop = useTransform(scrollYProgress, [0.7, 0.82], [1, 0]);
-
+  const opacityOnDesktop = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
+  const h2OpacityOnDesktop = useTransform(scrollYProgress, [0.4, 0.6], [1, 0]);
   const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
   const y = useTransform(scrollYProgress, [0, 0.3, 0.4], ["0", "6vh", "10vh"]);
 
@@ -87,7 +87,11 @@ export default function Service() {
       >
         <motion.div className=" ">
           <motion.h2
-            style={{ scale: h2Scale }}
+            style={
+              isMobile
+                ? { scale: h2Scale }
+                : { opacity: h2OpacityOnDesktop, scale: h2Scale }
+            }
             className=" text-center origin-bottom text-5xl relative"
           >
             השירותים שלנו
@@ -113,7 +117,7 @@ export default function Service() {
 
 function ServiceCardMedia({ item, index }) {
   return (
-    <motion.li className={`bg-theme-light w-[93vw]`} key={index}>
+    <motion.li className={`bg-theme-light w-[93vw] pb-8`} key={index}>
       <div className="relative h-64 top-0 ">
         <Image
           src={item.image}
@@ -151,10 +155,10 @@ function ServiceCardDesktop({ item, index }) {
       style={{
         scale: scale,
       }}
-      className={`${styles.card} absolute inset-0 top-16 `}
+      className={`${styles.card} absolute inset-0 top-16  `}
     >
       <div
-        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 border-4 border-theme-light `}
+        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 border-4 border-theme-light shadow-lg `}
       >
         <div className="relative h-64 top-0 ">
           <Image src={image} alt={name} fill className=" object-cover" />
