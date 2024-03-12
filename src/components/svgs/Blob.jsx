@@ -1,9 +1,9 @@
 function FlotObject({ className }) {
   return (
-    <div className={`absolute h-24 w-24 z-20  ${className}`}>
+    <div className={`absolute h-20 w-24   ${className}`}>
       <svg
         fill="currentColor"
-        viewBox="14 41 200 200"
+        viewBox="3 32 200 200"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

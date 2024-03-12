@@ -23,22 +23,20 @@ export default function Service() {
     [0.5, 0.56, 0.8, 0.9],
     ["0%", "-10%", "-40%", "-67.5%"]
   );
-  const scale2 = useTransform(scrollYProgress, [0.4, 1], [1, 2]);
-  const scale4 = useTransform(scrollYProgress, [0.4, 1], [1, 1.2]);
-  const scale5 = useTransform(scrollYProgress, [0.4, 1], [1, 1.6]);
+  const scaleMiddle = useTransform(scrollYProgress, [0.4, 1], [1, 2]);
+  const scaleSides = useTransform(scrollYProgress, [0.4, 1], [1, 1.6]);
 
   const opacityOnMobile = useTransform(scrollYProgress, [0.92, 1], [1, 0]);
-  const opacityOnDesktop = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
-  const h2OpacityOnDesktop = useTransform(scrollYProgress, [0.4, 0.6], [1, 0]);
+  const opacityOnDesktop = useTransform(scrollYProgress, [0.8, 0.92], [1, 0]);
+  const h2OpacityOnDesktop = useTransform(scrollYProgress, [0.6, 0.7], [1, 0]);
   const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
   const y = useTransform(scrollYProgress, [0, 0.3, 0.4], ["0", "6vh", "10vh"]);
-
   const services = [
     {
       id: 0,
       name: "תחזוקת דירות",
       image: "/apartment.jpg",
-      scale: scale4,
+      scale: scaleSides,
       details: [
         "ניהול צוות תחזוקה למתן מענה לכל הצרכים השוטפים של מוסדות.",
         "ניקיון: מבנה, אבזור טואלטיקה שירותים, חצרות, גינון.",
@@ -52,7 +50,7 @@ export default function Service() {
       id: 1,
       name: "תחזוקת מבנים",
       image: "/building.jpg",
-      scale: scale2,
+      scale: scaleMiddle,
       details: [
         "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
         "שילום תקופתי חשבונות חשמל ומים.",
@@ -69,7 +67,7 @@ export default function Service() {
       id: 2,
       name: "תחזוקת נכסים לתושבי חו׳׳ל",
       image: "/hul.jpg",
-      scale: scale5,
+      scale: scaleSides,
       details: [
         "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
         "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
@@ -83,7 +81,7 @@ export default function Service() {
     <motion.div ref={ref} className="h-[200vh] ">
       <motion.div
         style={{ opacity: isMobile ? opacityOnMobile : opacityOnDesktop }}
-        className="sticky z-10 main-bg inset-0 top-0 lg:top-[4.5rem]  h-screen overflow-hidden  "
+        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem]  h-screen overflow-hidden  "
       >
         <motion.div className=" ">
           <motion.h2

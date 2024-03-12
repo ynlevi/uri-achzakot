@@ -4,12 +4,16 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 // import { CiCircleChevRight, CiCircleChevLeft } from "react-icons/ci";
 import { FaCircleChevronRight, FaCircleChevronLeft } from "react-icons/fa6";
-
+import Blob from "@/components/svgs/Blob";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 export default function Reviews() {
   const recommendation = [
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "ר. בית שמש",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `
@@ -17,36 +21,31 @@ export default function Reviews() {
     `,
     },
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "עמותת נצח יהודה",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `לעמותה דירות המשמשות חיילים בודדים למגורים, עד שאורי הגיע הייתי צריך להתנהל מול עשרות בעלי מקצוע, כל תקלה הייתי צריך לחפש את בעל המקצוע המתאים שיגיע בזמן המתאים ולדאוג שהוא נותן שירות טוב. מהיום שאורי הגיע אני מתנהל מול אדם אחד שפותר לי הכל כולל הכל בכל שעה ביום. הוא תמיד זמין ונותן מענה מקצועי.`,
     },
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "ל. לונדון",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `יש לי דירה בירושלים, שאני לא גר בה בקביעות. מההתחלה הייתה לנו בעיה בחשמל, כל חודשיים שהגענו החשמל היה מקצר, המקררים הפסיקו לעבוד, אוכל התקלקל. הזמנתי חשמלאים כל פעם אמרו לי להחליף חלק אחר, אפילו החלפנו ארון חשמל בהון רב ועדיין התקלה חזרה על עצמה. אורי ידע להביא בעלי מקצוע שפתרו את הבעיה. כשלא הייתי בארץ, הוא הגיע אחרי גשם ואחרי שמש, עד שעלו על התקלה המדויקת וטיפלו בזה עד הסוף. מאז כל תחזוקת הבית תחת הידיים שלו. לפני החורף הוא עשה לנו איטום ובדק מרזבים. אורי זה שקט בראש.`,
     },
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "ד. מקסיקו",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `שבוע לפני סוכות נכנסתי לבעיה רצינית, היו לי אורחים בדירה ואני לא שם, התאורת חוץ לא עבדה, תריסי גלילה נתקעו, מוט עליון בארון נשבר, דלת כניסה הייתה תקועה ועוד יותר נורא לא הייתה לי סוכה. חבר המליץ לי על אורי ומאז אנחנו יחד. הכל טופל על הצד היותר טוב ומאז אני רגוע שאני יודע, גם שאני לא בארץ הדירה בידיים טובות. `,
     },
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "ז. ירושלים",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `בנוסף לעיסוקי הרבים, יש לי דירות שאני משכיר אבל אני לא יכול להתעסק עם זה בשוטף,אורי עושה לי את כל התיקונים והתחזוקה, פותר לי את כל הבעיות ישירות מול הדיירים, אני אפילו לא מעורב באמצע. יש לי רוגע ושקט נפשי, אורי מקצועי ואמין והכי חשוב לי שאני יכול לסמוך עליו.`,
     },
     {
-      name: "אלה רונדל",
-      city: "קרית אתא",
+      header: "ישיבה בירושלים",
       avatar:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       p: `הרבה זמן חיפשתי מישהו שיוכל לתחזק את מבנה הישיבה שמשתרע על מאות דונמים. התשתיות שם ישנות מאוד ומפוזרות על פני כמה קמפוסים ומכיל מאות תלמידים. יש לי אנשי צוות אחזקה שכירים במקום אבל לא ידעתי לתפעל אותם. אורי נשכר כדי לפקח על הצוות ולתת הוראות, תוך זמן קצר יעילות הצוות עלתה עשרות מונים. אנחנו עובדים יחד מאז כבר 3 שנים, אורי מלווה אותנו ואני לא רואה איך המוסד יכול לתפקד תחזוקתית בלעדיו.`,
@@ -56,7 +55,7 @@ export default function Reviews() {
   const maxPosition = recommendation.length - 3;
   const [containerPosition, setContainerPosition] = useState(0);
   const changePoition = (side) => {
-    containerRef.current.scrollLeft += side === "right" ? +300 : -300;
+    containerRef.current.scrollLeft += side === "right" ? +350 : -350;
     setContainerPosition((prev) =>
       side === "right" && prev > 0
         ? prev - 1
@@ -66,8 +65,8 @@ export default function Reviews() {
     );
   };
   return (
-    <div className="relative px-3 xs:px-8 xl:px-32">
-      <div className="hidden lg:flex absolute z-[1] inset-0 mx-3 xs:mx-8 lg:mx-32 items-center justify-between ">
+    <div className=" mx-3 xs:mx-8 xl:mx-32">
+      {/* <div className="hidden lg:flex absolute z-[2] inset-0 mx-3 xs:mx-8 lg:mx-32 items-center justify-between ">
         <button
           className={`relative left-[22.5px] bg-theme-light  ${
             containerPosition > 0 ? "text-theme-primary" : "text-gray-300"
@@ -90,44 +89,53 @@ export default function Reviews() {
         >
           <FaCircleChevronLeft size={45} />
         </button>
-      </div>
-      <ul
-        className=" snap-mandatory flex  py-6 overflow-scroll snap-x scroll-smooth border-2 border-theme-light-dark"
+      </div> */}
+      <Swiper
+        navigation={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination, Navigation]}
         ref={containerRef}
+        slidesPerView={1}
+        breakpoints={{
+          // when window width is >= 320px
+          320: {
+            slidesPerView: 2,
+          },
+          // when window width is >= 480px
+          480: {
+            slidesPerView: 3,
+          },
+        }}
+        className="py-6 border-theme-light-dark scroll-smooth snap-mandatory snap-x "
+        style={{
+          "--swiper-pagination-color": "var(--theme-primary)",
+          "--swiper-navigation-color": "var(--theme-primary)",
+        }}
       >
-        {recommendation.map(({ name, city, avatar, p }, index) => (
-          <li
+        {recommendation.map(({ header, avatar, p }, index) => (
+          <SwiperSlide
             key={index}
-            className={`relative snap-center min-w-full sm:min-w-[66%] md:min-w-[33.333%] py-4 px-10 lg:px-10 text-center flex flex-col gap-4 tracking-wide text-[.9rem] ${
+            className={`snap-start swiper-slide py-5 px-10 lg:px-10 text-center flex flex-col gap-4 tracking-wide text-[.9rem] ${
               index < recommendation.length - 1 &&
-              "after:absolute after:inset-0 after:h-10 after:my-auto after:right-full after:border-l after:border-gray-300 after:border-dashed"
+              "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-gray-300 before:border-dashed"
             }`}
           >
-            <div className="flex justify-center items-center gap-2">
-              <div className="">
-                <h4 className="font-bold ">{name}</h4>
-                <h4 className="">{city}</h4>
-              </div>
-              <div className="relative h-20 w-20">
-                <Image
-                  src={avatar}
-                  blurDataURL={avatar}
-                  fill={true}
-                  className="object-cover rounded-full "
-                  alt={name}
-                ></Image>
-              </div>
+            <div className="relative flex justify-center items-center ">
+              <h4 className="font-bold absolute z-[1]">{header}</h4>
+              <Blob className={"text-red-100 relative right-10 "} />
             </div>
             <p
-              className=" text-theme-yellow"
+              className=" text-theme-yellow my-1"
               style={{ letterSpacing: ".25em" }}
             >
               ★★★★★
             </p>
-            <p>{p}</p>
-          </li>
+            <p className="mb-auto">{p}</p>
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
     </div>
   );
 }

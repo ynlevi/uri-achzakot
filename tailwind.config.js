@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         "theme-primary": "var(--theme-primary)",
         "theme-selected": "var(--theme-selected)",
+        "theme-whatsapp": "var(--theme-whatsapp)",
         "theme-light": "var(--theme-light)",
         "theme-cream": "var(--theme-cream)",
         "theme-dark": "var(--theme-dark)",

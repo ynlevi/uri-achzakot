@@ -5,6 +5,7 @@
 :root {
   --theme-primary: #1da1f2;
   --theme-selected: #f2681d;
+  --theme-whatsapp: #25d366;
   /* --theme-green: #98fb98; */
   /* --theme-light: #f2e8e9; */
   --theme-light: #fff6e9;
@@ -72,4 +73,7 @@ h2 {
   to {
     transform: translate(-100%);
   }
+}
+.swiper-slide {
+  height: auto !important;
 }
