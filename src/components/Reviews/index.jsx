@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+
 // import { CiCircleChevRight, CiCircleChevLeft } from "react-icons/ci";
 import { FaCircleChevronRight, FaCircleChevronLeft } from "react-icons/fa6";
 import Blob from "@/components/svgs/Blob";
@@ -51,19 +51,19 @@ export default function Reviews() {
       p: `הרבה זמן חיפשתי מישהו שיוכל לתחזק את מבנה הישיבה שמשתרע על מאות דונמים. התשתיות שם ישנות מאוד ומפוזרות על פני כמה קמפוסים ומכיל מאות תלמידים. יש לי אנשי צוות אחזקה שכירים במקום אבל לא ידעתי לתפעל אותם. אורי נשכר כדי לפקח על הצוות ולתת הוראות, תוך זמן קצר יעילות הצוות עלתה עשרות מונים. אנחנו עובדים יחד מאז כבר 3 שנים, אורי מלווה אותנו ואני לא רואה איך המוסד יכול לתפקד תחזוקתית בלעדיו.`,
     },
   ];
-  const containerRef = useRef(null);
-  const maxPosition = recommendation.length - 3;
-  const [containerPosition, setContainerPosition] = useState(0);
-  const changePoition = (side) => {
-    containerRef.current.scrollLeft += side === "right" ? +350 : -350;
-    setContainerPosition((prev) =>
-      side === "right" && prev > 0
-        ? prev - 1
-        : side === "left" && prev < maxPosition
-        ? prev + 1
-        : prev
-    );
-  };
+  // const containerRef = useRef(null);
+  // const maxPosition = recommendation.length - 3;
+  // const [containerPosition, setContainerPosition] = useState(0);
+  // const changePoition = (side) => {
+  //   containerRef.current.scrollLeft += side === "right" ? +350 : -350;
+  //   setContainerPosition((prev) =>
+  //     side === "right" && prev > 0
+  //       ? prev - 1
+  //       : side === "left" && prev < maxPosition
+  //       ? prev + 1
+  //       : prev
+  //   );
+  // };
   return (
     <div className=" mx-3 xs:mx-8 xl:mx-32">
       {/* <div className="hidden lg:flex absolute z-[2] inset-0 mx-3 xs:mx-8 lg:mx-32 items-center justify-between ">
@@ -96,15 +96,14 @@ export default function Reviews() {
           dynamicBullets: true,
         }}
         modules={[Pagination, Navigation]}
-        ref={containerRef}
         slidesPerView={1}
         breakpoints={{
           // when window width is >= 320px
-          320: {
+          580: {
             slidesPerView: 2,
           },
           // when window width is >= 480px
-          480: {
+          780: {
             slidesPerView: 3,
           },
         }}

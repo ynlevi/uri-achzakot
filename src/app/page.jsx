@@ -1,5 +1,6 @@
 import CTABtn from "@/components/CTABtn";
 import Image from "next/image";
+import Link from "next/link";
 import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
@@ -11,11 +12,13 @@ import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
 
 import FlotObjects from "@/components/FlotObjects";
+import HeaderBg from "@/components/HeaderBg";
 export default function Home() {
   // const scrollYService = scrollYService;
   return (
     <div className="pt-16 lg:pt-20">
       {/* hero sectoin */}
+      <HeaderBg />
       <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="md:flex  md:max-w-xl lg:max-w-2xl">
           <div className="text-4xl md:text-6xl ml-8 ">
@@ -62,8 +65,8 @@ export default function Home() {
         </ul>
 
         <CTABtn
+          url={"tel:+972502727526"}
           text={"לשיחת יעוץ חינם"}
-          url={"contact"}
           className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
         />
       </section>

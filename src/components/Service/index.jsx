@@ -81,9 +81,9 @@ export default function Service() {
     <motion.div ref={ref} className="h-[200vh] ">
       <motion.div
         style={{ opacity: isMobile ? opacityOnMobile : opacityOnDesktop }}
-        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem]  h-screen overflow-hidden  "
+        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem] h-screen overflow-hidden  "
       >
-        <motion.div className=" ">
+        <motion.div className="flex md:block flex-col justify-around h-[85%] lg:h-auto ">
           <motion.h2
             style={
               isMobile
@@ -95,7 +95,7 @@ export default function Service() {
             השירותים שלנו
           </motion.h2>
           <motion.ul
-            className="flex pt-7 flex-row-reverse gap-4 lg:gap-0 mx-3 xs:mx-8 xl:mx-32 w-fit lg:w-auto lg:justify-between "
+            className="max-h-[80vh] flex lg:pt-7 flex-row-reverse gap-4 lg:gap-0 mx-3 xs:mx-8 xl:mx-32 w-fit lg:w-auto lg:justify-between "
             style={isMobile && { x: mediaEffect }}
             dir="auto"
           >
