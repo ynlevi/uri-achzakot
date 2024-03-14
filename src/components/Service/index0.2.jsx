@@ -78,25 +78,20 @@ export default function Service() {
     },
   ];
   return (
-    <motion.div ref={ref} className="h-[200vh] ">
+    <motion.div ref={ref} className="lg:h-[200vh] ">
       <motion.div
-        style={{ opacity: isMobile ? opacityOnMobile : opacityOnDesktop }}
-        className="sticky z-10 main-bg inset-0 top-14 lg:top-[4.5rem] h-screen overflow-hidden  "
+        style={{ opacity: !isMobile && opacityOnDesktop }}
+        className="lg:sticky z-10 main-bg inset-0 lg:top-[4.5rem] lg:h-screen lg:overflow-hidden  "
       >
-        <motion.div className="flex md:block flex-col justify-around  h-[85%] lg:h-auto ">
+        <motion.div className="">
           <motion.h2
-            style={
-              isMobile
-                ? { scale: h2Scale }
-                : { opacity: h2OpacityOnDesktop, scale: h2Scale }
-            }
-            className=" text-center origin-bottom text-5xl relative"
+            style={!isMobile && { opacity: h2OpacityOnDesktop, scale: h2Scale }}
+            className=" text-center origin-bottom text-4xl lg:text-5xl relative"
           >
             השירותים שלנו
           </motion.h2>
           <motion.ul
-            className="max-h-[80vh] flex lg:pt-7 flex-row-reverse gap-4 lg:gap-0 mx-3 xs:mx-8 xl:mx-32 w-fit lg:w-auto lg:justify-between "
-            style={isMobile && { x: mediaEffect }}
+            className="lg:max-h-[80vh] flex lg:pt-7 flex-col lg:flex-row-reverse gap-4 mx-3 xs:mx-8 xl:mx-32 w-fit lg:w-auto lg:justify-between "
             dir="auto"
           >
             {services.map((item, index) =>
@@ -115,21 +110,16 @@ export default function Service() {
 
 function ServiceCardMedia({ item, index }) {
   return (
-    <motion.li className={`bg-theme-light w-[93vw] pb-8`} key={index}>
+    <motion.li className={`bg-theme-light min-h-[32rem] p-3`} key={index}>
       <div className="relative h-64 top-0 ">
-        <Image
-          src={item.image}
-          alt={item.name}
-          fill
-          className=" object-cover"
-        />
+        <Image src={item.image} alt={item.name} fill className="object-cover" />
       </div>
 
       <div className={`relative`}>
         <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
           {item.name}
         </h4>
-        <ul className="text-black p-4">
+        <ul className="text-black py-3">
           {item.details.map((detail, index) => (
             <div className="flex gap-1">
               <GoGoal
@@ -153,10 +143,10 @@ function ServiceCardDesktop({ item, index }) {
       style={{
         scale: scale,
       }}
-      className={`${styles.card} absolute inset-0 top-16  `}
+      className={`${styles.card} absolute inset-0 top-16 `}
     >
       <div
-        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 border-4 border-theme-light shadow-lg `}
+        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 scale-95 p-3 shadow-lg`}
       >
         <div className="relative h-64 top-0 ">
           <Image src={image} alt={name} fill className=" object-cover" />
@@ -165,7 +155,7 @@ function ServiceCardDesktop({ item, index }) {
           <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
             {name}
           </h4>
-          <ul className="text-black p-4">
+          <ul className="text-black py-3">
             {details.map((detail, index) => (
               <div className="flex gap-1">
                 <GoGoal

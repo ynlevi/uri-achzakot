@@ -1,11 +1,10 @@
 import CTABtn from "@/components/CTABtn";
 import Image from "next/image";
-import Link from "next/link";
 import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import Service from "@/components/Service/index.jsx";
+import Service from "@/components/Service/index0.2.jsx";
 import Reviews from "@/components/Reviews";
 
 import Choosing from "@/components/Choosing";
@@ -18,10 +17,9 @@ export default function Home() {
   return (
     <div className="pt-16 lg:pt-20">
       {/* hero sectoin */}
-      <HeaderBg />
       <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
-        <div className="md:flex  md:max-w-xl lg:max-w-2xl">
-          <div className="text-4xl md:text-6xl ml-8 ">
+        <div className="flex flex-col lg:flex-row justify-between  ">
+          <div className="text-4xl md:text-6xl ml-8 lg:w-[56%]">
             <h1 className="">
               <b>אורי אחזקות.</b>
             </h1>
@@ -30,14 +28,15 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="mask relative md:absolute h-[19rem] w-[22rem] md:scale-125 lg:scale-150 top-0 left-0 -z-10  mr-auto mt-6">
-            {/* <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400"> */}
-            <Image
-              src={"/holding-house.jpg"}
-              fill={true}
-              className="absolute -z-1 object-cover"
-              property={true}
-            />
+          <div className="relative md:w-[60%] lg:w-[44%]">
+            <div className="h-[20rem] md:h-[28rem] lg:h-[33rem] lg:w-[130%] lg:absolute -top-14 left-0">
+              <Image
+                src={"/hero.jpg"}
+                fill={true}
+                className="mask absolute -z-1 object-cover"
+                property={true}
+              />
+            </div>
           </div>
         </div>
         <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
@@ -65,17 +64,15 @@ export default function Home() {
         </ul>
 
         <CTABtn
-          url={"tel:+972502727526"}
           text={"לשיחת יעוץ חינם"}
-          className={"mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-cta "}
+          url={"Tel:+972502727526"}
+          className={
+            "mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 "
+          }
         />
       </section>
       {/* our service */}
-      <section
-        //  scrollYService={scrollYService}
-        className=""
-        dir="ltr"
-      >
+      <section className="" dir="ltr">
         <Service />
       </section>
       {/* how can we help
@@ -85,16 +82,18 @@ export default function Home() {
         <Choosing />
       </section> */}
       {/* why me section */}
-      <section className="-mt-[70vh]  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
+      <section className="mt-8 lg:-mt-[70vh]  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
         <h2 className="">למה דווקא אורי אחזקות?</h2>
-        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border ">
+        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border text-theme-dark mt-4">
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[15rem]  px-[.15rem] md:px-6 text-theme-primary py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-red-50 bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-4 md:border-8 border-red-50 w-24`}
+              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[16.5rem]  px-[.15rem] md:px-6 py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-2 md:border-4 border-theme-dark w-24 ${
+                i === 1 && "relative bottom-4"
+              }`}
             >
               {icon}
-              <h3 className="font-bold text-lg whitespace-nowrap ">{title}</h3>
+              <h3 className="font-bold text-lg whitespace-nowrap">{title}</h3>
               <p className="text-sm md:text-base">{p}</p>
             </li>
           ))}
@@ -102,7 +101,7 @@ export default function Home() {
       </section>
       {/*our story */}
       <section className="absolute  inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-        <div className="shadow-lg border-4 border-theme-primary flex flex-col md:flex-row md:gap-8 bg-red-50 relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
+        <div className="shadow-lg flex flex-col md:flex-row md:gap-8 bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
           <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
             <Image
               src={"/happy-customer.jpg"}
@@ -111,8 +110,8 @@ export default function Home() {
               property={true}
             />
           </div>
-          <div className="md:w-64 md:flex-auto ">
-            <h2 className="text-2xl mt-3 mb-1 font-semibold ">
+          <div className="md:w-64 md:flex-auto h-auto lg:flex lg:justify-between lg:flex-col">
+            <h2 className="text-2xl mt-3 lg:mt-0 font-semibold ">
               נעים להכיר, אני אורי.
             </h2>
             <p className="text-lg">
@@ -125,28 +124,28 @@ export default function Home() {
             <CTABtn
               text={"קרא עוד"}
               url={"/our-story"}
-              className={"mt-4 bg-theme-primary "}
+              className={"mt-4 bg-theme-primary text-theme-light px-6 py-3 "}
             />
           </div>
         </div>
       </section>
       {/*our customors */}
-      <section className="mt-32 md:mt-24 relative bg-theme-light text-theme-primary  pt-[27rem] xs:pt-96 md:pt-48">
+      <section className="mt-[35rem] md:mt-24 relative bg-theme-dark text-theme-light  pt-12 xs:pt-14 md:pt-48">
         <Wave
           position={"top"}
           className="absolute -top-20 md:-top-52 -z-10 inset-0 "
-          color={"var(--theme-light)"}
+          color={"var(--theme-dark)"}
         />
         <Wave
           position={"top"}
-          color="var(--theme-dark)"
+          color="var(--theme-light)"
           className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] -inset-x-0 absolute"
         />
         <FlotObjects />
         <h2 className="mx-3 xs:mx-8 lg:mx-32 -mt-10">לקוחות מרוצים שלנו</h2>
 
         <Reviews />
-        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-12 before:h-28 before:md:h-36 before:lg:h-44 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-light before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-light after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 after:lg:h-44">
+        <ul className="overflow-hidden relative pb-6 inset-x-0 pt-12  before:md:h-36 before:lg:h-44 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-dark before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-dark after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 after:lg:h-44">
           <div
             dir="ltr"
             className="flex gap-6  "
@@ -156,7 +155,7 @@ export default function Home() {
               <li
                 className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                   index % 2 === 0
-                    ? "border-[.1px] border-theme-dark "
+                    ? "border-[.1px] border-theme-light text-white bg-white bg-opacity-10 "
                     : "bg-white shadow-md"
                 }`}
               >
@@ -209,15 +208,25 @@ const customersLogos = [
     link: "https://netzahyehuda.org",
   },
   {
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
+  },
+  {
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
     custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
-    src: "/hetz.png",
-    alt: "חץ",
-    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
   },
   {
     src: "/netzach.png",
@@ -230,15 +239,57 @@ const customersLogos = [
     link: "https://netzahyehuda.org",
   },
   {
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
+  },
+  {
+    src: "/hetz.png",
+    alt: "חץ",
+    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
     src: "/hechal-itchak.svg",
     alt: "ישיבת היכל יצחק",
     custom: "scale-[2] mt-2",
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
+  },
+
+  {
+    src: "/netzach.png",
+    alt: "עמותת נצח יהודה",
+    link: "https://netzahyehuda.org",
+  },
+  {
+    src: "/bet-sanedria.gif",
+    alt: "בית סנהדריה",
+    link: "https://netzahyehuda.org",
+  },
+  {
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
+  },
+  {
     src: "/hetz.png",
     alt: "חץ",
     link: "https://www.facebook.com/Paratroopersultraorthodox/",
+  },
+  {
+    src: "/hechal-itchak.svg",
+    alt: "ישיבת היכל יצחק",
+    custom: "scale-[2] mt-2",
+    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
+  },
+  {
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
   },
   {
     src: "/netzach.png",
@@ -251,25 +302,14 @@ const customersLogos = [
     link: "https://netzahyehuda.org",
   },
   {
-    src: "/hechal-itchak.svg",
-    alt: "ישיבת היכל יצחק",
-    custom: "scale-[2] mt-2",
-    link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
   },
   {
     src: "/hetz.png",
     alt: "חץ",
     link: "https://www.facebook.com/Paratroopersultraorthodox/",
-  },
-  {
-    src: "/netzach.png",
-    alt: "עמותת נצח יהודה",
-    link: "https://netzahyehuda.org",
-  },
-  {
-    src: "/bet-sanedria.gif",
-    alt: "בית סנהדריה",
-    link: "https://netzahyehuda.org",
   },
   {
     src: "/hechal-itchak.svg",
@@ -278,8 +318,8 @@ const customersLogos = [
     link: "https://he.wikipedia.org/wiki/ישיבת_היכל_יצחק",
   },
   {
-    src: "/hetz.png",
-    alt: "חץ",
-    link: "https://www.facebook.com/Paratroopersultraorthodox/",
+    src: "/maccabi.png",
+    alt: "maccabi",
+    link: "https://www.maccabi4u.co.il",
   },
 ];

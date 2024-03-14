@@ -18,18 +18,18 @@ function page() {
 
       <div className="relative ">
         <Wave
-          color="var(--theme-dark)"
+          color="var(--theme-light)"
           position={"top"}
           className={"relative inset-x-0 top-3 -z-0"}
         />
         <Wave
-          color={"var(--theme-light)"}
+          color={"var(--theme-dark)"}
           position={"top"}
           className=" absolute inset-x-0 top-4"
         />
       </div>
 
-      <div className=" bg-theme-light text-theme-primary ">
+      <div className=" bg-theme-dark font-medium tracking-wide text-theme-light ">
         <div className="mx-3 xs:mx-8  md:mx-auto max-w-3xl relative bottom-4 lg:bottom-10">
           {p.map((s, i) => {
             return (

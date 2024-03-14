@@ -110,6 +110,8 @@ export default function Reviews() {
         className="py-6 border-theme-light-dark scroll-smooth snap-mandatory snap-x "
         style={{
           "--swiper-pagination-color": "var(--theme-primary)",
+          "--swiper-pagination-bullet-inactive-color": "#1da1f2",
+          "--swiper-pagination-bullet-inactive-opacity": ".6",
           "--swiper-navigation-color": "var(--theme-primary)",
         }}
       >
@@ -118,20 +120,20 @@ export default function Reviews() {
             key={index}
             className={`snap-start swiper-slide py-5 px-10 lg:px-10 text-center flex flex-col gap-4 tracking-wide text-[.9rem] ${
               index < recommendation.length - 1 &&
-              "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-gray-300 before:border-dashed"
+              "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-theme-primary before:border-dashed"
             }`}
           >
             <div className="relative flex justify-center items-center ">
               <h4 className="font-bold absolute z-[1]">{header}</h4>
-              <Blob className={"text-red-100 relative right-10 "} />
+              <Blob className={"text-theme-primary relative right-10 "} />
             </div>
             <p
-              className=" text-theme-yellow my-1"
+              className=" text-theme-yellow my-1 "
               style={{ letterSpacing: ".25em" }}
             >
               ★★★★★
             </p>
-            <p className="mb-auto">{p}</p>
+            <p className="mb-auto px-8 lg:px-4">{p}</p>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -5,11 +5,11 @@ export default function Footer() {
       <Wave
         position={"bottom"}
         className="relative -top-2 inset-x-0 -z-[5]"
-        color={"var(--theme-light)"}
+        color={"var(--theme-dark)"}
       />
       <Wave
         position={"bottom"}
-        color="var(--theme-dark)"
+        color="var(--theme-light)"
         className="-z-10 -top-1 -inset-x-0 absolute"
       />
       <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl lg:-mt-24 mb-10">
@@ -45,7 +45,7 @@ export default function Footer() {
             name="Send"
             value={"דברו איתנו עוד היום"}
             id="send"
-            className="w-fit py-2 px-3 text-theme-light bg-theme-dark rounded-b-xl font-bold tracking-wider"
+            className="w-fit py-2 px-3 text-theme-light bg-theme-whatsapp border-2 border-theme-light rounded-b-xl font-bold tracking-wider"
           />
         </form>
       </div>
@@ -54,7 +54,7 @@ export default function Footer() {
           hand-coded by
           <a
             href="https://ynlevi.github.io/portfolio/"
-            className="text-theme-dark "
+            className="text-theme-dark text-shadow-light font-bold"
           >
             {" "}
             Levi's Digital Solutions for Small Business{" "}
