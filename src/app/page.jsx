@@ -111,9 +111,9 @@ export default function Home() {
             />
           </div>
           <div className="md:w-64 md:flex-auto h-auto lg:flex lg:justify-between lg:flex-col">
-            <h2 className="text-2xl mt-3 lg:mt-0 font-semibold ">
+            <h3 className="text-2xl mt-3 lg:mt-0 font-semibold ">
               נעים להכיר, אני אורי.
-            </h2>
+            </h3>
             <p className="text-lg">
               מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת
               דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי

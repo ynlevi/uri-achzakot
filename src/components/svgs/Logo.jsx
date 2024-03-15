@@ -3,10 +3,9 @@ function Logo() {
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      // viewBox="125 0 280 280"
-      viewBox="155 0 220 250"
+      viewBox="190 50 140 160"
       preserveAspectRatio="xMidYMid meet"
-      className="fill-theme-light"
+      className="fill-theme-light text-theme-light h-full w-full "
     >
       <g
         transform="translate(0.000000,295.000000) scale(0.100000,-0.100000)"

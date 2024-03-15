@@ -96,7 +96,11 @@ export default function Service() {
           >
             {services.map((item, index) =>
               isMobile ? (
-                <ServiceCardMedia item={item} index={index} />
+                <ServiceCardMedia
+                  item={item}
+                  index={index}
+                  length={services.length}
+                />
               ) : (
                 <ServiceCardDesktop item={item} index={index} />
               )
@@ -108,29 +112,46 @@ export default function Service() {
   );
 }
 
-function ServiceCardMedia({ item, index }) {
+function ServiceCardMedia({ item, index, length }) {
   return (
-    <motion.li className={`bg-theme-light min-h-[32rem] p-3`} key={index}>
-      <div className="relative h-64 top-0 ">
-        <Image src={item.image} alt={item.name} fill className="object-cover" />
+    <motion.li
+      className={`relative bg-theme-light min-h-[32rem] p-3 rounded-tr-3xl rounded-bl-3xl`}
+      key={index}
+    >
+      <div className="relative h-64 top-0  ">
+        <Image
+          src={item.image}
+          alt={item.name}
+          fill
+          className="object-cover rounded-tr-3xl rounded-bl-3xl"
+        />
       </div>
 
       <div className={`relative`}>
         <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
           {item.name}
         </h4>
-        <ul className="text-black py-3">
+        <ul className="text-theme-dark text-lg py-3">
           {item.details.map((detail, index) => (
             <div className="flex gap-1">
-              <GoGoal
-                className="mt-[.35rem] w-4 shrink-0  border-black"
-                size={14}
-              />
+              <GoGoal className="mt-[.35rem] w-4 shrink-0 " size={14} />
               <li key={index}>{detail}</li>
             </div>
           ))}
         </ul>
       </div>
+      {index < length - 1 && (
+        <>
+          <div className="absolute -bottom-4 right-0 h-4 w-4">
+            <div className="bg-theme-primary relative z-[1] h-full w-full rounded-tr-3xl "></div>
+            <div className="absolute top-0 bg-theme-light w-full h-full z-0 rounded-bl-full "></div>
+          </div>
+          <div className="absolute -bottom-4 left-0 h-4 w-4">
+            <div className="bg-theme-primary relative z-[1] h-full w-full rounded-bl-3xl "></div>
+            <div className="absolute top-0 bg-theme-light w-full h-full z-0 rounded-tr-full "></div>
+          </div>
+        </>
+      )}
     </motion.li>
   );
 }
@@ -146,7 +167,7 @@ function ServiceCardDesktop({ item, index }) {
       className={`${styles.card} absolute inset-0 top-16 `}
     >
       <div
-        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 scale-95 p-3 shadow-lg`}
+        className={`${styles.el} relative bg-theme-light h-[34rem] inset-y-0 border border-blacksca p-3 shadow-lg`}
       >
         <div className="relative h-64 top-0 ">
           <Image src={image} alt={name} fill className=" object-cover" />
@@ -155,11 +176,11 @@ function ServiceCardDesktop({ item, index }) {
           <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
             {name}
           </h4>
-          <ul className="text-black py-3">
+          <ul className="text-theme-dark py-3">
             {details.map((detail, index) => (
               <div className="flex gap-1">
                 <GoGoal
-                  className="mt-[.35rem] w-4 shrink-0  border-black"
+                  className="mt-[.35rem] w-4 shrink-0  border-theme-dark"
                   size={14}
                 />
                 <li key={index}>{detail}</li>
