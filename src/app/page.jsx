@@ -1,4 +1,3 @@
-import CTABtn from "@/components/CTABtn";
 import Image from "next/image";
 import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
@@ -6,6 +5,9 @@ import { BsPersonGear } from "react-icons/bs";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import Service from "@/components/Service/index0.2.jsx";
 import Reviews from "@/components/Reviews";
+import { MotionDiv } from "@/components/MotionDiv";
+import ParallaxDiv from "@/components/ParallaxDiv";
+import Link from "next/link";
 
 import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
@@ -13,107 +15,157 @@ import Wave from "@/components/svgs/Wave";
 import FlotObjects from "@/components/FlotObjects";
 import HeaderBg from "@/components/HeaderBg";
 export default function Home() {
-  // const scrollYService = scrollYService;
+  // motion variants
+  const fromRightVariant = {
+    hidden: { opacity: 0, x: "50vw" },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+  const fromLeftVariant = {
+    hidden: { opacity: 0, x: "-50vw" },
+    visible: { opacity: 1, x: 0 },
+  };
+  const fromBottomVariant = {
+    hidden: {
+      opacity: 0,
+      y: "20vh",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    hover: {
+      y: "-.25rem",
+      boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+    },
+  };
   return (
     <div className="pt-16 lg:pt-20">
       {/* hero sectoin */}
       <section className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative my-8 md:my-24 lg:my-28">
         <div className="flex flex-col lg:flex-row justify-between  ">
-          <div className="text-4xl md:text-6xl ml-8 lg:w-[56%]">
+          <MotionDiv
+            variants={fromRightVariant}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-6xl ml-8 overflow-x-hidden"
+          >
             <h1 className="">
               <b>אורי אחזקות.</b>
             </h1>
             <h1 className="">
               אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
             </h1>
-          </div>
+          </MotionDiv>
 
           <div className="relative md:w-[60%] lg:w-[44%]">
-            <div className="h-[20rem] md:h-[28rem] lg:h-[33rem] lg:w-[130%] lg:absolute -top-14 left-0">
-              <Image
-                src={"/hero.jpg"}
-                fill={true}
-                className="mask absolute -z-1 object-cover"
-                property={true}
-              />
-            </div>
+            <ParallaxDiv effectStartAt={0.6} yStartAt={0} yEndAt={50}>
+              <MotionDiv
+                variants={fromLeftVariant}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5 }}
+                className="h-[20rem] md:h-[28rem] lg:h-[33rem] lg:w-[130%] lg:absolute -top-14 left-0"
+              >
+                <Image
+                  src={"/hero.jpg"}
+                  fill={true}
+                  className="mask absolute -z-1 object-cover"
+                  property={true}
+                />
+              </MotionDiv>
+            </ParallaxDiv>
           </div>
         </div>
-        <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
-          <li>
-            <b>יש לך </b>
-            המון על הראש.
-          </li>
-          <li>
-            <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
-          </li>
-          <li>
-            <b>אתה לא רוצה </b>
-            להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
-          </li>
-          {/* <li>
+
+        <MotionDiv
+          className="overflow-hidden"
+          variants={fromRightVariant}
+          initial="hidden"
+          animate="visible"
+          transition={{
+            duration: 0.5,
+            delay: 0.4,
+          }}
+        >
+          <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
+            <li>
+              <b>יש לך </b>
+              המון על הראש.
+            </li>
+            <li>
+              <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
+            </li>
+            <li>
+              <b>אתה לא רוצה </b>
+              להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
+            </li>
+            {/* <li>
             <b>אתה צריך </b>
             מישהו אמין בעל ידים טובות, מקצועיות ויחסי אנוש מעולים.
           </li> */}
-          <b className="text-2xl mt-3 md:mt-4">בדיוק בשביל זה אנחנו כאן.</b>
-          <h4 className="text-lg lg:text-xl tracking-wide">
-            צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
-            אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
-            בתחום עד הפיתרון המושלם ביותר.
-          </h4>
-        </ul>
+            <b className="text-2xl mt-3 md:mt-4">בדיוק בשביל זה אנחנו כאן.</b>
+            <h4 className="text-lg lg:text-xl tracking-wide">
+              צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
+              אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
+              בתחום עד הפיתרון המושלם ביותר.
+            </h4>
+          </ul>
 
-        <CTABtn
-          text={"לשיחת יעוץ חינם"}
-          url={"Tel:+972502727526"}
-          className={
-            "mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 "
-          }
-        />
+          <MotionDiv
+            variants={fromBottomVariant}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+            transition={{ type: "spring", stiffness: 300 }}
+            className={`w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
+          >
+            <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
+          </MotionDiv>
+        </MotionDiv>
       </section>
       {/* our service */}
       <section className="" dir="ltr">
         <Service />
       </section>
-      {/* how can we help
-      <section className="mx-3 xs:mx-8 lg:mx-auto tracking-wide max-w-4xl text-center">
-        <h2 className="text-3xl">היי! איך אפשר לעזור?</h2>
-        <h4 className="text-lg">לחצו על השירות המבוקש לפירוט נוסף</h4>
-        <Choosing />
-      </section> */}
       {/* why me section */}
-      <section className="mt-8 lg:-mt-[70vh]  mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-32 md:pb-44 ">
+      <section className="mt-8 lg:-mt-[70vh] mx-2 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-36 md:pb-44 ">
         <h2 className="">למה דווקא אורי אחזקות?</h2>
-        <ul className="flex gap-[.4rem] lg:w-full justify-between box-border text-theme-dark mt-4">
+        <ul className="flex gap-[.15rem] lg:w-full justify-between box-border text-theme-dark mt-4">
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center gap-1 flex-1 max-w-[16.5rem]  px-[.15rem] md:px-6 py-1  rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border-2 md:border-4 border-theme-dark w-24 ${
+              className={`flex flex-col items-center text-center flex-1 max-w-[16.5rem] px-[.1rem] md:px-6 py-1 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border md:border-4 border-theme-dark w-24 ${
                 i === 1 && "relative bottom-4"
               }`}
             >
               {icon}
-              <h3 className="font-bold text-lg whitespace-nowrap">{title}</h3>
-              <p className="text-sm md:text-base">{p}</p>
+              <h3 className="font-bold whitespace-nowrap">{title}</h3>
+              <p className="text-xs md:text-base">{p}</p>
             </li>
           ))}
         </ul>
       </section>
       {/*our story */}
-      <section className="absolute  inset-x-0 z-[1] mt-3 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-        <div className="shadow-lg flex flex-col md:flex-row md:gap-8 bg-theme-light relative bottom-24  mx-auto p-5 rounded-xl text-theme-primary ">
-          <div className="relative h-52 w-full z-[1] md:flex-auto md:w-52 md:h-64 ">
-            <Image
-              src={"/happy-customer.jpg"}
-              fill
-              className="absolute -z-10 object-cover"
-              property={true}
-            />
+      <section className="absolute  inset-x-0 z-[1] -mt-6 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
+        <div className="shadow-lg lg:flex md:flex-row md:gap-5 bg-theme-light relative bottom-24 mx-auto px-5 pb-5 lg:pb-0 rounded-xl text-theme-primary ">
+          <div className="border-y-[1.25rem] border-theme-light overflow-hidden h-auto md:flex-auto md:w-52 ">
+            <ParallaxDiv yStartAt={30} yEndAt={-30}>
+              <div className="relative h-52 w-full z-[1] lg:h-64 scale-125">
+                <Image
+                  src={"/happy-customer.jpg"}
+                  fill
+                  className="absolute -z-10 object-cover "
+                  property={true}
+                />
+              </div>
+            </ParallaxDiv>
           </div>
-          <div className="md:w-64 md:flex-auto h-auto lg:flex lg:justify-between lg:flex-col">
-            <h3 className="text-2xl mt-3 lg:mt-0 font-semibold ">
-              נעים להכיר, אני אורי.
-            </h3>
+          <div className="lg:flex lg:justify-between lg:flex-col md:w-64 md:flex-auto md:my-5">
+            <h3 className="text-2xl font-semibold ">נעים להכיר, אני אורי.</h3>
             <p className="text-lg">
               מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת
               דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי
@@ -121,11 +173,11 @@ export default function Home() {
               מורכבות. מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים
               ומוסדות.
             </p>
-            <CTABtn
-              text={"קרא עוד"}
-              url={"/our-story"}
-              className={"mt-4 bg-theme-primary text-theme-light px-6 py-3 "}
-            />
+            <div
+              className={`w-fit rounded-xl tracking-wide font-extrabold hover:shadow-lg relative hover:-translate-y-1 duration-300 mt-4 bg-theme-primary text-theme-light px-6 py-3 `}
+            >
+              <Link href={"/our-story"}>קרא עוד</Link>
+            </div>
           </div>
         </div>
       </section>

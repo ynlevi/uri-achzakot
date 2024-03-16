@@ -16,7 +16,7 @@ function HeaderBg() {
   return (
     <motion.div
       ref={ref}
-      className="h-14 lg:h-[4.4rem] backdrop-blur-sm  w-full bg-transparent z-[2] fixed top-0 before:bg-theme-primary before:absolute before:h-14 before:lg:h-[4.4rem] before:w-full before:inset-0 before:opacity-50 "
+      className="h-14 lg:h-[4.8rem] backdrop-blur-sm  w-full bg-transparent z-[2] fixed top-0 before:bg-theme-primary before:absolute before:h-14 before:lg:h-[4.8rem] before:w-full before:inset-0 before:opacity-50 "
       style={{
         y,
         backdropFilter: "blur(6px)",

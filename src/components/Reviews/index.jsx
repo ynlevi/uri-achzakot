@@ -118,7 +118,7 @@ export default function Reviews() {
         {recommendation.map(({ header, avatar, p }, index) => (
           <SwiperSlide
             key={index}
-            className={`snap-start swiper-slide py-5 px-10 lg:px-10 text-center flex flex-col gap-4 tracking-wide text-[.9rem] ${
+            className={`snap-start swiper-slide pt-5 pb-6 px-4 lg:px-7 text flex flex-col gap-4 text-[.9rem] text-justify ${
               index < recommendation.length - 1 &&
               "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-theme-primary before:border-dashed"
             }`}
@@ -128,7 +128,7 @@ export default function Reviews() {
               <Blob className={"text-theme-primary relative right-10 "} />
             </div>
             <p
-              className=" text-theme-yellow my-1 "
+              className=" text-theme-yellow my-1 text-center "
               style={{ letterSpacing: ".25em" }}
             >
               ★★★★★

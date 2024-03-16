@@ -4,6 +4,7 @@ import Image from "next/image";
 import { GoGoal } from "react-icons/go";
 import styles from "./styles.module.scss";
 import React, { useEffect, useRef } from "react";
+import ParallaxDiv from "@/components/ParallaxDiv";
 import {
   useScroll,
   motion,
@@ -81,7 +82,7 @@ export default function Service() {
     <motion.div ref={ref} className="lg:h-[200vh] ">
       <motion.div
         style={{ opacity: !isMobile && opacityOnDesktop }}
-        className="lg:sticky z-10 main-bg inset-0 lg:top-[4.5rem] lg:h-screen lg:overflow-hidden  "
+        className="lg:sticky z-10 main-bg inset-0 lg:top-[4.9rem] lg:h-screen lg:overflow-hidden  "
       >
         <motion.div className="">
           <motion.h2
@@ -115,22 +116,24 @@ export default function Service() {
 function ServiceCardMedia({ item, index, length }) {
   return (
     <motion.li
-      className={`relative bg-theme-light min-h-[32rem] p-3 rounded-tr-3xl rounded-bl-3xl`}
+      className={`relative bg-theme-light min-h-[32rem] rounded-tr-3xl rounded-bl-3xl p-3 `}
       key={index}
     >
-      <div className="relative h-64 top-0  ">
+      <div className="relative h-64 top-0 ">
         <Image
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover rounded-tr-3xl rounded-bl-3xl"
+          className="object-cover rounded-tr-3xl  rounded-bl-3xl"
         />
       </div>
 
-      <div className={`relative`}>
-        <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">
-          {item.name}
-        </h4>
+      <div className={`relative `}>
+        <ParallaxDiv yStartAt={35} yEndAt={-35}>
+          <h4 className="backdrop-blur-[2px] absolute -top-[4.5rem] font-medium text-theme-light px-3 max-w-full text-nowrap py-2 theme-dark-with-opacity md:mt-0 text-3xl ">
+            {item.name}
+          </h4>
+        </ParallaxDiv>
         <ul className="text-theme-dark text-lg py-3">
           {item.details.map((detail, index) => (
             <div className="flex gap-1">
