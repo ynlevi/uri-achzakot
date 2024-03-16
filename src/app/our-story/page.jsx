@@ -1,5 +1,4 @@
 import Image from "next/image";
-import CTABtn from "@/components/CTABtn";
 import Wave from "@/components/svgs/Wave";
 function page() {
   return (
