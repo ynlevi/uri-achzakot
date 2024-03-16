@@ -138,7 +138,7 @@ export default function Home() {
           {benefit.map(({ icon, title, p }, i) => (
             <li
               key={i}
-              className={`flex flex-col items-center text-center flex-1 max-w-[16.5rem] px-[.1rem] md:px-6 py-1 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border md:border-4 border-theme-dark w-24 ${
+              className={`flex flex-col items-center text-center flex-1 max-w-[16.5rem] px-[.1rem] md:px-6 py-1 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border md:border-[3px] border-theme-dark w-24 ${
                 i === 1 && "relative bottom-4"
               }`}
             >
