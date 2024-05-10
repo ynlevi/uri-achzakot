@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Wave from "@/components/svgs/Wave";
+//for cloudflare deployment
+export const runtime = "edge";
 function page() {
   return (
     <div className="tracking-wide  ">
