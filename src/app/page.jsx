@@ -1,8 +1,5 @@
 "use client";
 
-//for cloudflare deployment
-export const runtime = "edge";
-
 import { useEffect } from "react";
 import Image from "next/image";
 import { FaMedal, FaRegBuilding } from "react-icons/fa6";
