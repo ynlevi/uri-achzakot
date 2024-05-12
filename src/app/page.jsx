@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useRef } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaMedal, FaRegBuilding } from "react-icons/fa6";
 import { MdOutlineEventAvailable } from "react-icons/md";
@@ -9,26 +10,13 @@ import { SlArrowDown } from "react-icons/sl";
 import Service from "@/components/Service/index";
 import Reviews from "@/components/Reviews";
 import { MotionDiv } from "@/components/MotionDiv";
-import ParallaxDiv from "@/components/ParallaxDiv";
 import Link from "next/link";
-import Choosing from "@/components/Choosing";
 import Wave from "@/components/svgs/Wave";
 
 import FlotObjects from "@/components/FlotObjects";
 import HeaderBg from "@/components/HeaderBg";
-import { isMobile } from "react-device-detect";
 
 export default function Home() {
-  //smoth scrolling on desktop screens
-  useEffect(() => {
-    (
-      !isMobile &&
-      (async () => {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        const locomotiveScroll = new LocomotiveScroll();
-      })
-    )();
-  }, []);
   // motion variants
   const fromRightVariant = {
     hidden: { opacity: 0, x: "50vw" },
@@ -60,7 +48,7 @@ export default function Home() {
       {/* hero sectoin */}
       <div className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
         <div className="flex flex-col lg:flex-row justify-between ">
-          <MotionDiv
+          <motion.div
             variants={fromRightVariant}
             initial="hidden"
             animate="visible"
@@ -73,31 +61,33 @@ export default function Home() {
             <h1 className="">
               אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
             </h1>
-          </MotionDiv>
+          </motion.div>
 
           <div className="relative md:w-[60%] lg:w-[44%] ">
-            <ParallaxDiv effectStartAt={0.6} yStartAt={0} yEndAt={-30}>
-              <MotionDiv
-                variants={fromLeftVariant}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.5 }}
-                className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
-              >
-                <Image
-                  src={
-                    "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
-                  }
-                  alt="hero-image"
-                  fill={true}
-                  className="mask absolute -z-1 object-cover "
-                  priority={true}
-                />
-              </MotionDiv>
-            </ParallaxDiv>
+            {/* <ParallaxDiv effectStartAt={0.6} yStartAt={0} yEndAt={-30}> */}
+            <motion.div
+              data-scroll
+              data-scroll-speed="0.5"
+              variants={fromLeftVariant}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
+              className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
+            >
+              <Image
+                src={
+                  "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
+                }
+                alt="hero-image"
+                fill={true}
+                className="mask absolute -z-1 object-cover "
+                priority={true}
+              />
+            </motion.div>
+            {/* </ParallaxDiv> */}
           </div>
         </div>
-        <MotionDiv
+        <motion.div
           className="overflow-hidden"
           variants={fromRightVariant}
           initial="hidden"
@@ -139,7 +129,7 @@ export default function Home() {
           >
             <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
           </MotionDiv>
-        </MotionDiv>
+        </motion.div>
         <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-light ">
           <SlArrowDown size={30} />
         </div>
@@ -176,8 +166,8 @@ export default function Home() {
       <section className="absolute  inset-x-0 z-[1] -mt-6 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
         <div className="shadow-lg lg:flex md:flex-row md:gap-5 bg-theme-light relative bottom-24 mx-auto px-5 pb-5 lg:pb-0 rounded-xl text-theme-primary ">
           <div className="border-y-[1.25rem] border-theme-light overflow-hidden h-auto md:flex-auto md:w-52 ">
-            <ParallaxDiv yStartAt={30} yEndAt={-30}>
-              <MotionDiv
+            <div data-scroll data-scroll-speed=".07">
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -194,8 +184,8 @@ export default function Home() {
                   placeholder="blur"
                   property={true}
                 />
-              </MotionDiv>
-            </ParallaxDiv>
+              </motion.div>
+            </div>
           </div>
           <div className="lg:flex lg:justify-between lg:flex-col md:w-64 md:flex-auto md:my-5">
             <h3 className="text-2xl font-semibold ">נעים להכיר, אני אורי.</h3>
@@ -206,11 +196,13 @@ export default function Home() {
               מורכבות. מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים
               ומוסדות.
             </p>
-            <div
-              className={`w-fit rounded-xl tracking-wide font-extrabold hover:shadow-lg relative hover:-translate-y-1 duration-300 mt-4 bg-theme-primary text-theme-light px-6 py-3 `}
-            >
-              <Link href={"/our-story"}>קרא עוד</Link>
-            </div>
+            <Link href={"/our-story"}>
+              <div
+                className={`w-fit rounded-xl tracking-wide font-extrabold hover:shadow-lg relative hover:-translate-y-1 duration-300 mt-4 bg-theme-primary text-theme-light px-6 py-3 `}
+              >
+                קרא עוד
+              </div>
+            </Link>
           </div>
         </div>
       </section>
