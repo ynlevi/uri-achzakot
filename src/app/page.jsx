@@ -16,13 +16,18 @@ import Wave from "@/components/svgs/Wave";
 
 import FlotObjects from "@/components/FlotObjects";
 import HeaderBg from "@/components/HeaderBg";
+import { isMobile } from "react-device-detect";
 
 export default function Home() {
+  //smoth scrolling on desktop screens
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
-    })();
+    (
+      !isMobile &&
+      (async () => {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        const locomotiveScroll = new LocomotiveScroll();
+      })
+    )();
   }, []);
   // motion variants
   const fromRightVariant = {
