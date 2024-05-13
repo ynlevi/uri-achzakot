@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import { CldImage as CldImageDefault } from "next-cloudinary";
 
 const CldImage = (props) => {
@@ -20,7 +20,6 @@ const CldImage = (props) => {
       />
     </div>
   );
-  // return React.createElement(CldImageDefault, { ...props });
 };
 
 export default CldImage;

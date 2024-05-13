@@ -1,13 +1,11 @@
 "use client";
 import { useEffect } from "react";
-import { isMobile } from "react-device-detect";
 import { MotionConfig } from "framer-motion";
-
 import Header from "./Header";
 import Footer from "./Footer";
-function Main({ children }) {
-  //   const containerRef = useRef();
+import Test from "./Test";
 
+function Main({ children }) {
   //smoth scrolling on desktop screens
   useEffect(() => {
     (async () => {
@@ -15,6 +13,7 @@ function Main({ children }) {
       const locomotiveScroll = new LocomotiveScroll();
     })();
   }, []);
+
   return (
     <MotionConfig reducedMotion="user">
       <Header />

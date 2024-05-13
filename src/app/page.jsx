@@ -16,9 +16,16 @@ import Wave from "@/components/svgs/Wave";
 import FlotObjects from "@/components/FlotObjects";
 import HeaderBg from "@/components/HeaderBg";
 import CldImage from "@/components/CldImage";
-
+import { createMedia } from "@artsy/fresnel";
 export default function Home() {
-  // motion variants
+  const { MediaContextProvider, Media } = createMedia({
+    breakpoints: {
+      sm: 0,
+      lg: 1024,
+    },
+  });
+
+  // motion variant
   const fromRightVariant = {
     hidden: { opacity: 0, x: "50vw" },
     visible: {
@@ -27,9 +34,10 @@ export default function Home() {
     },
   };
   const fromLeftVariant = {
-    hidden: { opacity: 0, x: "-50vw" },
+    hidden: { x: "-50vw", opacity: 0 },
     visible: { opacity: 1, x: 0 },
   };
+
   const fromBottomVariant = {
     hidden: {
       opacity: 0,
@@ -47,94 +55,173 @@ export default function Home() {
   return (
     <div className="pt-16 lg:pt-20">
       {/* hero sectoin */}
-      <div className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
-        <div className="flex flex-col lg:flex-row justify-between ">
-          <motion.div
-            variants={fromRightVariant}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-6xl ml-8 overflow-hidden lg:mt-32 2xl:mt-48"
-          >
-            <h1 className="">
-              <b>אורי אחזקות.</b>
-            </h1>
-            <h1 className="">
-              אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
-            </h1>
-          </motion.div>
 
-          <div className="relative md:w-[60%] lg:w-[44%] ">
-            <motion.div
-              data-scroll
-              data-scroll-speed="0.5"
-              variants={fromLeftVariant}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
-              className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
-            >
-              <CldImage
-                src={
-                  "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
-                }
-                alt="hero-image"
-                fill
-                quality="100"
-                className="mask absolute -z-1 object-cover "
-                priority={true}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
-              />
+      <MediaContextProvider>
+        <Media at="sm">
+          <div className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
+            <div className="flex flex-col lg:flex-row justify-between ">
+              <div className=" text-4xl md:text-6xl ml-8  lg:mt-32 2xl:mt-48">
+                <h1 className="">
+                  <b>אורי אחזקות.</b>
+                </h1>
+                <h1 className="">
+                  אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
+                </h1>
+              </div>
+
+              <div className="relative md:w-[60%] lg:w-[44%] ">
+                <motion.div
+                  data-scroll
+                  data-scroll-speed="0.5"
+                  className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
+                >
+                  <CldImage
+                    src={
+                      "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
+                    }
+                    alt="hero-image"
+                    fill
+                    quality="100"
+                    className="mask absolute -z-1 object-cover "
+                    priority={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
+                  />
+                </motion.div>
+              </div>
+            </div>
+            <motion.div className="overflow-hidden">
+              <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
+                <li>
+                  <b>יש לך </b>
+                  המון על הראש.
+                </li>
+                <li>
+                  <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
+                </li>
+                <li>
+                  <b>אתה לא רוצה </b>
+                  להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
+                </li>
+                <li>
+                  <b className="text-2xl mt-3 md:mt-4">
+                    בדיוק בשביל זה אנחנו כאן.
+                  </b>
+                </li>
+                <h4 className="text-lg lg:text-xl tracking-wide">
+                  צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה
+                  והבנייה, אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע
+                  המומחים ביותר בתחום עד הפיתרון המושלם ביותר.
+                </h4>
+              </ul>
+
+              <MotionDiv
+                variants={fromBottomVariant}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
+              >
+                <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
+              </MotionDiv>
             </motion.div>
           </div>
-        </div>
-        <motion.div
-          className="overflow-hidden"
-          variants={fromRightVariant}
-          initial="hidden"
-          animate="visible"
-          transition={{
-            duration: 0.5,
-            delay: 0.4,
-          }}
-        >
-          <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
-            <li>
-              <b>יש לך </b>
-              המון על הראש.
-            </li>
-            <li>
-              <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
-            </li>
-            <li>
-              <b>אתה לא רוצה </b>
-              להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
-            </li>
-            <li>
-              <b className="text-2xl mt-3 md:mt-4">בדיוק בשביל זה אנחנו כאן.</b>
-            </li>
-            <h4 className="text-lg lg:text-xl tracking-wide">
-              צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
-              אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
-              בתחום עד הפיתרון המושלם ביותר.
-            </h4>
-          </ul>
+        </Media>
+        <Media greaterThanOrEqual="lg">
+          <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
+            <div className="flex flex-col lg:flex-row justify-between ">
+              <motion.div
+                variants={fromRightVariant}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5 }}
+                className=" text-4xl md:text-6xl ml-8  lg:mt-32 2xl:mt-48"
+              >
+                <h1 className="">
+                  <b>אורי אחזקות.</b>
+                </h1>
+                <h1 className="">
+                  אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
+                </h1>
+              </motion.div>
 
-          <MotionDiv
-            variants={fromBottomVariant}
-            initial="hidden"
-            animate="visible"
-            whileHover="hover"
-            transition={{ type: "spring", stiffness: 300 }}
-            className={`w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
-          >
-            <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
-          </MotionDiv>
-        </motion.div>
-        <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-light ">
-          <SlArrowDown size={30} />
-        </div>
+              <div className="relative md:w-[60%] lg:w-[44%] ">
+                <motion.div
+                  data-scroll
+                  data-scroll-speed="0.5"
+                  variants={fromLeftVariant}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.5 }}
+                  className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
+                >
+                  <CldImage
+                    src={
+                      "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
+                    }
+                    alt="hero-image"
+                    fill
+                    quality="100"
+                    className="mask absolute -z-1 object-cover "
+                    priority={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
+                  />
+                </motion.div>
+              </div>
+            </div>
+            <motion.div
+              className="overflow-hidden"
+              variants={fromRightVariant}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                duration: 0.5,
+                delay: 0.4,
+              }}
+            >
+              <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
+                <li>
+                  <b>יש לך </b>
+                  המון על הראש.
+                </li>
+                <li>
+                  <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
+                </li>
+                <li>
+                  <b>אתה לא רוצה </b>
+                  להתעסק בתקלות היום יומיות - אלא פשוט למנוע אותם.
+                </li>
+                <li>
+                  <b className="text-2xl mt-3 md:mt-4">
+                    בדיוק בשביל זה אנחנו כאן.
+                  </b>
+                </li>
+                <h4 className="text-lg lg:text-xl tracking-wide">
+                  צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה
+                  והבנייה, אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע
+                  המומחים ביותר בתחום עד הפיתרון המושלם ביותר.
+                </h4>
+              </ul>
+
+              <MotionDiv
+                variants={fromBottomVariant}
+                initial="hidden"
+                animate="visible"
+                whileHover="hover"
+                transition={{ type: "spring", stiffness: 300 }}
+                className={`w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
+              >
+                <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
+              </MotionDiv>
+            </motion.div>
+          </div>
+        </Media>
+      </MediaContextProvider>
+
+      <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-light ">
+        <SlArrowDown size={30} />
       </div>
+
       {/* our service */}
       <section className="" dir="ltr">
         <Service />
