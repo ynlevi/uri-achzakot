@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 import React, { useEffect, useRef } from "react";
 import ParallaxDiv from "@/components/ParallaxDiv";
 import { useScroll, motion, useTransform } from "framer-motion";
-
+import CldImage from "../CldImage";
 export default function Service() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -165,14 +165,7 @@ function ServiceCardDesktop({ item, index }) {
         className={`${styles.el} relative bg-theme-light h-[35rem] 2xl:h-[38rem] 2xl:scale-90 inset-y-0 border border-blacksca p-3 shadow-lg`}
       >
         <div className="relative h-64 2xl:h-72 top-0 ">
-          <Image
-            src={image}
-            alt={name}
-            placeholder="blur"
-            blurDataURL={item.image}
-            fill
-            className=" object-cover"
-          />
+          <CldImage src={image} alt={name} fill className=" object-cover" />
         </div>
         <motion.div className={`relative`}>
           <h4 className="backdrop-blur-[2px] absolute -top-16 font-medium text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal ">

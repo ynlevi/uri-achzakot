@@ -15,6 +15,7 @@ import Wave from "@/components/svgs/Wave";
 
 import FlotObjects from "@/components/FlotObjects";
 import HeaderBg from "@/components/HeaderBg";
+import CldImage from "@/components/CldImage";
 
 export default function Home() {
   // motion variants
@@ -64,7 +65,6 @@ export default function Home() {
           </motion.div>
 
           <div className="relative md:w-[60%] lg:w-[44%] ">
-            {/* <ParallaxDiv effectStartAt={0.6} yStartAt={0} yEndAt={-30}> */}
             <motion.div
               data-scroll
               data-scroll-speed="0.5"
@@ -74,17 +74,18 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
             >
-              <Image
+              <CldImage
                 src={
                   "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
                 }
                 alt="hero-image"
-                fill={true}
+                fill
+                quality="100"
                 className="mask absolute -z-1 object-cover "
                 priority={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
               />
             </motion.div>
-            {/* </ParallaxDiv> */}
           </div>
         </div>
         <motion.div
@@ -173,16 +174,13 @@ export default function Home() {
                 transition={{ duration: 1 }}
                 className="relative h-52 w-full z-[1] lg:h-64 scale-125"
               >
-                <Image
+                <CldImage
                   src={
                     "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/wa4ij5cqdxqidgpusxyy"
                   }
                   alt="our-story-image"
                   fill
-                  blurDataURL="https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/wa4ij5cqdxqidgpusxyy"
                   className="absolute -z-10 object-cover "
-                  placeholder="blur"
-                  property={true}
                 />
               </motion.div>
             </div>
