@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
-import Test from "./Test";
 
 function Main({ children }) {
   //smoth scrolling on desktop screens

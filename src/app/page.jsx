@@ -58,7 +58,7 @@ export default function Home() {
 
       <MediaContextProvider>
         <Media at="sm">
-          <div className="mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
+          <div className="lg:hidden mx-3 xs:mx-8 xl:mx-32 tracking-wide relative ">
             <div className="flex flex-col lg:flex-row justify-between ">
               <div className=" text-4xl md:text-6xl ml-8  lg:mt-32 2xl:mt-48">
                 <h1 className="">
@@ -84,7 +84,7 @@ export default function Home() {
                     quality="100"
                     className="mask absolute -z-1 object-cover "
                     priority={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"
                   />
                 </motion.div>
               </div>
@@ -128,7 +128,7 @@ export default function Home() {
           </div>
         </Media>
         <Media greaterThanOrEqual="lg">
-          <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative lg:h-[calc(100vh-4.5rem)] ">
+          <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative h-[calc(100vh-4.5rem)] ">
             <div className="flex flex-col lg:flex-row justify-between ">
               <motion.div
                 variants={fromRightVariant}
@@ -164,7 +164,7 @@ export default function Home() {
                     quality="100"
                     className="mask absolute -z-1 object-cover "
                     priority={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 90vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 60vw"
                   />
                 </motion.div>
               </div>
