@@ -3,14 +3,17 @@ import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import { isMobile } from "react-device-detect";
 function Main({ children }) {
   //smoth scrolling on desktop screens
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
-    })();
+    if (isMobile) return;
+    else {
+      (async () => {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        const locomotiveScroll = new LocomotiveScroll();
+      })();
+    }
   }, []);
 
   return (

@@ -83,7 +83,7 @@ export default function Home() {
                     fill
                     className="mask absolute -z-1 object-cover "
                     priority={true}
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 60vw"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 60vw"
                   />
                 </motion.div>
               </div>

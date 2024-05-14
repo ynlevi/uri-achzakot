@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { GoGoal } from "react-icons/go";
 import styles from "./styles.module.scss";
 import React, { useRef } from "react";
@@ -134,7 +133,7 @@ function ServiceCardMedia({ item, index, length }) {
       key={index}
     >
       <div className="relative h-64 top-0 ">
-        <Image
+        <CldImage
           src={item.image}
           alt={item.name}
           fill
