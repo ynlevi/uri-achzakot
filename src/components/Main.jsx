@@ -7,13 +7,10 @@ import { isMobile } from "react-device-detect";
 function Main({ children }) {
   //smoth scrolling on desktop screens
   useEffect(() => {
-    if (isMobile) return;
-    else {
-      (async () => {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        const locomotiveScroll = new LocomotiveScroll();
-      })();
-    }
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
   }, []);
 
   return (
