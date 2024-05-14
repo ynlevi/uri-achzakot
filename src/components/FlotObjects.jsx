@@ -8,19 +8,11 @@ export default function FlotObjects() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    // offset: ["start end", "end end"],
     offset: ["end end", "start start"],
   });
 
   return (
-    // <div>
-    //   <motion.div
-    //     style={{ opacity: scrollYProgress }}
-    //     ref={ref}
-    //     className="z-40 bg-red-500 h-40 w-40"
-    //   ></motion.div>
-    // </div>
-    <div className="hidden md:absolute inset-x-0 top-0 z-[2]">
+    <div className=" bg-red-500 border-black border-8 md:absolute inset-x-0 top-0 z-[2] z-40 h-40 w-40">
       {/* right side */}
       <Blob className={"right-14 top-10 text-theme-primary -rotate-12"} />
       <Blob

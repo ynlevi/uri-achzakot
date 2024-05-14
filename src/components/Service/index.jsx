@@ -101,6 +101,7 @@ export default function Service() {
                 {services.map((item, index) => {
                   return (
                     <ServiceCardMedia
+                      key={index}
                       item={item}
                       index={index}
                       length={services.length}
@@ -115,7 +116,7 @@ export default function Service() {
                 dir="auto"
               >
                 {services.map((item, index) => (
-                  <ServiceCardDesktop item={item} index={index} />
+                  <ServiceCardDesktop key={index} item={item} index={index} />
                 ))}
               </motion.div>
             </Media>
@@ -149,7 +150,7 @@ function ServiceCardMedia({ item, index, length }) {
         </ParallaxDiv>
         <ul className="text-theme-dark text-lg py-3">
           {item.details.map((detail, index) => (
-            <li className="flex gap-1">
+            <li key={index} className="flex gap-1">
               <GoGoal className="mt-[.35rem] w-4 shrink-0 " size={14} />
               <div key={index}>{detail}</div>
             </li>
@@ -194,7 +195,7 @@ function ServiceCardDesktop({ item, index }) {
           </h4>
           <ul className="text-theme-dark py-3">
             {details.map((detail, index) => (
-              <li className="flex gap-1 text-lg">
+              <li key={index} className="flex gap-1 text-lg">
                 <GoGoal
                   className="mt-[.35rem] w-4 shrink-0  border-theme-dark"
                   size={14}

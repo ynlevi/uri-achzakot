@@ -75,7 +75,7 @@ export default function Home() {
                   data-scroll-speed="0.5"
                   className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
                 >
-                  <CldImage
+                  {/* <CldImage
                     src={
                       "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
                     }
@@ -84,7 +84,8 @@ export default function Home() {
                     className="mask absolute -z-1 object-cover "
                     priority={true}
                     sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 60vw"
-                  />
+                  /> */}
+                  <h2>wha't if it's just goonna be some text?</h2>
                 </motion.div>
               </div>
             </div>
@@ -301,7 +302,6 @@ export default function Home() {
           color="var(--theme-light)"
           className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] lg:-top-[16.2rem] -inset-x-0 absolute "
         />
-        <FlotObjects />
         <h2 className="mx-3 xs:mx-8 lg:mx-32 -mt-10">לקוחות מרוצים שלנו</h2>
 
         <Reviews />
@@ -313,6 +313,7 @@ export default function Home() {
           >
             {customersLogos.map(({ src, alt, link, custom }, index) => (
               <li
+                key={index}
                 className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                   index % 2 === 0
                     ? "border-[.1px] border-theme-light text-white bg-white bg-opacity-10 "
