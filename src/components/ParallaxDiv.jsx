@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 
-export default function ParallaxImage({
+export default function ParallaxDiv({
   children,
   className,
   effectStartAt,

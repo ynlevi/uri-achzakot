@@ -1,8 +1,4 @@
 "use client";
-
-import Image from "next/image";
-
-import { FaCircleChevronRight, FaCircleChevronLeft } from "react-icons/fa6";
 import Blob from "@/components/svgs/Blob";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
