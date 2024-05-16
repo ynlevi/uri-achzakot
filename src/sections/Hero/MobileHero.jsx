@@ -28,7 +28,7 @@ export default function MobileHero() {
           >
             <Image
               src={
-                "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
+                "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_webp,fl_awebp,q_auto/c_limit,w_750/v1715355117/uri-achzakot/b2ihh41inlwmvunovblp"
               }
               alt="hero-image"
               fill
