@@ -1,6 +1,6 @@
+import CldImage from "@/components/CldImage";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
-import Image from "next/image";
 export default function MobileHero() {
   const fromBottomVariant = {
     hover: {
@@ -26,9 +26,9 @@ export default function MobileHero() {
             data-scroll-speed="0.15"
             className=" h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%]"
           >
-            <Image
+            <CldImage
               src={
-                "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_webp,fl_awebp,q_auto/c_limit,w_750/v1715355117/uri-achzakot/b2ihh41inlwmvunovblp"
+                "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
               }
               alt="hero-image"
               fill
