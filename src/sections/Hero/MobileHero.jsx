@@ -3,14 +3,6 @@ import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
 export default function MobileHero() {
   const fromBottomVariant = {
-    hidden: {
-      opacity: 0,
-      y: "20vh",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
     hover: {
       y: "-.25rem",
       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
@@ -63,22 +55,24 @@ export default function MobileHero() {
           <li>
             <b className="text-2xl mt-3 md:mt-4">בדיוק בשביל זה אנחנו כאן.</b>
           </li>
-          <h4 className="text-lg tracking-wide">
-            צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
-            אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
-            בתחום עד הפיתרון המושלם ביותר.
-          </h4>
+          <li>
+            <h4 className="text-lg tracking-wide">
+              צוות "אורי אחזקות" נותן מענה וליווי מקיף לכל סוגי התחזוקה והבנייה,
+              אנחנו איתך מהגדרת התקלה, בליווי צמוד עם אנשי המקצוע המומחים ביותר
+              בתחום עד הפיתרון המושלם ביותר.
+            </h4>
+          </li>
         </ul>
 
         <MotionDiv
           variants={fromBottomVariant}
-          initial="hidden"
-          animate="visible"
           whileHover="hover"
           transition={{ type: "spring", stiffness: 300 }}
           className={`w-fit rounded-xl tracking-wide font-extrabold relative mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
         >
-          <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
+          <Link aria-label="שיחת יעוץ חינם" href={"Tel:+972502727526"}>
+            לשיחת יעוץ חינם
+          </Link>
         </MotionDiv>
       </div>
     </div>

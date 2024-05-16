@@ -32,7 +32,7 @@ export default function Story() {
             שלהם. מיומן בניתוח מערכות חשמל ומיזוג אוויר וטיפול בתקלות מורכבות.
             מחויב לספק פתרונות יעילים וחסכוניים לבעלי בתים, מבנים ומוסדות.
           </p>
-          <Link href={"/our-story"}>
+          <Link aria-label="הסיפור שלנו" href={"/our-story"}>
             <div
               className={`w-fit rounded-xl tracking-wide font-extrabold hover:shadow-lg relative hover:-translate-y-1 duration-300 mt-4 bg-theme-primary text-theme-light px-6 py-3 `}
             >

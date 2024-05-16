@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Wave from "./svgs/Wave";
 export default function Footer() {
   return (
@@ -46,19 +47,21 @@ export default function Footer() {
             value={"דברו איתנו עוד היום"}
             id="send"
             className="w-fit py-2 px-3 text-theme-light bg-theme-whatsapp border-2 border-theme-light rounded-b-xl font-bold tracking-wider"
+            aria-label="דברו איתנו"
           />
         </form>
       </div>
       <div className="px-3 xs:px-8 lg:px-32 ">
         <p className="border-theme-light w-full border-t-[.1px] mt-8 text-center py-2 text-xs md:text-base">
           hand-coded by
-          <a
+          <Link
             href="https://ynlevi.github.io/portfolio/"
             className="text-theme-dark text-shadow-light font-bold"
+            aria-label="למעבר לעמוד פורטפוליו"
           >
             {" "}
             Levi's Digital Solutions for Small Business{" "}
-          </a>
+          </Link>
           2024 ©
         </p>
       </div>

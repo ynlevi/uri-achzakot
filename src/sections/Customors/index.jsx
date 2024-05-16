@@ -1,6 +1,7 @@
 import Reviews from "./Reviews";
 import Wave from "@/components/svgs/Wave";
 import Image from "next/image";
+import Link from "next/link";
 export default function Customors() {
   const customersLogos = [
     {
@@ -143,9 +144,9 @@ export default function Customors() {
       />
       <h2 className="mx-3 xs:mx-8 lg:mx-32 -mt-10">לקוחות מרוצים שלנו</h2>
 
-      {/* <Reviews /> */}
-      <ul className="overflow-hidden relative pb-6 inset-x-0 pt-12  before:md:h-36 before:lg:h-44 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-dark before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-dark after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 after:lg:h-44">
-        <div
+      <Reviews />
+      <div className="overflow-hidden relative pb-6 inset-x-0 pt-12  before:md:h-36 before:lg:h-44 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-dark before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-dark after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 after:lg:h-44">
+        <ul
           dir="ltr"
           className="flex gap-6  "
           style={{ animation: "30s move-right infinite linear" }}
@@ -159,7 +160,7 @@ export default function Customors() {
                   : "bg-white shadow-md"
               }`}
             >
-              <a target="_blank" href={link}>
+              <Link aria-label={alt} target="_blank" href={link}>
                 <Image
                   fill
                   src={src}
@@ -167,11 +168,11 @@ export default function Customors() {
                   decoding="async"
                   className={`p-1 md:p-3 object-contain ${custom}`}
                 ></Image>
-              </a>
+              </Link>
             </li>
           ))}
-        </div>
-      </ul>
+        </ul>
+      </div>
     </section>
   );
 }

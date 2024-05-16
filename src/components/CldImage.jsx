@@ -15,7 +15,7 @@ const CldImage = (props) => {
         sizes={
           sizes
             ? sizes
-            : "(max-width: 768px) 95vw, (max-width: 1200px) 50vw, 30vw"
+            : "(max-width: 768px) 85vw, (max-width: 1200px) 50vw, 30vw"
         }
       />
     </div>

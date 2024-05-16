@@ -13,7 +13,6 @@ export default function Service() {
     target: ref,
     offset: ["start .7", "end end"],
   });
-
   const opacityOnDesktop = useTransform(scrollYProgress, [0.55, 0.92], [1, 0]);
   const h2OpacityOnDesktop = useTransform(scrollYProgress, [0.6, 0.7], [1, 0]);
   const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
