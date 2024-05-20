@@ -1,7 +1,11 @@
 import dynamic from "next/dynamic";
 //sections:
 import Hero from "@/sections/Hero";
-const Service = dynamic(() => import("@/sections/Service"));
+const Service = dynamic(() => import("@/sections/Service"), {
+  ssr: false,
+  loading: () => <h1>hold on..</h1>,
+});
+
 import Uniqueness from "@/sections/Uniqueness/index";
 import Story from "@/sections/Story";
 import Customors from "@/sections/Customors";
