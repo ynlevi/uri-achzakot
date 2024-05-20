@@ -25,6 +25,7 @@ export default function MobileHero() {
             data-scroll
             data-scroll-speed="0.15"
             className=" h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%]"
+            priority
           >
             <CldImage
               src={
@@ -32,7 +33,7 @@ export default function MobileHero() {
               }
               alt="hero-image"
               fill
-              className="mask absolute -z-1 object-cover "
+              className=" absolute -z-1 object-cover "
               priority={true}
               sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 60vw"
             />
