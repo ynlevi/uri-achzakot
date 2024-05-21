@@ -1,6 +1,7 @@
 import CldImage from "@/components/CldImage";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
+
 export default function DesktopHero() {
   // motion variant
   const fromRightVariant = {
@@ -30,7 +31,7 @@ export default function DesktopHero() {
     },
   };
   return (
-    <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative h-[calc(100vh-4.5rem)] ">
+    <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative h-[calc(100vh-4.5rem)]">
       <div className="flex flex-col lg:flex-row justify-between ">
         <MotionDiv
           variants={fromRightVariant}
@@ -55,7 +56,7 @@ export default function DesktopHero() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.5 }}
-            className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40"
+            className=" h-[20rem] md:h-[28rem] lg:h-[33rem] 2xl:h-[45rem] lg:w-[130%] lg:absolute -top-14 left-0 lg:my-40 relative"
           >
             <CldImage
               src={
@@ -64,7 +65,7 @@ export default function DesktopHero() {
               alt="hero-image"
               fill
               className="mask absolute -z-1 object-cover "
-              priority={true}
+              priority
               sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 60vw"
             />
           </MotionDiv>
@@ -80,7 +81,7 @@ export default function DesktopHero() {
           delay: 0.4,
         }}
       >
-        <ul className="text-lg lg:text-xl max-w-xl md:mt-4">
+        <ul className="text-lg lg:text-xl max-w-xl mt-2">
           <li>
             <b>יש לך </b>
             המון על הראש.
@@ -110,7 +111,7 @@ export default function DesktopHero() {
           animate="visible"
           whileHover="hover"
           transition={{ type: "spring", stiffness: 300 }}
-          className={`w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
+          className={`w-fit rounded-xl font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-primary tracking-wider text-lg p-3 border-gradient border-4 text-theme-background`}
         >
           <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
         </MotionDiv>

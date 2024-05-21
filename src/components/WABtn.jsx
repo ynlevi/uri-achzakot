@@ -39,9 +39,9 @@ export default function WABtn() {
         animate={controls}
         whileInView={() => controls.start(controlInitialMedia)}
         onTap={controls.stop}
-        className="lg:hidden text-theme-whatsapp relative before:absolute before:inset-0 before:bg-theme-light before:scale-75 before:-z-[1]"
+        className="lg:hidden text-theme- bg-theme-whatsapp relative before:absolute before:inset-0 before:bg-theme-light before:scale-75 before:-z-[1] p-1 rounded-md"
       >
-        <FaWhatsappSquare size={50} />
+        <FaWhatsapp size={30} />
       </motion.li>
       {/* on desktop */}
       <motion.li
@@ -60,7 +60,7 @@ export default function WABtn() {
             כאן בשבילכם תמיד.
           </h5>
           <div className="bg-theme-whatsapp rounded-full p-1 border-2 border-theme-whatsapp">
-            <FaWhatsapp className="" size={35} />
+            <FaWhatsapp className="" size={35} color="#ece5dd" />
           </div>
           <h6 className="invisible pl-2 flex gap-1 font-semibold tracking-wider items-center">
             <p>מעבר לוואטסאפ </p>

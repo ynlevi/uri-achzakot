@@ -3,7 +3,7 @@ import Wave from "@/components/svgs/Wave";
 
 function page() {
   return (
-    <div className="tracking-wide  ">
+    <div className="tracking-wide ">
       <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl flex flex-col lg:flex-row gap-4 justify-between mt-16 lg:mt-24 lg:items-center ">
         <h2 className="text-5xl text-center ">קצת עליי</h2>
         <div className="relative h-52 xs:h-64 md:h-80 lg:h-96 w-full lg:max-w-xl ">

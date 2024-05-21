@@ -6,15 +6,15 @@ export default function Footer() {
       <Wave
         position={"bottom"}
         className="relative -top-2 inset-x-0 -z-[5]"
-        color={"var(--theme-dark)"}
+        color={"var(--theme-accent)"}
       />
       <Wave
         position={"bottom"}
-        color="var(--theme-light)"
+        color="var(--theme-secondary)"
         className="-z-10 -top-1 -inset-x-0 absolute"
       />
       <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl lg:-mt-24 mb-10">
-        <h2 className="text-2xl lg:text-3xl font-bold text-theme-dark">
+        <h2 className="text-2xl lg:text-3xl font-bold text-shadow-sm text-theme-secondary">
           מחכים לשמוע ממך, אנחנו כאן לכל שאלה.
         </h2>
         <form
@@ -30,7 +30,7 @@ export default function Footer() {
             id="name"
             type="text"
             required
-            placeholder={"השם שלך"}
+            placeholder={"שם פרטי"}
           />
           <input
             dir="rtl"
@@ -39,14 +39,14 @@ export default function Footer() {
             id="tel"
             type="tel"
             required
-            placeholder={"טלפון לחזרה"}
+            placeholder={"מספר לחזרה"}
           />
           <input
             type="submit"
             name="Send"
-            value={"דברו איתנו עוד היום"}
+            value={"דברו איתנו עוד היום!"}
             id="send"
-            className="w-fit py-2 px-3 text-theme-light bg-theme-whatsapp border-2 border-theme-light rounded-b-xl font-bold tracking-wider"
+            className="w-fit py-2 px-6 text-theme-background bg-theme-primary border-gradient border-[4px] rounded-b-xl font-bold tracking-wide cursor-pointer"
             aria-label="דברו איתנו"
           />
         </form>

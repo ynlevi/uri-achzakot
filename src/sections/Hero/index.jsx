@@ -13,7 +13,7 @@ export default function Hero() {
           <DesktopHero />
         </Media>
       </MediaContextProvider>
-      <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-light ">
+      <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-secondary">
         <SlArrowDown size={30} />
       </div>
     </section>

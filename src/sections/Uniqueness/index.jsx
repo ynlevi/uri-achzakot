@@ -1,52 +1,58 @@
-import { MotionDiv } from "@/components/MotionDiv";
+import { MotionDiv, MotionItem } from "@/components/MotionDiv";
 
 //icons
 import { BsPersonGear } from "react-icons/bs";
-import { FaMedal } from "react-icons/fa6";
+import { CiMedal } from "react-icons/ci";
+import available from "../../../public/avaiable.svg";
+import contractor from "../../../public/contractor.svg";
+import Image from "next/image";
 import { MdOutlineEventAvailable } from "react-icons/md";
+import About from "./About";
+
 export default function index() {
   return (
-    <section className="mt-40 lg:-mt-[70vh] mx-2 xs:mx-8 lg:mx-auto lg:max-w-4xl pb-36 md:pb-44 ">
-      <h2 className="">למה דווקא אורי אחזקות?</h2>
-      <MotionDiv
-        initial={{ opacity: 0, y: "20px" }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <ul className="flex gap-[.15rem] lg:w-full justify-between box-border text-theme-dark mt-4">
-          {benefits.map(({ icon, title, p }, i) => (
-            <li
-              key={i}
-              className={`flex flex-col items-center text-center flex-1 max-w-[16.5rem] px-[.1rem] md:px-6 py-1 rounded-xl md:hover:shadow-2xl drop-shadow-md bg-theme-light bottom-0 md:hover:bottom-1 duration-300 relative cursor-default border md:border-[3px] border-theme-dark w-24 ${
-                i === 1 && "relative bottom-4"
-              }`}
-            >
-              {icon}
-              <h3 className="font-bold whitespace-nowrap">{title}</h3>
-              <p className="text-xs md:text-base">{p}</p>
-            </li>
-          ))}
-        </ul>
-      </MotionDiv>
+    <section className="mt-40 lg:-mt-[70vh] pb-[18vh] lg:pb-[30vh] px-3 xs:px-8 lg:px-32 w-full  ">
+      <h2 className="mb-4  font-bold text-theme-text ">
+        מגיע לך <span className="text-theme-secondary">רמה אחרת</span>.
+      </h2>
+      <ul className="max-w-6xl grid lg:grid-cols-3 gap-4 lg:gap-5 mt-4 mx-auto w-full justify-center ">
+        {benefits.map(({ icon, title, p }, i) => (
+          <MotionItem
+            initial={{ opacity: 0, y: "10px" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            key={i}
+            className={`border-theme-secondary hover:border-theme-accent border-4  p-4 flex gap-2 lg:gap-4 flex-col rounded-xl  duration-300 relative  max-w-fit bg-theme-secondary text-theme-background `}
+          >
+            <h3 className="font-bold whitespace-nowrap text-2xl text-theme-accent">
+              {title}
+            </h3>
+            <div className="text-theme-accent ">{icon}</div>
+            <p className="text md:text-base">{p}</p>
+          </MotionItem>
+        ))}
+      </ul>
+      <About />
     </section>
   );
 }
 
 const benefits = [
   {
-    icon: <BsPersonGear size={40} />,
-    title: "בגלל המומחיות",
+    icon: <Image src={contractor} height={80} width={80} />,
+    title: "המומחיות.",
     p: `אצלנו תקבלו מענה מקיף לכל סוגי התחזוקה, הבניה והתחזוק השוטף, מניעת תקלות ופתרון בעיות מורכבות.`,
   },
   {
-    icon: <FaMedal size={40} />,
-    title: "בגלל הנסיון",
+    icon: <CiMedal size={80} strokeWidth={0.01} />,
+    title: "הניסיון.",
     p: `עשור של מתן שרותים מגוונים בכל סוגי המבנים מתחזוקת מוסדות ועד דירות,
     חללים משותפים, פנים וחוץ.`,
   },
   {
-    icon: <MdOutlineEventAvailable size={40} />,
-    title: "בגלל הזמינות",
+    icon: <Image src={available} width={70} height={70} />,
+    title: "הזמינות.",
     p: `כל הפתרונות במרחק טלפון אחד, מול חברה אחת שנותנת לך מעטפת מלאה, כולל מענה מיידי לתקלות SOS, גם בתקופות העמוסות ביותר בשנה.`,
   },
 ];

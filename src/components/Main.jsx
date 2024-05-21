@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 function Main({ children }) {
-  //smoth scrolling on desktop screens
+  // smoth scrolling on desktop screens
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;

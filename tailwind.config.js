@@ -9,15 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "theme-text": "var(--theme-text)",
+        "theme-background": "var(--theme-background)",
         "theme-primary": "var(--theme-primary)",
-        "theme-selected": "var(--theme-selected)",
+        "theme-secondary": "var(--theme-secondary)",
+        "theme-accent": "var(--theme-accent)",
         "theme-whatsapp": "var(--theme-whatsapp)",
-        "theme-light": "var(--theme-light)",
-        "theme-cream": "var(--theme-cream)",
-        "theme-dark": "var(--theme-dark)",
-        "theme-yellow": "var(--theme-yellow)",
-        "theme-light-dark": "var(--theme-light-dark)",
-        "theme-cta": "var(--theme-cta)",
       },
       screens: {
         xs: "500px",

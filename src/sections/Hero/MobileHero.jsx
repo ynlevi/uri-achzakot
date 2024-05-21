@@ -1,4 +1,5 @@
 import CldImage from "@/components/CldImage";
+
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
 export default function MobileHero() {
@@ -20,12 +21,11 @@ export default function MobileHero() {
           </h1>
         </div>
 
-        <div className=" ">
+        <div className=" mt-4">
           <div
             data-scroll
             data-scroll-speed="0.15"
-            className=" h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%]"
-            priority
+            className=" mask h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%] "
           >
             <CldImage
               src={
@@ -34,7 +34,7 @@ export default function MobileHero() {
               alt="hero-image"
               fill
               className=" absolute -z-1 object-cover "
-              priority={true}
+              priority
               sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 60vw"
             />
           </div>
@@ -69,7 +69,7 @@ export default function MobileHero() {
           variants={fromBottomVariant}
           whileHover="hover"
           transition={{ type: "spring", stiffness: 300 }}
-          className={`w-fit rounded-xl tracking-wide font-extrabold relative mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-whatsapp text-lg p-3 shadow-lg text-theme-light border-theme-light border-2 `}
+          className="w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-primary text-lg p-3 border-gradient border-[3px] text-theme-background"
         >
           <Link aria-label="שיחת יעוץ חינם" href={"Tel:+972502727526"}>
             לשיחת יעוץ חינם

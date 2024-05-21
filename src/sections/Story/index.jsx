@@ -3,8 +3,8 @@ import { MotionDiv } from "@/components/MotionDiv";
 import Link from "next/link";
 export default function Story() {
   return (
-    <section className="absolute  inset-x-0 z-[1] -mt-6 md:-mt-4 mx-3 xs:mx-8 lg:mx-auto lg:max-w-4xl">
-      <div className="shadow-lg lg:flex md:flex-row md:gap-5 bg-theme-light relative bottom-24 mx-auto px-5 pb-5 lg:pb-0 rounded-xl text-theme-primary ">
+    <section className="absolute  inset-x-0 z-[1] xs:mx-8 lg:mx-auto lg:max-w-4xl ">
+      {/* <div className="shadow-lg lg:flex md:flex-row md:gap-5 bg-theme-light relative bottom-24 mx-auto px-5 lg:pb-0 rounded-xl text-theme-primary ">
         <div className="border-y-[1.25rem] border-theme-light overflow-hidden h-auto md:flex-auto md:w-52 ">
           <div data-scroll data-scroll-speed=".07">
             <MotionDiv
@@ -40,7 +40,7 @@ export default function Story() {
             </div>
           </Link>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
