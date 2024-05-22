@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="shadow-lg md:flex-row md:gap-5 bg-theme-light mt-5 max-w-6xl mx-auto rounded-xl flex flex-col-reverse lg:grid grid-cols-3 pb-10">
-      <div className="bg-gradient-to-bl from-theme-secondary from-55% to-transparent lg:bg-gradient-to-l lg:from-theme-secondary  lg:to-transparent text-theme-background rounded-xl rounded-l-none p-[2px] pl-0 relative z-[1] ">
+      <div className="bg-gradient-to-bl from-theme-secondary from-55% to-transparent lg:bg-gradient-to-l lg:from-theme-secondary  lg:to-transparent text-theme-background rounded-xl rounded-l-none p-[2px] pl-0 relative z-[3] ">
         <div className="lg:flex lg:justify-between lg:flex-col md:flex-auto p-4 rounded-xl rounded-l-none bg-theme-accent  lg:ml-0">
           <h3 className="text-2xl font-semibold text-theme-secondary ">
             נעים להכיר, אני אורי.
@@ -26,14 +26,16 @@ export default function About() {
       </div>
 
       <div className="h-56 lg:h-auto bg-gradient-to-r from-theme-secondary to-transparent rounded-l-xl p-[2px] pr-0 top-3 lg:top-0 relative overflow-hidden z-[1]">
-        <div className="h-full z-0 overflow-hidden rounded-l-xl">
+        <div className="h-full rounded-l-xl">
+          {" "}
           <MotionDiv
             data-scroll
             data-scroll-speed="0.04"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative h-full w-full rounded-xl"
+            viewport={{ once: true }}
+            className="relative h-full w-full z-0 "
           >
             <CldImage
               src={
