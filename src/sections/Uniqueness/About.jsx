@@ -25,15 +25,15 @@ export default function About() {
         </div>
       </div>
 
-      <div className="h-56 lg:h-auto bg-gradient-to-r from-theme-secondary to-transparent rounded-l-xl p-[2px] pr-0 top-3 lg:top-0 relative">
-        <div className="h-full z-10 overflow-hidden rounded-l-xl">
+      <div className="h-56 lg:h-auto bg-gradient-to-r from-theme-secondary to-transparent rounded-l-xl p-[2px] pr-0 top-3 lg:top-0 relative overflow-hidden z-[1]">
+        <div className="h-full z-0 overflow-hidden rounded-l-xl">
           <MotionDiv
             data-scroll
             data-scroll-speed="0.04"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative h-full w-full bg-red-700"
+            className="relative h-full w-full rounded-xl"
           >
             <CldImage
               src={
@@ -41,7 +41,7 @@ export default function About() {
               }
               alt="our-story-image"
               fill
-              className="absolute object-cover rounded-l-xl scale-125"
+              className="absolute object-cover rounded-l-xl scale-125 "
             />
           </MotionDiv>
         </div>
