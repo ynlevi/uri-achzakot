@@ -21,8 +21,8 @@ export default function index() {
             initial={{ opacity: 0, y: "10px" }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
             key={i}
+            transition={{ duration: 0.8 }}
             className={`border-theme-secondary hover:border-theme-accent border-4  p-4 flex gap-2 lg:gap-4 flex-col rounded-xl   relative  max-w-fit bg-theme-secondary text-theme-background `}
           >
             <h3 className="font-bold whitespace-nowrap text-2xl text-theme-accent">

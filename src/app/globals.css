@@ -29,6 +29,7 @@ h2 {
   line-height: 2.25rem;
   text-align: center;
   padding-bottom: 1rem;
+  color: var(--theme-secondary);
 }
 
 .text-shadow-light {

@@ -65,7 +65,7 @@ export default function Footer() {
             {" "}
             Levi's Web Solutions{" "}
           </Link>
-          in 🇲🇶🇨🇦 2024 ©
+          in 🇲🇶 🇨🇦 2024 ©
         </p>
       </div>
     </div>
