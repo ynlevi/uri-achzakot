@@ -2,7 +2,7 @@
 import Hero from "@/sections/Hero";
 import Service from "@/sections/Service";
 import Uniqueness from "@/sections/Uniqueness/index";
-import Story from "@/sections/Story";
+
 import Customors from "@/sections/Customors";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <Service />
       <Uniqueness />
-      {/* <Story /> */}
+
       <Customors />
     </div>
   );

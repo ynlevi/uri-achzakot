@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Wave from "@/components/svgs/Wave";
+import CldImage from "@/components/CldImage";
 
 function page() {
   return (
     <div className="tracking-wide ">
       <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl flex flex-col lg:flex-row gap-4 justify-between mt-16 lg:mt-24 lg:items-center ">
-        <h2 className="text-5xl text-center ">קצת עליי</h2>
+        <h2 className="text-5xl text-center text-theme-secondary ">קצת עליי</h2>
         <div className="relative h-52 xs:h-64 md:h-80 lg:h-96 w-full lg:max-w-xl ">
-          <Image
+          <CldImage
             src={
               "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/wa4ij5cqdxqidgpusxyy"
             }
             placeholder="blur"
-            blurDataURL="https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/wa4ij5cqdxqidgpusxyy"
             fill
             className="absolute -z-10 object-cover "
             property={true}
@@ -22,18 +22,18 @@ function page() {
 
       <div className="relative ">
         <Wave
-          color="var(--theme-light)"
+          color="var(--theme-secondary)"
           position={"top"}
           className={"relative inset-x-0 top-3 -z-0"}
         />
         <Wave
-          color={"var(--theme-dark)"}
+          color={"var(--theme-accent)"}
           position={"top"}
           className=" absolute inset-x-0 top-4"
         />
       </div>
 
-      <div className=" bg-theme-dark font-medium tracking-wide text-theme-light ">
+      <div className=" bg-theme-accent font-medium tracking-wide ">
         <div className="mx-3 xs:mx-8  md:mx-auto max-w-3xl relative bottom-4 lg:bottom-10">
           {p.map((s, i) => {
             return (

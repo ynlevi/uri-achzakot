@@ -25,7 +25,7 @@ export default function Footer() {
         >
           <input
             dir="rtl"
-            className="w-full px-3 py-2 placeholder:text-theme-primary rounded-t-xl focus:outline-none bg-theme-light"
+            className="w-full px-3 py-2 placeholder:text-theme-background font-bold border-[3px] border-theme-secondary rounded-t-xl focus:outline-none bg-theme-text"
             name="Name"
             id="name"
             type="text"
@@ -34,7 +34,7 @@ export default function Footer() {
           />
           <input
             dir="rtl"
-            className="w-full px-3 py-2 placeholder:text-theme-primary rounded-bl-xl focus:outline-none bg-theme-light "
+            className="w-full px-3 py-2 placeholder:text-theme-background font-bold border-[3px] border-theme-secondary rounded-bl-xl focus:outline-none bg-theme-text "
             name="Tel"
             id="tel"
             type="tel"
@@ -46,23 +46,26 @@ export default function Footer() {
             name="Send"
             value={"דברו איתנו עוד היום!"}
             id="send"
-            className="w-fit py-2 px-6 text-theme-background bg-theme-primary border-gradient border-[4px] rounded-b-xl font-bold tracking-wide cursor-pointer"
+            className="w-fit py-2 px-6 text-theme-background bg-gradient-to-l from-theme-primary via-theme-secondary border-theme-secondary to-theme-primary border-[3px] rounded-b-xl font-bold tracking-wide cursor-pointer"
             aria-label="דברו איתנו"
           />
         </form>
       </div>
       <div className="px-3 xs:px-8 lg:px-32 ">
-        <p className="border-theme-light w-full border-t-[.1px] mt-8 text-center py-2 text-xs md:text-base">
-          hand-coded by
+        <p
+          dir="ltr"
+          className="border-theme-light w-full border-t-[.1px] mt-8 text-center py-2 text-xs md:text-base"
+        >
+          Hand-coded by
           <Link
             href="https://ynlevi.github.io/portfolio/"
-            className="text-theme-dark text-shadow-light font-bold"
+            className="text-theme-primary"
             aria-label="למעבר לעמוד פורטפוליו"
           >
             {" "}
-            Levi's Digital Solutions for Small Business{" "}
+            Levi's Web Solutions{" "}
           </Link>
-          2024 ©
+          in 🇲🇶🇨🇦 2024 ©
         </p>
       </div>
     </div>

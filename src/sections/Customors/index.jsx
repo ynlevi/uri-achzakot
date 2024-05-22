@@ -134,7 +134,7 @@ export default function Customors() {
     <section className="relative bg-theme-accent">
       <Wave
         position={"top"}
-        className="absolute  -top-20 md:-top-52 lg:-top-64 -z-10 inset-0 "
+        className="absolute -top-20 md:-top-52 lg:-top-64 -z-10 inset-0 "
         color={"var(--theme-accent)"}
       />
       <Wave
@@ -154,9 +154,9 @@ export default function Customors() {
           {customersLogos.map(({ src, alt, link, custom }, index) => (
             <li
               key={index}
-              className={`relative rounded-xl shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
+              className={`relative rounded-lg shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
                 index % 2 === 0
-                  ? "border-[.1px] border-theme-light text-white bg-white bg-opacity-10 "
+                  ? "border-[.1px] border-theme-light text-white "
                   : "bg-white shadow-md"
               }`}
             >

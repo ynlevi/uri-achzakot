@@ -7,7 +7,7 @@ function Header() {
   return (
     <>
       <HeaderBg />
-      <div className="inset-0 px-3 xs:px-8 lg:px-32 w-full z-10 fixed top-0 h-14 lg:h-[4.8rem] text-shadow-md">
+      <div className="inset-0 px-3 xs:px-8 lg:px-32 w-full z-10 fixed top-0 h-14 lg:h-[4.8rem] text-shadow-sm text-theme-primary">
         <ul className="w-full  flex items-center justify-between h-full">
           <li className="font-bold ">English</li>
           <li className="absolute h-14 lg:h-[4.8rem] right-[calc(50vw-2.5rem)] lg:right-[calc(50vw-3.5rem)]">

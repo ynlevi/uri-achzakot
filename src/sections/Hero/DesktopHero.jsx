@@ -1,6 +1,7 @@
 import CldImage from "@/components/CldImage";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
+import CTABtn from "@/components/CTABtn";
 
 export default function DesktopHero() {
   // motion variant
@@ -16,20 +17,6 @@ export default function DesktopHero() {
     visible: { opacity: 1, x: 0 },
   };
 
-  const fromBottomVariant = {
-    hidden: {
-      opacity: 0,
-      y: "20vh",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-    hover: {
-      y: "-.25rem",
-      boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-    },
-  };
   return (
     <div className="hidden lg:block mx-3 xs:mx-8 xl:mx-32 tracking-wide relative h-[calc(100vh-4.5rem)]">
       <div className="flex flex-col lg:flex-row justify-between ">
@@ -105,16 +92,7 @@ export default function DesktopHero() {
           </li>
         </ul>
 
-        <MotionDiv
-          variants={fromBottomVariant}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-          transition={{ type: "spring", stiffness: 300 }}
-          className={`w-fit rounded-xl font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-primary tracking-wider text-lg p-3 border-gradient border-4 text-theme-background`}
-        >
-          <Link href={"Tel:+972502727526"}>לשיחת יעוץ חינם</Link>
-        </MotionDiv>
+        <CTABtn text={"לשיחת יעוץ חינם"} />
       </MotionDiv>
     </div>
   );

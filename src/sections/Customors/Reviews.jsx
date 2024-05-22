@@ -50,7 +50,7 @@ export default function Reviews() {
             slidesPerView: 2,
           },
           // when window width is >= 480px
-          780: {
+          950: {
             slidesPerView: 3,
           },
           1600: {
@@ -60,7 +60,7 @@ export default function Reviews() {
         className="py-6 border-theme-light-dark scroll-smooth snap-mandatory snap-x "
         style={{
           "--swiper-pagination-color": "var(--theme-primary)",
-          "--swiper-pagination-bullet-inactive-color": "#1da1f2",
+          "--swiper-pagination-bullet-inactive-color": "var(--theme-secondary)",
           "--swiper-pagination-bullet-inactive-opacity": ".6",
           "--swiper-navigation-color": "var(--theme-primary)",
         }}
@@ -68,24 +68,26 @@ export default function Reviews() {
         {recommendation.map(({ header, avatar, p }, index) => (
           <SwiperSlide
             key={index}
-            className={`snap-start swiper-slide pt-5 pb-6 px-4 lg:px-7 text flex flex-col gap-4 text-[.9rem] text-justify ${
+            className={`snap-start swiper-slide pb-6 px-3 lg:px-7 text flex flex-col gap-4 text-[.9rem] text-justify ${
               index < recommendation.length - 1 &&
-              "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-theme-primary before:border-dashed"
+              "before:absolute before:inset-0 before:mr-[-.05rem] lg:before:mr-[-.072rem] before:h-8 before:my-auto before:right-full before:border-r-2 before:border-theme-secondary before:border-double"
             }`}
           >
-            <div className="relative flex justify-center items-center ">
-              <h4 className="text-shadow-sm font-bold absolute z-[1] text-theme-secondary tracking-wider">
-                {header}
-              </h4>
-              <Blob className={"text-theme-text relative right-10 "} />
+            <div className="p-8  h-full bg-opacity-10 bg-white">
+              <div className="relative flex justify-center items-center ">
+                <h4 className="text-shadow-sm font-bold absolute z-[1] text-theme-secondary tracking-wider">
+                  {header}
+                </h4>
+                <Blob className={"text-theme-text relative right-10 "} />
+              </div>
+              <p
+                className=" text-yellow-400 my-1 text-center "
+                style={{ letterSpacing: ".25em" }}
+              >
+                ★★★★★
+              </p>
+              <p className="mb-auto ">{p}</p>
             </div>
-            <p
-              className=" text-yellow-400 my-1 text-center "
-              style={{ letterSpacing: ".25em" }}
-            >
-              ★★★★★
-            </p>
-            <p className="mb-auto px-8 lg:px-4">{p}</p>
           </SwiperSlide>
         ))}
       </Swiper>

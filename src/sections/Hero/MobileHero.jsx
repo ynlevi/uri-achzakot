@@ -2,6 +2,7 @@ import CldImage from "@/components/CldImage";
 
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
+import CTABtn from "@/components/CTABtn";
 export default function MobileHero() {
   const fromBottomVariant = {
     hover: {
@@ -65,16 +66,7 @@ export default function MobileHero() {
           </li>
         </ul>
 
-        <MotionDiv
-          variants={fromBottomVariant}
-          whileHover="hover"
-          transition={{ type: "spring", stiffness: 300 }}
-          className="w-fit rounded-xl tracking-wide font-extrabold relative  mt-3 md:mt-4 mr-auto md:ml-auto md:mr-0 bg-theme-primary text-lg p-3 border-gradient border-[3px] text-theme-background"
-        >
-          <Link aria-label="שיחת יעוץ חינם" href={"Tel:+972502727526"}>
-            לשיחת יעוץ חינם
-          </Link>
-        </MotionDiv>
+        <CTABtn text={"לשיחת יעוץ חינם"} />
       </div>
     </div>
   );
