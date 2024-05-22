@@ -23,7 +23,7 @@ export default function index() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
             key={i}
-            className={`border-theme-secondary hover:border-theme-accent border-4  p-4 flex gap-2 lg:gap-4 flex-col rounded-xl  duration-300 relative  max-w-fit bg-theme-secondary text-theme-background `}
+            className={`border-theme-secondary hover:border-theme-accent border-4  p-4 flex gap-2 lg:gap-4 flex-col rounded-xl   relative  max-w-fit bg-theme-secondary text-theme-background `}
           >
             <h3 className="font-bold whitespace-nowrap text-2xl text-theme-accent">
               {title}
