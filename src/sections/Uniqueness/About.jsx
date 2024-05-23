@@ -1,6 +1,7 @@
 import { MotionDiv } from "@/components/MotionDiv";
 import CldImage from "@/components/CldImage";
 import Link from "next/link";
+import ParallaxDiv from "@/components/ParallaxDiv";
 export default function About() {
   return (
     <div className="shadow-lg md:flex-row md:gap-5 bg-theme-light mt-5 max-w-6xl mx-auto rounded-xl flex flex-col-reverse lg:grid grid-cols-3 pb-10">
@@ -25,17 +26,16 @@ export default function About() {
         </div>
       </div>
 
-      <div className="h-56 lg:h-auto bg-gradient-to-r from-theme-secondary to-transparent rounded-l-xl p-[2px] pr-0 top-3 lg:top-0 relative overflow-hidden z-[1]">
-        <div className="h-full rounded-l-xl">
-          {" "}
-          <MotionDiv
-            data-scroll
-            data-scroll-speed="0.04"
+      <div className="h-56 lg:h-auto  rounded-l-xl top-3 lg:top-0 relative overflow-hidden z-[1] bg-gradient-to-r from-theme-secondary to-transparent p-[2px] pr-0">
+        <div className="h-full relative z-0 overflow-hidden rounded-xl rounded-r-none">
+          <ParallaxDiv
+            className={"h-full w-full"}
+            yStartAt={30}
+            yEndAt={-35}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative h-full w-full z-0 "
           >
             <CldImage
               src={
@@ -45,7 +45,7 @@ export default function About() {
               fill
               className="absolute object-cover rounded-l-xl scale-125 "
             />
-          </MotionDiv>
+          </ParallaxDiv>
         </div>
       </div>
       {/* squres illstration for astetic perposes */}
