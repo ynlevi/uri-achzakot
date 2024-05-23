@@ -11,12 +11,12 @@ export default function Footer() {
       <Wave
         position={"bottom"}
         color="var(--theme-secondary)"
-        className="-z-10 -top-1 -inset-x-0 absolute"
+        className="-z-10 -top-[0.2rem] -inset-x-0 absolute"
       />
       <div className="mx-3 xs:mx-8 md:mx-auto max-w-3xl lg:-mt-24 mb-10">
-        <h2 className="text-2xl lg:text-3xl font-bold text-shadow-sm text-theme-secondary">
+        <h3 className="text-2xl lg:text-4xl font-bold text-shadow-sm text-theme-secondary text-center mb-10">
           מחכים לשמוע ממך, אנחנו כאן לכל שאלה.
-        </h2>
+        </h3>
         <form
           action="https://public.herotofu.com/v1/bd010930-6125-11ee-a450-5f0c9649ec83"
           method="post"
@@ -51,11 +51,12 @@ export default function Footer() {
           />
         </form>
       </div>
-      <div className="px-3 xs:px-8 lg:px-32 ">
-        <p
-          dir="ltr"
-          className="border-theme-light w-full border-t-[.1px] mt-8 text-center py-2 text-xs md:text-base"
-        >
+      <div className="">
+        <div
+          className=" w-screen absolute bg-gradient-to-l
+        from-transparent via-theme-secondary to to-transparent h-[1px]"
+        />
+        <p dir="ltr" className="text-center py-4 text-xs md:text-base  ">
           Hand-coded by
           <Link
             href="https://ynlevi.github.io/portfolio/"
@@ -65,7 +66,7 @@ export default function Footer() {
             {" "}
             Levi's Web Solutions{" "}
           </Link>
-          in 🇨🇦 2024 ©
+          in Montréal 🇨🇦 2024 ©
         </p>
       </div>
     </div>

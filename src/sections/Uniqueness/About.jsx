@@ -4,12 +4,10 @@ import Link from "next/link";
 import ParallaxDiv from "@/components/ParallaxDiv";
 export default function About() {
   return (
-    <div className="shadow-lg md:flex-row md:gap-5 bg-theme-light mt-5 max-w-6xl mx-auto rounded-xl flex flex-col-reverse lg:grid grid-cols-3 pb-10">
+    <div className="shadow-lg md:flex-row md:gap-5 bg-theme-light mt-1 lg:mt-5 max-w-6xl mx-auto rounded-xl flex flex-col-reverse lg:grid grid-cols-3 pb-10">
       <div className="bg-gradient-to-bl from-theme-secondary from-55% to-transparent lg:bg-gradient-to-l lg:from-theme-secondary  lg:to-transparent text-theme-background rounded-xl rounded-l-none p-[2px] pl-0 relative z-[3] ">
         <div className="lg:flex lg:justify-between lg:flex-col md:flex-auto p-4 rounded-xl rounded-l-none bg-theme-accent  lg:ml-0">
-          <h3 className="text-2xl font-semibold text-theme-secondary ">
-            נעים להכיר, אני אורי.
-          </h3>
+          <h3 className="text-theme-secondary ">נעים להכיר, אני אורי.</h3>
           <p className="text-sm text-theme-text">
             מנהל ומייסד של אורי אחזקות בעל ניסיון של עשור בתעשיית החשמל ואחזקת
             דירות, המחברת בין בעלי בתים לבין אנשי המקצוע המתאימים לכל צרכי הבית

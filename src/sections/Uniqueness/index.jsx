@@ -11,8 +11,8 @@ import About from "./About";
 
 export default function index() {
   return (
-    <section className="mt-40 lg:-mt-[70vh] pb-[18vh] lg:pb-[30vh] px-3 xs:px-8 lg:px-32 w-full  ">
-      <h2 className="mb-4  font-bold text-theme-text ">
+    <section className=" lg:-mt-[70vh] lg:mb-[30vh] px-3 xs:px-8 lg:px-32 w-full  ">
+      <h2 className="font-bold">
         מגיע לך <span className="text-theme-secondary">רמה אחרת</span>.
       </h2>
       <ul className="max-w-6xl grid lg:grid-cols-3 gap-4 lg:gap-5 mt-4 mx-auto w-full justify-center ">

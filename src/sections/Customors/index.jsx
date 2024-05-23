@@ -131,7 +131,7 @@ export default function Customors() {
     },
   ];
   return (
-    <section className="relative bg-theme-accent">
+    <section className="relative bg-theme-accent mb-0 mt-20">
       <Wave
         position={"top"}
         className="absolute -top-20 md:-top-52 lg:-top-64 -z-10 inset-0 "
@@ -140,9 +140,9 @@ export default function Customors() {
       <Wave
         position={"top"}
         color="var(--theme-secondary)"
-        className="-z-[12] -top-[5.3rem] md:-top-[13.2rem] lg:-top-[16.2rem] -inset-x-0 absolute "
+        className="-z-[12] -top-[5.3rem] md:-top-[13.3rem] lg:-top-[16.3rem] -inset-x-0 absolute "
       />
-      <h2 className="mx-3 xs:mx-8 lg:mx-32 -mt-10">מה הלקוחות שלנו מספרים:</h2>
+      <h2 className="mx-3 xs:mx-8 lg:mx-32 ">מה הלקוחות שלנו מספרים:</h2>
 
       <Reviews />
       <div className="overflow-hidden relative pb-6 inset-x-0 pt-12  before:md:h-36 before:lg:h-44 before:w-3/12 before:absolute before:bg-gradient-to-l before:from-theme-dark before:to-transparent before:bottom-0  before:top-0 after:absolute after:bg-gradient-to-r after:from-theme-dark after:to-transparent after:w-3/12 before:md:from-35% after:md:from-35% after:left-0 after:top-0 after:bottom-0  before:z-[1] after:z-[1] after:md:h-36 after:lg:h-44">

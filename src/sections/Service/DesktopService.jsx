@@ -1,55 +1,93 @@
-import CldImage from "@/components/CldImage";
+"use client";
+
 import { MotionDiv } from "@/components/MotionDiv";
-import { GoGoal } from "react-icons/go";
-import styles from "./styles.module.scss";
-export default function DesktopService({ services }) {
+
+import { useRef } from "react";
+
+import { useScroll, motion, useTransform } from "framer-motion";
+
+import DesktopServiceCard from "./DesktopServiceCard";
+export default function DesktopService() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start .7", "end end"],
+  });
+  const opacity = useTransform(scrollYProgress, [0.55, 0.92], [1, 0]);
+  const h2Opacity = useTransform(scrollYProgress, [0.6, 0.7], [1, 0]);
+  const h2Scale = useTransform(scrollYProgress, [0, 0.3], [0.6, 1]);
+  const scaleMiddle = useTransform(scrollYProgress, [0.4, 1], [1, 2]);
+  const scaleSides = useTransform(scrollYProgress, [0.4, 1], [1, 1.6]);
+  const services = [
+    {
+      id: 0,
+      name: "תחזוקת דירות",
+      image:
+        "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/a7mzyfprrjgjqfmtqhp6",
+      scale: scaleSides,
+      details: [
+        "ניהול צוות תחזוקה למתן מענה לכל הצרכים השוטפים של מוסדות.",
+        "ניקיון: מבנה, אבזור טואלטיקה שירותים, חצרות, גינון.",
+        "תשתיות: חשמל, אינסטלציה, השחלות כבלים רשת.",
+        "תיקונים ותוספות: גבס, צבע, ריצוף, איטום ובניה קלה",
+        "לווי מהנדסים לחיזוקי מבנה.",
+        "בדיקה תקופתית על ידי מהנדס/ יועץ בטיחות, עבור אישור תמ״ת.",
+      ],
+    },
+    {
+      id: 1,
+      name: "תחזוקת מבנים",
+      image:
+        "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/wgwqax8cufrmj27wj7bx",
+      scale: scaleMiddle,
+      details: [
+        "תחזוקה וניקיון של שטחים משותפים במבנים ומחסנים.",
+        "שילום תקופתי חשבונות חשמל ומים.",
+        "מעקב תקינות חשמל, ספרינקלרים, עמודות אש.",
+        "עבודות גינון וטיפוח שטחי חוץ.",
+        "תקינות תאורת פנים, חוץ, גינה, פוטו צל.",
+        "ניקיון שטחים משותפים, חדרי אשפה.",
+        "תחזוקת צבע, בדיקת נזילות, איטום יריעות.",
+        "חיזוק קורות.",
+        "טיפולי הרחקת יונים.",
+      ],
+    },
+    {
+      id: 2,
+      name: "תחזוקת נכסים לתושבי חו׳׳ל",
+      image:
+        "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/opcy9dgfx14tjqtf4s2i",
+      scale: scaleSides,
+      details: [
+        "תחזוקה שוטפת של ניקיון ואוורור הדירה.",
+        "בדיקה תקופתית של נזילות, קצרים חשמליים, הארקה, דודי שמש, מיזוג אויר.",
+        "שילום תקופתי חשבונות חשמל ומים.",
+        "בדיקת תקינות כלל המוצרים בבית במצב שמיש.",
+        "טיפולי הרחקת יונים.",
+      ],
+    },
+  ];
   return (
-    <MotionDiv
-      className="hidden lg:flex max-h-[80vh] flex-row-reverse gap-4 mx-8 xl:mx-32 w-auto justify-between"
-      dir="auto"
-    >
-      {services.map((item, index) => (
-        <ServiceCardDesktop key={index} item={item} index={index} />
-      ))}
-    </MotionDiv>
-  );
-}
-function ServiceCardDesktop({ item, index }) {
-  const { scale, image, name, details } = item;
-  return (
-    <MotionDiv
-      key={index}
-      style={{
-        scale: scale,
-      }}
-      className={`${styles.card} absolute inset-0 top-16 2xl:top-28`}
-    >
-      <div
-        className={`${styles.el} relative backdrop-blur-sm bg-gradient-to-br from-theme-secondary via-theme-text to-45% to-theme-secondary 2xl:scale-90 inset-y-0 p-2 `}
+    <motion.div ref={ref} className="lg:h-[200vh]">
+      <motion.div
+        style={{ opacity }}
+        className="lg:sticky  main-bg inset-0 top-20 lg:h-screen lg:overflow-hidden "
       >
-        <div className="relative h-[17rem] 2xl:h-72 top-0 ">
-          <CldImage src={image} alt={name} fill className=" object-cover" />
-        </div>
-        <MotionDiv className={`relative`}>
-          <h4
-            style={{ backgroundColor: "rgba(38, 12, 26, 0.5)" }}
-            className="backdrop-blur-[2px] absolute -top-16 text-theme-light p-4 py-2 theme-dark-with-opacity md:mt-0 text-3xl tracking-normal "
-          >
-            {name}
-          </h4>
-          <ul className="mt-2 p-3 bg-theme-text text-theme-background min-h-[17rem] 2xl:min-h-72  ">
-            {details.map((detail, index) => (
-              <li key={index} className="flex gap-1 lg:text-md 2xl:text-xl">
-                <GoGoal
-                  className="mt-[.35rem] w-4 shrink-0 text-theme-accent"
-                  size={18}
-                />
-                <div key={index}>{detail}</div>
-              </li>
-            ))}
-          </ul>
+        <motion.h2
+          style={{ opacity: h2Opacity, scale: h2Scale }}
+          className="text-center origin-bottom relative font-bold text-theme-text my-10"
+        >
+          השירותים שלנו
+        </motion.h2>
+        <MotionDiv
+          className="hidden lg:flex max-h-[80vh] flex-row-reverse gap-4 mx-8 xl:mx-32 w-auto justify-between"
+          dir="auto"
+        >
+          {services.map((item, index) => (
+            <DesktopServiceCard item={item} index={index} />
+          ))}
         </MotionDiv>
-      </div>
-    </MotionDiv>
+      </motion.div>
+    </motion.div>
   );
 }
