@@ -40,18 +40,22 @@ export default function index() {
 
 const benefits = [
   {
-    icon: <Image src={contractor} height={80} width={80} />,
+    icon: (
+      <Image src={contractor} height={80} width={80} className="-mr-[2px]" />
+    ),
     title: "המומחיות.",
     p: `אצלנו תקבלו מענה מקיף לכל סוגי התחזוקה, הבניה והתחזוק השוטף, מניעת תקלות ופתרון בעיות מורכבות.`,
   },
   {
-    icon: <CiMedal size={80} strokeWidth={0.01} />,
+    icon: <CiMedal size={80} strokeWidth={0.01} className="-mr-[10px]" />,
     title: "הניסיון.",
     p: `עשור של מתן שרותים מגוונים בכל סוגי המבנים מתחזוקת מוסדות ועד דירות,
     חללים משותפים, פנים וחוץ.`,
   },
   {
-    icon: <Image src={available} width={70} height={70} />,
+    icon: (
+      <Image src={available} width={70} height={70} className="-mr-[3.5px]" />
+    ),
     title: "הזמינות.",
     p: `כל הפתרונות במרחק טלפון אחד, מול חברה אחת שנותנת לך מעטפת מלאה, כולל מענה מיידי לתקלות SOS, גם בתקופות העמוסות ביותר בשנה.`,
   },

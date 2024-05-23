@@ -73,7 +73,7 @@ export default function Service() {
       <motion.div ref={ref} className="lg:h-[200vh]">
         <motion.div
           style={{ opacity: !isMobile && opacityOnDesktop }}
-          className="lg:sticky  main-bg inset-0 lg:top-[4.9rem] lg:h-screen lg:overflow-hidden "
+          className="lg:sticky  main-bg inset-0 lg:top-[2.9rem] xl:top-[4.9rem] lg:h-screen lg:overflow-hidden "
         >
           <ParallaxDiv yStartAt={0} yEndAt={isMobile ? 140 : 80}>
             <motion.h2
