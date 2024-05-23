@@ -75,7 +75,7 @@ export default function DesktopService() {
       >
         <motion.h2
           style={{ opacity: h2Opacity, scale: h2Scale }}
-          className="text-center origin-bottom relative font-bold text-theme-text my-10"
+          className="text-center origin-bottom relative font-bold text-theme-text my-10 "
         >
           השירותים שלנו
         </motion.h2>
