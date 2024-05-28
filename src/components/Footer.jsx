@@ -18,14 +18,15 @@ export default function Footer() {
           מחכים לשמוע ממך, אנחנו כאן לכל שאלה.
         </h3>
         <form
-          action="https://public.herotofu.com/v1/bd010930-6125-11ee-a450-5f0c9649ec83"
-          method="post"
+          // action="https://public.herotofu.com/v1/bd010930-6125-11ee-a450-5f0c9649ec83"
+          action="https://formsubmit.co/jonilevi@icloud.com"
+          method="POST"
           acceptCharset="UTF-8"
           className={`flex flex-col gap-2 mt-2 text-theme-dark text-lg tracking-wider`}
         >
           <input
             dir="rtl"
-            className="w-full px-3 py-2 placeholder:text-theme-background font-bold border-[3px] border-theme-secondary rounded-t-xl focus:outline-none bg-theme-text"
+            className="w-full px-5 py-2 placeholder:text-theme-accent font-bold border-[3px] border-theme-secondary rounded-t-xl focus:outline-none bg-theme-text text-theme-accent"
             name="Name"
             id="name"
             type="text"
@@ -34,7 +35,7 @@ export default function Footer() {
           />
           <input
             dir="rtl"
-            className="w-full px-3 py-2 placeholder:text-theme-background font-bold border-[3px] border-theme-secondary rounded-bl-xl focus:outline-none bg-theme-text "
+            className="w-full px-5 py-2 placeholder:text-theme-accent font-bold border-[3px] border-theme-secondary rounded-bl-xl focus:outline-none bg-theme-text text-theme-accent"
             name="Tel"
             id="tel"
             type="tel"
@@ -46,7 +47,7 @@ export default function Footer() {
             name="Send"
             value={"דברו איתנו עוד היום!"}
             id="send"
-            className="w-fit py-2 px-6 text-theme-background bg-gradient-to-l from-theme-primary via-theme-secondary border-theme-secondary to-theme-primary border-[3px] rounded-b-xl font-bold tracking-wide cursor-pointer"
+            className="w-fit py-2 px-5 text-theme-background bg-gradient-to-l from-theme-primary via-theme-secondary border-theme-secondary to-theme-primary border-[3px] rounded-b-xl font-bold tracking-wide cursor-pointer"
             aria-label="דברו איתנו"
           />
         </form>
