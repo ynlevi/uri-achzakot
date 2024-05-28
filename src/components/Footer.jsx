@@ -19,7 +19,7 @@ export default function Footer() {
         </h3>
         <form
           // action="https://public.herotofu.com/v1/bd010930-6125-11ee-a450-5f0c9649ec83"
-          action="https://formsubmit.co/jonilevi@icloud.com"
+          action="https://formsubmit.co/uriachzakot@gmail.com"
           method="POST"
           acceptCharset="UTF-8"
           className={`flex flex-col gap-2 mt-2 text-theme-dark text-lg tracking-wider`}
