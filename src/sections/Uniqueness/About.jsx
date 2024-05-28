@@ -5,7 +5,7 @@ import ParallaxDiv from "@/components/ParallaxDiv";
 export default function About() {
   return (
     <div className="shadow-lg md:flex-row md:gap-5  bg-theme-light mt-1 lg:mt-5 lg:max-w-4xl mx-auto rounded-xl flex flex-col-reverse pb-10">
-      <div className="bg-gradient-to-bl from-theme-secondary from-55% to-transparent lg:bg-gradient-to-l lg:from-theme-secondary  lg:to-transparent text-theme-background rounded-xl rounded-l-none p-[2px] pl-0 relative z-[3] grow">
+      <div className="lg:w-[90rem] bg-gradient-to-bl from-theme-secondary from-55% to-transparent lg:bg-gradient-to-l lg:from-theme-secondary  lg:to-transparent text-theme-background rounded-xl rounded-l-none p-[2px] pl-0 relative z-[3] grow">
         <div className="lg:flex lg:my-auto lg:justify-center lg:flex-col md:flex-auto p-4 rounded-xl rounded-l-none bg-theme-accent  lg:ml-0 lg:h-full">
           <h3 className="text-theme-secondary ">נעים להכיר, אני אורי.</h3>
           <p className="text-sm text-theme-text my-1">

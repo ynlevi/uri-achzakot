@@ -80,7 +80,7 @@ export default function DesktopService() {
           השירותים שלנו
         </motion.h2>
         <MotionDiv
-          className="hidden lg:flex max-h-[80vh] flex-row-reverse gap-4 mx-8 xl:mx-32 w-auto justify-between"
+          className="hidden lg:flex max-h-[80vh] flex-row-reverse gap-4 mx-8 xl:mx-32 w-auto justify-between "
           dir="auto"
         >
           {services.map((item, index) => (
