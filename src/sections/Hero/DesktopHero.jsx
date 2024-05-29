@@ -2,6 +2,7 @@ import CldImage from "@/components/CldImage";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
 import CTABtn from "@/components/CTABtn";
+import { SlArrowDown } from "react-icons/sl";
 
 export default function DesktopHero() {
   // motion variant
@@ -94,6 +95,9 @@ export default function DesktopHero() {
 
         <CTABtn text={"לשיחת יעוץ חינם"} />
       </MotionDiv>
+      <div className="flex justify-center absolute bottom-10 w-full text-theme-secondary">
+        <SlArrowDown size={30} />
+      </div>
     </div>
   );
 }

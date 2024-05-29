@@ -1,5 +1,5 @@
 import CldImage from "@/components/CldImage";
-
+import { SlArrowDown } from "react-icons/sl";
 import Link from "next/link";
 import { MotionDiv } from "@/components/MotionDiv";
 import CTABtn from "@/components/CTABtn";
@@ -10,45 +10,52 @@ export default function MobileHero() {
       boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
     },
   };
+
   return (
     <div className="lg:hidden mx-3 xs:mx-8 xl:mx-32 tracking-wide relative ">
-      <div className="flex flex-col lg:flex-row justify-between ">
-        <div className=" text-4xl md:text-6xl ml-8  lg:mt-32 2xl:mt-48">
-          <h1 className="">
-            <b>אורי אחזקות.</b>
-          </h1>
-          <h1 className="">
-            אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
-          </h1>
-        </div>
+      <div className="h-[calc(100vh-4.5rem)] relative flex flex-col justify-center">
+        <div className="flex gap-10 flex-col lg:flex-row justify-between ">
+          <div className="text-4xl md:text-6xl ml-8 lg:mt-32 2xl:mt-48">
+            <h1 className="">
+              <b>אורי אחזקות.</b>
+            </h1>
+            <h1 className="">
+              אנחנו מציעים לך <b className="whitespace-pre">רוגע נפשי.</b>
+            </h1>
+          </div>
 
-        <div className=" mt-4">
-          <div
-            data-scroll
-            data-scroll-speed="0.15"
-            className=" mask h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%] "
-          >
-            <CldImage
-              src={
-                "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
-              }
-              alt="hero-image"
-              fill
-              className=" absolute -z-1 object-cover "
-              priority
-              sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 60vw"
-            />
+          <div className="">
+            <div
+              data-scroll
+              data-scroll-speed="0.15"
+              className="mask h-[20rem] md:h-[28rem] 2xl:h-[45rem] left-0 relative md:w-[60%] "
+            >
+              <CldImage
+                src={
+                  "https://res.cloudinary.com/dwmqmcx1w/image/upload/f_auto,q_auto/v1/uri-achzakot/b2ihh41inlwmvunovblp"
+                }
+                alt="hero-image"
+                fill
+                className=" absolute -z-1 object-cover "
+                priority
+                sizes="(max-width: 768px) 70vw, (max-width: 1200px) 50vw, 60vw"
+              />
+            </div>
+          </div>
+          <div className="">
+            <CTABtn text={"לשיחת יעוץ חינם"} />
           </div>
         </div>
+
+        <div className="flex justify-center w-full absolute bottom-10 text-theme-secondary">
+          <SlArrowDown size={22} />
+        </div>
       </div>
-      <div>
-        <ul className="text-lg max-w-xl md:mt-4">
+      <div className=" md:mt-4">
+        <ul className="text-lg max-w-xl ">
           <li>
             <b>יש לך </b>
             המון על הראש.
-          </li>
-          <li>
-            <b>אתה רוצה </b>להתפנות לדברים שבאמת חשובים לך.
           </li>
           <li>
             <b>אתה לא רוצה </b>
@@ -65,8 +72,6 @@ export default function MobileHero() {
             </h4>
           </li>
         </ul>
-
-        <CTABtn text={"לשיחת יעוץ חינם"} />
       </div>
     </div>
   );

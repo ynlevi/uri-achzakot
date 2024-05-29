@@ -1,4 +1,3 @@
-import { SlArrowDown } from "react-icons/sl";
 import { Media, MediaContextProvider } from "@/components/Breackpoints";
 import DesktopHero from "./DesktopHero";
 import MobileHero from "./MobileHero";
@@ -13,9 +12,6 @@ export default function Hero() {
           <DesktopHero />
         </Media>
       </MediaContextProvider>
-      <div className="hidden lg:flex justify-center absolute bottom-10 w-full text-theme-secondary">
-        <SlArrowDown size={30} />
-      </div>
     </section>
   );
 }

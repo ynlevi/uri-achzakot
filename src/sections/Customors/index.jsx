@@ -154,11 +154,7 @@ export default function Customors() {
           {customersLogos.map(({ src, alt, link, custom }, index) => (
             <li
               key={index}
-              className={`relative rounded-lg shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 ${
-                index % 2 === 0
-                  ? "border-[.1px] border-theme-light text-white "
-                  : "bg-white shadow-md"
-              }`}
+              className={`relative rounded-lg shrink-0 my-auto flex items-center w-32 h-20 md:w-44 md:h-28 bg-white shadow-md`}
             >
               <Link aria-label={alt} target="_blank" href={link}>
                 <Image
