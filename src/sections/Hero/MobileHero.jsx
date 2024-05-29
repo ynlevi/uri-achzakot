@@ -13,8 +13,8 @@ export default function MobileHero() {
 
   return (
     <div className="lg:hidden mx-3 xs:mx-8 xl:mx-32 tracking-wide relative ">
-      <div className="h-[calc(100vh-4.5rem)] relative flex flex-col justify-center">
-        <div className="flex gap-10 flex-col lg:flex-row justify-between ">
+      <div className="h-[calc(100vh-8rem)] relative flex flex-col justify-center">
+        <div className="flex gap-4 flex-col lg:flex-row justify-between ">
           <div className="text-4xl md:text-6xl ml-8 lg:mt-32 2xl:mt-48">
             <h1 className="">
               <b>אורי אחזקות.</b>
@@ -46,12 +46,8 @@ export default function MobileHero() {
             <CTABtn text={"לשיחת יעוץ חינם"} />
           </div>
         </div>
-
-        <div className="flex justify-center w-full absolute bottom-10 text-theme-secondary">
-          <SlArrowDown size={22} />
-        </div>
       </div>
-      <div className=" md:mt-4">
+      <div className="mt-4">
         <ul className="text-lg max-w-xl ">
           <li>
             <b>יש לך </b>
