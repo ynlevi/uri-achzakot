@@ -60,7 +60,7 @@ export default function Footer() {
         <p dir="ltr" className="text-center py-4 text-xs md:text-base  ">
           Hand-coded by
           <Link
-            href="https://ynlevi.github.io/portfolio/"
+            href="https://lws-xi.vercel.app"
             className="text-theme-primary"
             aria-label="למעבר לעמוד פורטפוליו"
           >
