@@ -6,6 +6,7 @@ import { TbArrowUpLeft } from "react-icons/tb";
 
 import { motion, useAnimation, useAnimate } from "framer-motion";
 import { useEffect } from "react";
+import Link from "next/link";
 export default function WABtn() {
   const controls = useAnimation();
   const [scope, animate] = useAnimate();
@@ -35,14 +36,16 @@ export default function WABtn() {
   return (
     <>
       {/* on mobile */}
-      <motion.li
-        animate={controls}
-        whileInView={() => controls.start(controlInitialMedia)}
-        onTap={controls.stop}
-        className="lg:hidden text-theme- bg-theme-whatsapp relative before:absolute before:inset-0 before:bg-theme-light before:scale-75 before:-z-[1] p-1 rounded-md"
-      >
-        <FaWhatsapp size={30} />
-      </motion.li>
+      <Link href="https://wa.me/+972502727526">
+        <motion.li
+          animate={controls}
+          whileInView={() => controls.start(controlInitialMedia)}
+          onTap={controls.stop}
+          className="lg:hidden text-theme- bg-theme-whatsapp relative before:absolute before:inset-0 before:bg-theme-light before:scale-75 before:-z-[1] p-1 rounded-md"
+        >
+          <FaWhatsapp size={30} />
+        </motion.li>
+      </Link>
       {/* on desktop */}
       <motion.li
         ref={scope}
