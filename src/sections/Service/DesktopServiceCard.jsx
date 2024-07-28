@@ -10,10 +10,10 @@ export default function DesktopServiceCard({ item, index }) {
       style={{
         scale: scale,
       }}
-      className={`${styles.card} absolute inset-0 top-[17vh] `}
+      className={`${styles.card} absolute inset-0 top-[17vh]`}
     >
       <div
-        className={`${styles.el} relative backdrop-blur-sm bg-gradient-to-br from-theme-secondary via-theme-text to-45% to-theme-secondary 2xl:scale-90 inset-y-0 p-2 `}
+        className={`${styles.el} scale-90 relative backdrop-blur-sm bg-gradient-to-br from-theme-secondary via-theme-text to-45% to-theme-secondary 2xl:scale-90 inset-y-0 p-2 `}
       >
         <div className="relative h-[17rem] 2xl:h-72 top-0 ">
           <CldImage src={image} alt={name} fill className=" object-cover" />

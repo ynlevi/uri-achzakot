@@ -23,7 +23,7 @@ export default function CTABtn({ text, className }) {
         animate="visible"
         whileHover="hover"
         transition={{ type: "spring", stiffness: 300 }}
-        className="w-fit rounded-2xl p-1 bg-gradient-to-tl from-theme-text via-theme-secondary to-theme-text mt-3 md:mt-4 "
+        className="w-fit rounded-2xl p-1 my-6 bg-gradient-to-tl from-theme-text via-theme-secondary to-theme-text mt-3 md:mt-4 "
       >
         <div
           className={`w-fit rounded-xl font-extrabold relative mr-auto md:ml-auto md:mr-0 tracking-wider md:text-lg p-3 bg-gradient-to-l from-theme-primary via-theme-secondary to-theme-primary text-theme-background ${className}`}
